@@ -1,4 +1,4 @@
-# Portuguese version of GAP-text2SQL: Learning Contextual Representations for Semantic Parsing with Generation-Augmented Pre-Training
+# Portuguese version of the GAP-text2SQL: Learning Contextual Representations for Semantic Parsing with Generation-Augmented Pre-Training
 
 Code and model from our [AAAI 2021 paper](https://arxiv.org/abs/2012.10309)
 
