@@ -1,8 +1,6 @@
 # P-RAT-SQL+GAP - Portuguese version of the GAP-text2SQL
 
-Based on:
-Original Code of RAT-SQL+GAP: [Github] https://github.com/awslabs/gap-text2sql
-Original paper [AAAI 2021 paper](https://arxiv.org/abs/2012.10309)
+Based on: RAT-SQL+GAP: [Github] https://github.com/awslabs/gap-text2sql Paper [AAAI 2021 paper](https://arxiv.org/abs/2012.10309)
 
 ## Updates
 
