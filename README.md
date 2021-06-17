@@ -1,4 +1,4 @@
-# P-RAT-SQL+GAP - Portuguese version of the GAP-text2SQL
+# mRAT-SQL+GAP - Multilingual version of the RAT-SQL+GAP
 
 Based on: RAT-SQL+GAP: [Github] https://github.com/awslabs/gap-text2sql Paper [AAAI 2021 paper](https://arxiv.org/abs/2012.10309)
 
