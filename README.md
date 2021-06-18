@@ -62,6 +62,7 @@ ln -s $(pwd)/spider/database data/spider-en/database
 
 ### Build Portuguese dataset directory
 Modified versions of train_spider.json, train_others.json and dev.json distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license
+```bash
 mkdir data/spider-pt
 cp ./spider/tables.json data/spider-pt/
 cd data/spider-pt
@@ -75,6 +76,7 @@ ln -s $(pwd)/spider/database data/spider-pt/database
 
 ### Build English and Portuguese dataset directory
 Modified versions of train_spider.json, train_others.json and dev.json distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license
+```bash
 mkdir data/spider-en-pt
 cd data/spider-en-pt
 cp ./spider/tables.json data/spider-en-pt/
