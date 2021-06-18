@@ -54,21 +54,7 @@ cp ./spider/dev.json data/spider-bart/
 ln -s $(pwd)/spider/database data/spider-bart/database
 ```
 
-### Download the library
-```bash
-mkdir third_party
-wget http://nlp.stanford.edu/software/stanford-corenlp-full-2018-10-05.zip
-unzip stanford-corenlp-full-2018-10-05.zip -d third_party/
-```
-
-### Start the Stanford library
-```bash
-pushd third_party/stanford-corenlp-full-2018-10-05
-nohup java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 8999 -timeout 15000 > server.log &
-popd
-```
-
-### Download the checkpoint
+### Download the BART checkpoint
 ```bash
 mkdir -p logdir/bart_run_1/bs\=12\,lr\=1.0e-04\,bert_lr\=1.0e-05\,end_lr\=0e0\,att\=1/
 mkdir ie_dirs
