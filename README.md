@@ -80,7 +80,7 @@ This is good to validate the setup. It will take some time, maybe 40 minutes.
 python run.py preprocess experiments/spider-configs/gap-run.jsonnet
 ```
 You then see the files processed in the paths:
-`data\spider-bart\nl2code-1115,output_from=true,fs=2,emb=bart,cvlink`
+`data/spider-bart/nl2code-1115,output_from=true,fs=2,emb=bart,cvlink`
 
 ## Inference
 This is good to validate de setup. 
