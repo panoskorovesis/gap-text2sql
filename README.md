@@ -6,6 +6,10 @@ Based on: RAT-SQL+GAP: [Github] https://github.com/awslabs/gap-text2sql Paper [A
 
 The Spider dataset translated to Portuguese and a double-size (English and Portuguese) version are available [here](https://drive.google.com/drive/folders/1U5-3eqX8vQSkVechxTViRSWD11bh-Fa-?usp=sharing)  (distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, to respect the source of [Spider Dataset](https://yale-lily.github.io/spider) that follow this license ) different from the other contents that is available under Apache-2.0 license.
 
+## Results
+
+The results are in the directory [inference-results](https://github.com/C4AI/gap-text2sql/tree/main/mrat-sql-gap/inference-results).
+
 
 ## Updates
 
@@ -15,9 +19,6 @@ The Spider dataset translated to Portuguese and a double-size (English and Portu
 
 mRAT-SQL+GAP is a multilingual version of the RAT-SQL+GAP, wich start with Portuguese Language. Here is available the code, dataset and the results.
 
-## Dataset
-
-The translation of 
 
 
 ## Setup
