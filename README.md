@@ -32,7 +32,6 @@ conda create --name gap-text2sql python=3.7
 conda activate gap-text2sql
 conda install pytorch=1.5 cudatoolkit=10.2 -c pytorch
 pip install -r requirements.txt
-pip install simplemma
 python -c "import nltk; nltk.download('stopwords'); nltk.download('punkt')"
 ```
 
