@@ -16,13 +16,17 @@ from seq2struct.utils import registry
 from seq2struct.utils import vocab
 from seq2struct.utils import serialization
 from seq2struct import resources
-from seq2struct.resources import corenlp
+#from seq2struct.resources import corenlp
 #from transformers import BertModel, BertTokenizer, BartModel, BartTokenizer
 from transformers import BertModel, BertTokenizer, BartModel, BartTokenizer, MBartModel, MBart50Tokenizer #model MBART50 
 from seq2struct.models.spider.spider_match_utils import (
     compute_schema_linking, 
     compute_cell_value_linking
 )
+
+import simplemma
+from simplemma import text_lemmatizer
+langdata = simplemma.load_data('pt','en')
 
 useMBART = False #Variavel global para selecionar o model MBART50, definido em: class SpiderEncoderBartPreproc(SpiderEncoderV2Preproc):
 
@@ -610,14 +614,19 @@ class Bertokens:
                 idx_map[len(new_toks)] = i
                 new_toks.append(piece)
         self.idx_map = idx_map
-        
+
         # lemmatize "abc"
         normalized_toks = []
         for i, tok in enumerate(new_toks):
-            ann = corenlp.annotate(tok, annotators = ['tokenize', 'ssplit', 'lemma'])
-            lemmas = [tok.lemma.lower() for sent in ann.sentence for tok in sent.token]
-            lemma_word = " ".join(lemmas)
-            normalized_toks.append(lemma_word)
+            normalized_toks.append(simplemma.lemmatize(tok, langdata))
+        
+        # lemmatize "abc"
+#        normalized_toks = []
+#        for i, tok in enumerate(new_toks):
+#            ann = corenlp.annotate(tok, annotators = ['tokenize', 'ssplit', 'lemma'])
+#            lemmas = [tok.lemma.lower() for sent in ann.sentence for tok in sent.token]
+#            lemma_word = " ".join(lemmas)
+#            normalized_toks.append(lemma_word)
 
         self.normalized_pieces = normalized_toks
     
@@ -1057,10 +1066,14 @@ class BartTokens:
 
         normalized_toks = []
         for i, tok in enumerate(tokens):
-            ann = corenlp.annotate(tok, annotators=["tokenize", "ssplit", "lemma"])
-            lemmas = [tok.lemma.lower() for sent in ann.sentence for tok in sent.token]
-            lemma_word = " ".join(lemmas)
-            normalized_toks.append(lemma_word)
+            normalized_toks.append(simplemma.lemmatize(tok, langdata))
+
+#        normalized_toks = []
+#        for i, tok in enumerate(tokens):
+#            ann = corenlp.annotate(tok, annotators=["tokenize", "ssplit", "lemma"])
+#            lemmas = [tok.lemma.lower() for sent in ann.sentence for tok in sent.token]
+#            lemma_word = " ".join(lemmas)
+#            normalized_toks.append(lemma_word)
         self.normalized_pieces = normalized_toks
 
     def bart_schema_linking(self, columns, tables):
