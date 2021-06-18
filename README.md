@@ -75,11 +75,13 @@ curl https://gap-text2sql-public.s3.amazonaws.com/checkpoint-artifacts/pretraine
 
 
 ### Preprocess dataset
+This is good to validate the setup. It will take some time, maybe 40 minutes.
 ```bash
 python run.py preprocess experiments/spider-configs/gap-run.jsonnet
 ```
 
 ## Inference
+This is good to validate de setup. 
 ```bash
 python run.py eval experiments/spider-configs/gap-run.jsonnet
 ```
@@ -87,6 +89,7 @@ python run.py eval experiments/spider-configs/gap-run.jsonnet
 You then get the inference results and evaluation results in the paths:`ie_dirs/bart_run_1_true_1-step41000.infer` and `ie_dirs/bart_run_1_true_1-step41000.eval`.
 
 ## Training
+Execute if it is really necessary, if you want to fine-tune the model, this will take a long time... some days. But if you have a good machine available and want to see different checkpoints in the logdir, do it.
 
 ```bash
 python run.py train experiments/spider-configs/gap-run.jsonnet
