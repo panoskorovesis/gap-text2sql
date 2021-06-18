@@ -4,7 +4,7 @@ Based on: RAT-SQL+GAP: [Github] https://github.com/awslabs/gap-text2sql Paper [A
 
 ## Dataset
 
-The Spider dataset translated to Portuguese and a double-size (English and Portuguese) version are available [here](https://drive.google.com/drive/folders/1U5-3eqX8vQSkVechxTViRSWD11bh-Fa-?usp=sharing)  (distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, to respect the source of [Spider Dataset] (https://yale-lily.github.io/spider) ) different from the other contents that is available under Apache-2.0 license.
+The Spider dataset translated to Portuguese and a double-size (English and Portuguese) version are available [here](https://drive.google.com/drive/folders/1U5-3eqX8vQSkVechxTViRSWD11bh-Fa-?usp=sharing)  (distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, to respect the source of [Spider Dataset](https://yale-lily.github.io/spider) that follow this license ) different from the other contents that is available under Apache-2.0 license.
 
 
 ## Updates
