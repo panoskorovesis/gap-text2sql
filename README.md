@@ -11,6 +11,11 @@ The Spider dataset translated to Portuguese and a double-size (English and Portu
 The results are in the directory [inference-results](https://github.com/C4AI/gap-text2sql/tree/main/mrat-sql-gap/inference-results).
 
 
+## Checkpoints
+
+The checkpoints are available [here](https://drive.google.com/drive/folders/1XSmCsb-xrIzrrMFmRzS7iaAn9QthDm05?usp=sharing)
+
+
 ## Updates
 
 [2020/02/05] Support to run the model on own databases and queries. Check out the [notebook](rat-sql-gap/notebook.ipynb). 
