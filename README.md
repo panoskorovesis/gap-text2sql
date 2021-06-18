@@ -79,6 +79,8 @@ This is good to validate the setup. It will take some time, maybe 40 minutes.
 ```bash
 python run.py preprocess experiments/spider-configs/gap-run.jsonnet
 ```
+You then see the files processed in the paths:
+`data\spider-bart\nl2code-1115,output_from=true,fs=2,emb=bart,cvlink`
 
 ## Inference
 This is good to validate de setup. 
@@ -87,7 +89,11 @@ python run.py eval experiments/spider-configs/gap-run.jsonnet
 ```
 
 You then get the inference results and evaluation results in the paths:
-`ie_dirs/BART-large-en-train/bart-large-en_run_1_true_1-step41000.infer` and 
+
+`ie_dirs/BART-large-en-train/bart-large-en_run_1_true_1-step41000.infer` 
+
+and 
+
 `ie_dirs/BART-large-en-train/bart-large-en_run_1_true_1-step41000.eval`.
 
 ## Training
