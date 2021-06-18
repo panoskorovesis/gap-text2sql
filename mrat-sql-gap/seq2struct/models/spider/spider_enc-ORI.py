@@ -17,14 +17,12 @@ from seq2struct.utils import vocab
 from seq2struct.utils import serialization
 from seq2struct import resources
 from seq2struct.resources import corenlp
-#from transformers import BertModel, BertTokenizer, BartModel, BartTokenizer
-from transformers import BertModel, BertTokenizer, BartModel, BartTokenizer, MBartModel, MBart50Tokenizer #model MBART50 
+from transformers import BertModel, BertTokenizer, BartModel, BartTokenizer
 from seq2struct.models.spider.spider_match_utils import (
     compute_schema_linking, 
     compute_cell_value_linking
 )
 
-useMBART = False #Variavel global para selecionar o model MBART50, definido em: class SpiderEncoderBartPreproc(SpiderEncoderV2Preproc):
 
 @attr.s
 class SpiderEncoderState:
@@ -256,11 +254,9 @@ class SpiderEncoderV2Preproc(abstract_preproc.AbstractPreproc):
         self.vocab_builder.save(self.vocab_word_freq_path)
 
         for section, texts in self.texts.items():
-            with open(os.path.join(self.data_dir, section + '.jsonl'), 'w', encoding='utf8') as f: #UTF-8
-			#with open(os.path.join(self.data_dir, section + '.jsonl'), 'w') as f:
+            with open(os.path.join(self.data_dir, section + '.jsonl'), 'w') as f:
                 for text in texts:
-                    f.write(json.dumps(text, ensure_ascii=False) + '\n')#UTF-8
-                    #f.write(json.dumps(text) + '\n')
+                    f.write(json.dumps(text) + '\n')
 
     def load(self):
         self.vocab = vocab.Vocab.load(self.vocab_path)
@@ -269,8 +265,7 @@ class SpiderEncoderV2Preproc(abstract_preproc.AbstractPreproc):
     def dataset(self, section):
         return [
             json.loads(line)
-            for line in open(os.path.join(self.data_dir, section + '.jsonl'), encoding='utf8')] #UTF-8
-			#for line in open(os.path.join(self.data_dir, section + '.jsonl'))]
+            for line in open(os.path.join(self.data_dir, section + '.jsonl'))]
 
 
 @registry.register('encoder', 'spiderv2')
@@ -742,11 +737,9 @@ class SpiderEncoderBertPreproc(SpiderEncoderV2Preproc):
         self.tokenizer.save_pretrained(self.data_dir)
 
         for section, texts in self.texts.items():
-            with open(os.path.join(self.data_dir, section + '.jsonl'), 'w', encoding='utf8') as f:#UTF-8
-			#with open(os.path.join(self.data_dir, section + '.jsonl'), 'w') as f:
+            with open(os.path.join(self.data_dir, section + '.jsonl'), 'w') as f:
                 for text in texts:
-                    f.write(json.dumps(text, ensure_ascii=False) + '\n')#UTF-8
-					#f.write(json.dumps(text) + '\n')
+                    f.write(json.dumps(text) + '\n')
 
     def load(self):
         self.tokenizer = BertTokenizer.from_pretrained(self.data_dir)
@@ -1038,9 +1031,6 @@ class BartTokens:
         self.tokenizer = tokenizer
         self.normalized_pieces = None
         self.idx_map = None
-        #print(self.tokenizer.name_or_path)
-        if self.tokenizer.name_or_path == "facebook/mbart-large-50-many-to-many-mmt": useMBART = True #Adicionado com tratamento para model MBART50
-        else: useMBART = False #Adicionado com tratamento para model MBART50
 
         self.normalize_toks()
 
@@ -1051,9 +1041,7 @@ class BartTokens:
         toks = []
         for i, tok in enumerate(tokens):
             self.idx_map[i] = len(toks)
-            if self.tokenizer.name_or_path == "facebook/mbart-large-50-many-to-many-mmt": toks.extend(self.tokenizer.tokenize(tok))#Adicionado com tratamento para tokenizer MBART50 nao tem add_prefix_space
-            else: toks.extend(self.tokenizer.tokenize(tok, add_prefix_space=True))#Adicionado com tratamento para tokenizer MBART50             					
-            #toks.extend(self.tokenizer.tokenize(tok, add_prefix_space=True))
+            toks.extend(self.tokenizer.tokenize(tok, add_prefix_space=True))
 
         normalized_toks = []
         for i, tok in enumerate(tokens):
@@ -1197,13 +1185,7 @@ class SpiderEncoderBartPreproc(SpiderEncoderV2Preproc):
         self.counted_db_ids = set()
         self.preprocessed_schemas = {}
 
-        if bart_version == "facebook/mbart-large-50-many-to-many-mmt": useMBART = True #Adicionado com tratamento para model MBART50
-        else: useMBART = False #Adicionado com tratamento para model MBART50
-		
-        if useMBART == True: self.tokenizer = MBart50Tokenizer.from_pretrained(bart_version)#Adicionado com tratamento para model MBART50
-        else: self.tokenizer = BartTokenizer.from_pretrained(bart_version)#Adicionado com tratamento para model MBART50
-		
-        #self.tokenizer = BartTokenizer.from_pretrained(bart_version)
+        self.tokenizer = BartTokenizer.from_pretrained(bart_version)
 
         column_types = ["text", "number", "time", "boolean", "others"]
         self.tokenizer.add_tokens([f"<type: {t}>" for t in column_types])
@@ -1214,9 +1196,7 @@ class SpiderEncoderBartPreproc(SpiderEncoderV2Preproc):
         tokens = nltk.word_tokenize(unsplit.replace("'", " ' ").replace('"', ' " '))
         toks = []
         for token in tokens:
-            if self.tokenizer.name_or_path == "facebook/mbart-large-50-many-to-many-mmt": toks.extend(self.tokenizer.tokenize(token))#Adicionado com tratamento para model MBART50 nao tem add_prefix_space
-            else: toks.extend(self.tokenizer.tokenize(token, add_prefix_space=True))#Adicionado com tratamento para model MBART50 #Adicionado com tratamento para model MBART50         				
-            #toks.extend(self.tokenizer.tokenize(token, add_prefix_space=True))
+            toks.extend(self.tokenizer.tokenize(token, add_prefix_space=True))
         return toks
 
     def add_item(self, item, section, validation_info):
@@ -1286,16 +1266,12 @@ class SpiderEncoderBartPreproc(SpiderEncoderV2Preproc):
         self.tokenizer.save_pretrained(self.data_dir)
 
         for section, texts in self.texts.items():
-            with open(os.path.join(self.data_dir, section + '.jsonl'), 'w', encoding='utf8') as f:#UTF-8
-			#with open(os.path.join(self.data_dir, section + '.jsonl'), 'w') as f:
+            with open(os.path.join(self.data_dir, section + '.jsonl'), 'w') as f:
                 for text in texts:
-                    f.write(json.dumps(text, ensure_ascii=False) + '\n')#UTF-8
-					#f.write(json.dumps(text) + '\n')
+                    f.write(json.dumps(text) + '\n')
 
     def load(self):
-        if self.tokenizer.name_or_path == "facebook/mbart-large-50-many-to-many-mmt": self.tokenizer = MBart50Tokenizer.from_pretrained(self.data_dir)#Adicionado com tratamento para model MBART50
-        else: self.tokenizer = BartTokenizer.from_pretrained(self.data_dir)#Adicionado com tratamento para model MBART50
-        #self.tokenizer = BartTokenizer.from_pretrained(self.data_dir)
+        self.tokenizer = BartTokenizer.from_pretrained(self.data_dir)
 
 
 @registry.register('encoder', 'spider-bart')
@@ -1338,13 +1314,8 @@ class SpiderEncoderBart(torch.nn.Module):
             hidden_size=self.enc_hidden_size,
             sc_link=True,
         )
-        if bart_version == "facebook/mbart-large-50-many-to-many-mmt": useMBART = True #Adicionado com tratamento para model MBART50
-        else: useMBART = False #Adicionado com tratamento para model MBART50
-		
-        if useMBART == True: self.bert_model = MBartModel.from_pretrained(bart_version)#Adicionado com tratamento para model MBART50
-        else: self.bert_model = BartModel.from_pretrained(bart_version)#Adicionado com tratamento para model MBART50
-		#self.bert_model = BartModel.from_pretrained(bart_version)
-		
+
+        self.bert_model = BartModel.from_pretrained(bart_version)
         print(next(self.bert_model.encoder.parameters()))
 
         def replace_model_with_pretrained(model, path, prefix):
@@ -1360,23 +1331,13 @@ class SpiderEncoderBart(torch.nn.Module):
 
 
         self.tokenizer = self.preproc.tokenizer
-        if useMBART == True: #Adicionado com tratamento para model MBART50
-            #self.bert_model.resize_token_embeddings(50266)  # several tokens added #Especifico do BART, nao usar no MBART50
-            replace_model_with_pretrained(self.bert_model.encoder, os.path.join(
-                 "./pretrained_checkpoint",
-                 "pytorch_model.bin"), "model.encoder.") #"model.encoder." caracteristico do MBART50, para descobrir de outro modelo, faca print key em replace_model_with_pretrained
-        
-        else: #Adicionado com tratamento para model MBART50
-            self.bert_model.resize_token_embeddings(50266)  # several tokens added
+        self.bert_model.resize_token_embeddings(50266)  # several tokens added
 
-            replace_model_with_pretrained(self.bert_model.encoder, os.path.join(
-                 "./pretrained_checkpoint",
-                 "pytorch_model.bin"), "bert.model.encoder.") #"bert.model.encoder." caracteristico do BART
-        		
+        replace_model_with_pretrained(self.bert_model.encoder, os.path.join(
+            "./pretrained_checkpoint",
+            "pytorch_model.bin"), "bert.model.encoder.")
         self.bert_model.resize_token_embeddings(len(self.tokenizer))
-        self.bert_model = self.bert_model.encoder		
-		
-        
+        self.bert_model = self.bert_model.encoder
         self.bert_model.decoder = None
 
         print(next(self.bert_model.parameters()))

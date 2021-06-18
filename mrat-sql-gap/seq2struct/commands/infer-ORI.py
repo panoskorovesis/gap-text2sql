@@ -136,7 +136,7 @@ class Inferer:
                 json.dumps({
                     'index': i,
                     'beams': decoded,
-                }, ensure_ascii=False) + '\n')
+                }) + '\n')
             output.flush()
 
 
@@ -147,15 +147,15 @@ class Inferer:
                     json.dumps({
                         'index': i,
                         'history': history,
-                    }, ensure_ascii=False) + '\n')
+                    }) + '\n')
             output.flush()
 
     def _visualize_attention(self, model, beam_size, output_history, sliced_data, res1file, res2file, res3file, output):
-        res1 = json.load(open(res1file, 'r', encoding='utf8'))
+        res1 = json.load(open(res1file, 'r'))
         res1 = res1['per_item']
-        res2 = json.load(open(res2file, 'r', encoding='utf8'))
+        res2 = json.load(open(res2file, 'r'))
         res2 = res2['per_item']
-        res3 = json.load(open(res3file, 'r', encoding='utf8'))
+        res3 = json.load(open(res3file, 'r'))
         res3 = res3['per_item']
         interest_cnt = 0
         cnt = 0

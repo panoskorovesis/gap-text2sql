@@ -63,9 +63,9 @@ class NL2CodeEncoder(torch.nn.Module):
             self.vocab.save(self.vocab_path)
 
             for section, texts in self.texts.items():
-                with open(os.path.join(self.data_dir, section + '.jsonl'), 'w', encoding='utf8') as f:
+                with open(os.path.join(self.data_dir, section + '.jsonl'), 'w') as f:
                     for text in texts:
-                        f.write(json.dumps(text, ensure_ascii=False) + '\n')
+                        f.write(json.dumps(text) + '\n')
 
         def load(self):
             self.vocab = vocab.Vocab.load(self.vocab_path)
@@ -73,7 +73,7 @@ class NL2CodeEncoder(torch.nn.Module):
         def dataset(self, section):
             return [
                 json.loads(line)
-                for line in open(os.path.join(self.data_dir, section + '.jsonl'), encoding='utf8')]
+                for line in open(os.path.join(self.data_dir, section + '.jsonl'))]
 
     def __init__(
             self,

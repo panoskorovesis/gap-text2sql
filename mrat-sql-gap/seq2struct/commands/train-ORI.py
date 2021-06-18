@@ -260,8 +260,8 @@ def main(args):
     # Save the config info
     with open(os.path.join(args.logdir,
             'config-{}.json'.format(
-            datetime.datetime.now().strftime('%Y%m%dT%H%M%S%Z'))), 'w', encoding='utf8') as f:			
-        json.dump(config, f, sort_keys=True, indent=4, ensure_ascii=False)
+            datetime.datetime.now().strftime('%Y%m%dT%H%M%S%Z'))), 'w') as f:
+        json.dump(config, f, sort_keys=True, indent=4)
 
     logger.log('Logging to {}'.format(args.logdir))
 

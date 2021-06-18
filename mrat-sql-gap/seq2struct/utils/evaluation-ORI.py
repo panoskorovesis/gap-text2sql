@@ -17,7 +17,7 @@ def compute_metrics(config_path, config_args, section, inferred_path,logdir=None
     if logdir:
         inferred_path = inferred_path.replace('__LOGDIR__', logdir)
 
-    inferred = open(inferred_path, encoding='utf8')
+    inferred = open(inferred_path)
     data = registry.construct('dataset', config['data'][section])
     metrics = data.Metrics(data)
 

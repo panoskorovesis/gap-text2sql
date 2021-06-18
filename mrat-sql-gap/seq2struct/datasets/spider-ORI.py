@@ -52,7 +52,7 @@ def load_tables(paths):
     eval_foreign_key_maps = {}
 
     for path in paths:
-        schema_dicts  = json.load(open(path, encoding='utf8'))
+        schema_dicts  = json.load(open(path))
         for schema_dict in schema_dicts:
             tables = tuple(
                 Table(
@@ -197,7 +197,7 @@ class SpiderDataset(torch.utils.data.Dataset):
         self.schemas, self.eval_foreign_key_maps = load_tables(tables_paths)
 
         for path in paths:
-            raw_data = json.load(open(path, encoding='utf8'))
+            raw_data = json.load(open(path))
             for entry in raw_data:
                 item = SpiderItem(
                     text=entry['question_toks'],
@@ -264,7 +264,7 @@ class SpiderIdiomAstDataset(torch.utils.data.Dataset):
         self.schemas, self.eval_foreign_key_maps = load_tables(tables_paths)
 
         for path in paths:
-            for line in open(path, encoding='utf8'):
+            for line in open(path):
                 entry = json.loads(line)
                 item = SpiderItem(
                     text=entry['orig']['question_toks'],
