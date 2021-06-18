@@ -1,5 +1,5 @@
 local _0428_base = import 'nl2code-base.libsonnet';
-local _data_path = 'data/spider-bart/';
+local _data_path = 'data/spider-en/';
 local _output_from = true;
 local _fs = 2;
 

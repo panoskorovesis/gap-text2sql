@@ -35,30 +35,62 @@ pip install -r requirements.txt
 python -c "import nltk; nltk.download('stopwords'); nltk.download('punkt')"
 ```
 
-### Download the dataset
+## Directory Structure
+Go to the directory where you want to install the structure
+```bash
+git clone https://github.com/C4AI/gap-text2sql
+cd gap-text2sql/mrat-sql-gap 
+```
+
+### Download the Spider dataset (english)
 ```bash
 pip install gdown
-cd rat-sql-gap
 gdown --id 1_AckYkinAnhqmRQtGsQgUKAnTHxxX5J0
 unzip spider.zip
 bash data/spider/generate.sh ./spider
 ```
 
-### Build dataset directory
+### Build English dataset directory
 ```bash
-mkdir data/spider-bart
-cp ./spider/tables.json data/spider-bart/
-cp ./spider/train_spider.json data/spider-bart/
-cp ./spider/train_others.json data/spider-bart/
-cp ./spider/dev.json data/spider-bart/
-ln -s $(pwd)/spider/database data/spider-bart/database
+mkdir data/spider-en
+cp ./spider/train_spider.json data/spider-en/
+cp ./spider/train_others.json data/spider-en/
+cp ./spider/dev.json data/spider-en/
+cp ./spider/tables.json data/spider-en/
+ln -s $(pwd)/spider/database data/spider-en/database
+```
+
+### Build Portuguese dataset directory
+Modified versions of train_spider.json, train_others.json and dev.json distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license
+mkdir data/spider-pt
+cp ./spider/tables.json data/spider-pt/
+cd data/spider-pt
+gdown --id 12JjlnOsWxLDtOV2cK-3ggsAtBeqU1vYp
+gdown --id 1FeVYW3fR1A3Ls-Es-0H_QkB3mRw8QCFx
+gdown --id 1UvEFBTAqcrmibUfxTOLo41viIifh7g6K
+cd ..
+cd ..
+ln -s $(pwd)/spider/database data/spider-pt/database
+```
+
+### Build English and Portuguese dataset directory
+Modified versions of train_spider.json, train_others.json and dev.json distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license
+mkdir data/spider-en-pt
+cd data/spider-en-pt
+cp ./spider/tables.json data/spider-en-pt/
+gdown --id 1qFaSvUU1d4ZxYA7q4fRqjPTfZH9zjQ-x
+gdown --id 1c6CEnenCkpW9Ugk_OHhawGb39_-DeY1y
+gdown --id 1ZRIlwCOwi2VjaxADisf7QpFSVIyMONGe
+cd ..
+cd ..
+ln -s $(pwd)/spider/database data/spider-en-pt/database
 ```
 
 ### Download the BART checkpoint
 ```bash
-mkdir -p logdir/bart_run_1/bs\=12\,lr\=1.0e-04\,bert_lr\=1.0e-05\,end_lr\=0e0\,att\=1/
+mkdir -p logdir/BART-large-en-train/bs\=12\,lr\=1.0e-04\,bert_lr\=1.0e-05\,end_lr\=0e0\,att\=1/
 mkdir ie_dirs
-aws s3 cp s3://gap-text2sql-public/checkpoint-artifacts/gap-finetuned-checkpoint logdir/bart_run_1/bs\=12\,lr\=1.0e-04\,bert_lr\=1.0e-05\,end_lr\=0e0\,att\=1/model_checkpoint-00041000
+aws s3 cp s3://gap-text2sql-public/checkpoint-artifacts/gap-finetuned-checkpoint logdir/BART-large-en-train/bs\=12\,lr\=1.0e-04\,bert_lr\=1.0e-05\,end_lr\=0e0\,att\=1/model_checkpoint-00041000
 
 mkdir -p pretrained_checkpoint
 aws s3 cp s3://gap-text2sql-public/checkpoint-artifacts/pretrained-checkpoint pretrained_checkpoint/pytorch_model.bin
@@ -69,7 +101,7 @@ Alternatively, you can download them here if you don't have awscli:
 and [pretrained-checkpoint](https://gap-text2sql-public.s3.amazonaws.com/checkpoint-artifacts/pretrained-checkpoint)
 
 ```bash
-curl https://gap-text2sql-public.s3.amazonaws.com/checkpoint-artifacts/gap-finetuned-checkpoint -o logdir/bart_run_1/bs\=12\,lr\=1.0e-04\,bert_lr\=1.0e-05\,end_lr\=0e0\,att\=1/model_checkpoint-00041000
+curl https://gap-text2sql-public.s3.amazonaws.com/checkpoint-artifacts/gap-finetuned-checkpoint -o logdir/BART-large-en-train/bs\=12\,lr\=1.0e-04\,bert_lr\=1.0e-05\,end_lr\=0e0\,att\=1/model_checkpoint-00041000
 curl https://gap-text2sql-public.s3.amazonaws.com/checkpoint-artifacts/pretrained-checkpoint -o pretrained_checkpoint/pytorch_model.bin
 ```
 
@@ -80,7 +112,7 @@ This is good to validate the setup. It will take some time, maybe 40 minutes.
 python run.py preprocess experiments/spider-configs/gap-run.jsonnet
 ```
 You can see the files processed in the paths:
-`data/spider-bart/nl2code-1115,output_from=true,fs=2,emb=bart,cvlink`
+`data/spider-en/nl2code-1115,output_from=true,fs=2,emb=bart,cvlink`
 
 ## Inference
 This is good to validate de setup. 
