@@ -86,7 +86,9 @@ This is good to validate de setup.
 python run.py eval experiments/spider-configs/gap-run.jsonnet
 ```
 
-You then get the inference results and evaluation results in the paths:`ie_dirs/bart_run_1_true_1-step41000.infer` and `ie_dirs/bart_run_1_true_1-step41000.eval`.
+You then get the inference results and evaluation results in the paths:
+`ie_dirs/BART-large-en-train/bart-large-en_run_1_true_1-step41000.infer` and 
+`ie_dirs/BART-large-en-train/bart-large-en_run_1_true_1-step41000.eval`.
 
 ## Training
 Execute if it is really necessary, if you want to fine-tune the model, this will take a long time... some days. But if you have a good machine available and want to see different checkpoints in the logdir, do it.
@@ -94,6 +96,8 @@ Execute if it is really necessary, if you want to fine-tune the model, this will
 ```bash
 python run.py train experiments/spider-configs/gap-run.jsonnet
 ```
+You then get the training checkpoints in the paths:
+`logdir/BART-large-en-train`
 
 ## Security
 
