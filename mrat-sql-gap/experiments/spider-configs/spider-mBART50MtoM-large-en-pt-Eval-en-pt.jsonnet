@@ -1,7 +1,7 @@
 {
     local exp_id = 1,
-    logdir: "logdir/mBART50MtoM-large_run",
-    model_config: "configs/mBART50MtoM-large/gap-bart.jsonnet",
+    logdir: "logdir/mBART50MtoM-large-en-pt-train",
+    model_config: "configs/mBART50MtoM-large-pt-en/gap-bart.jsonnet",
     model_config_args: {
         bs: 12,
         num_batch_accumulated: 2,
@@ -23,10 +23,10 @@
         clause_order: null, # strings like "SWGOIF", it will be prioriotized over end_with_from 
     },
 
-    eval_name: "mBART50MtoM-large_run_%d_%s_%d" % [exp_id, self.eval_use_heuristic, self.eval_beam_size],
-    eval_output: "ie_dirs/mBART50MtoM-large",
+    eval_name: "mBART50MtoM-large-pt-en-Eval-en-pt_run_%d_%s_%d" % [exp_id, self.eval_use_heuristic, self.eval_beam_size],
+    eval_output: "ie_dirs/mBART50MtoM-large-en-pt-train",
     eval_beam_size: 1,
     eval_use_heuristic: true,
-    eval_steps: [41000],
+    eval_steps: [21100] + [41000],
     eval_section: "val",
 }

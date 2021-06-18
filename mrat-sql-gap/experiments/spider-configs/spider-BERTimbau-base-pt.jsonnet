@@ -1,8 +1,8 @@
 {
-    logdir: "logdir/bertimbau-base_run",
+    logdir: "logdir/BERTimbau-base-pt-train",
     model_config: "configs/bertimbau-base/nl2code-bertimbau-base.jsonnet",
     model_config_args: {
-        data_path: 'data/spider-bertimbau-base-pt/',
+        data_path: 'data/spider-pt/',
         bs: 6,
         num_batch_accumulated: 4,
         bert_version: "neuralmind/bert-base-portuguese-cased",
@@ -25,9 +25,9 @@
     },
 
     eval_name: "bertimbau-base_run_%s_%d" % [self.eval_use_heuristic, self.eval_beam_size],
-    eval_output: "ie_dirs/bertimbau-base",
+    eval_output: "ie_dirs/BERTimbau-base-pt-train",
     eval_beam_size: 1,
     eval_use_heuristic: true,
-    eval_steps: [ 1000 * x + 100 for x in std.range(14, 17)] + [ 1000 * x + 100 for x in std.range(24, 26)],
+    eval_steps: [24100],
     eval_section: "val",
 }

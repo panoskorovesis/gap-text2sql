@@ -1,6 +1,6 @@
 {
     local exp_id = 1,
-    logdir: "logdir/bart_run_%d" %exp_id,
+    logdir: "logdir/BART-large-en-train",
     model_config: "configs/gap/gap-bart.jsonnet",
     model_config_args: {
         bs: 12,
@@ -23,10 +23,10 @@
         clause_order: null, # strings like "SWGOIF", it will be prioriotized over end_with_from 
     },
 
-    eval_name: "bart_run_%d_%s_%d" % [exp_id, self.eval_use_heuristic, self.eval_beam_size],
-    eval_output: "ie_dirs",
+    eval_name: "bart-large-en_run_%d_%s_%d" % [exp_id, self.eval_use_heuristic, self.eval_beam_size],
+    eval_output: "ie_dirs/BART-large-en-train",
     eval_beam_size: 1,
     eval_use_heuristic: true,
-    eval_steps: [41000],
+    eval_steps: [40300],
     eval_section: "val",
 }

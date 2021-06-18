@@ -1,6 +1,6 @@
 {
     local exp_id = 1,
-    logdir: "/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/logdir/mBART50MtoM-large_run-en-ori-data",
+    logdir: "logdir/mBART50MtoM-large-en-train",
     model_config: "configs/gap/gap-bart.jsonnet",
     model_config_args: {
         bs: 12,
@@ -23,10 +23,10 @@
         clause_order: null, # strings like "SWGOIF", it will be prioriotized over end_with_from 
     },
 
-    eval_name: "mBART50MtoM-large_run-en-ori-data_%d_%s_%d" % [exp_id, self.eval_use_heuristic, self.eval_beam_size],
-    eval_output: "ie_dirs/mBART50MtoM-large-en-ori-data",
+    eval_name: "mBART50MtoM-large-en_run_%d_%s_%d" % [exp_id, self.eval_use_heuristic, self.eval_beam_size],
+    eval_output: "ie_dirs/mBART50MtoM-large-en-train",
     eval_beam_size: 1,
     eval_use_heuristic: true,
-    eval_steps: [ 1000 * x + 100 for x in std.range(7, 40)] + [41000],
+    eval_steps: [23100],
     eval_section: "val",
 }
