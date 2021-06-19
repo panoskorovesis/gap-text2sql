@@ -4,7 +4,7 @@ Based on: RAT-SQL+GAP: [Github] https://github.com/awslabs/gap-text2sql Paper [A
 
 ## Dataset
 
-The Spider dataset translated to Portuguese and a double-size (English and Portuguese) version are available [here](https://drive.google.com/drive/folders/1U5-3eqX8vQSkVechxTViRSWD11bh-Fa-?usp=sharing)  (distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, to respect the source of [Spider Dataset](https://yale-lily.github.io/spider) that follow this license ) different from the other contents that is available under Apache-2.0 license.
+The Spider dataset translated to Portuguese and a double-size (English and Portuguese) version are available [here](https://drive.google.com/drive/folders/1U5-3eqX8vQSkVechxTViRSWD11bh-Fa-?usp=sharing)  (distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, respecting ShareAlike. The source of [Spider Dataset](https://yale-lily.github.io/spider) that follow this license ) different from the other contents that is available under Apache-2.0 license.
 
 ## Results
 
@@ -43,6 +43,7 @@ cd gap-text2sql/mrat-sql-gap
 ```
 
 ### Download the Spider dataset (english)
+The original version of the Spider dataset is distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license
 ```bash
 pip install gdown
 gdown --id 1_AckYkinAnhqmRQtGsQgUKAnTHxxX5J0
@@ -61,7 +62,7 @@ ln -s $(pwd)/spider/database data/spider-en/database
 ```
 
 ### Build Portuguese dataset directory
-Modified versions of train_spider.json, train_others.json and dev.json distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license
+The modified versions of train_spider.json, train_others.json, and dev.json distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, respecting ShareAlike.
 ```bash
 mkdir data/spider-pt
 cp ./spider/tables.json data/spider-pt/
@@ -75,7 +76,7 @@ ln -s $(pwd)/spider/database data/spider-pt/database
 ```
 
 ### Build English and Portuguese dataset directory
-Modified versions of train_spider.json, train_others.json and dev.json distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license
+The modified versions of train_spider.json, train_others.json, and dev.json distributed under the  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, respecting ShareAlike.
 ```bash
 mkdir data/spider-en-pt
 cd data/spider-en-pt
