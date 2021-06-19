@@ -43,7 +43,7 @@ cd gap-text2sql/mrat-sql-gap
 ```
 
 ### Download the Spider dataset (english)
-The original version of the Spider dataset is distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license
+The original version of the Spider dataset is distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license.
 ```bash
 pip install gdown
 gdown --id 1_AckYkinAnhqmRQtGsQgUKAnTHxxX5J0
