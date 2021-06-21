@@ -42,6 +42,14 @@ git clone https://github.com/C4AI/gap-text2sql
 cd gap-text2sql/mrat-sql-gap 
 ```
 
+## Setup Script
+Just run this script below 
+```bash
+chmod +x setup.sh
+./setup.sh
+```
+or follow this steps:
+
 ### Download the Spider dataset (english)
 The original version of the Spider dataset is distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license.
 ```bash
@@ -49,6 +57,7 @@ pip install gdown
 gdown --id 1_AckYkinAnhqmRQtGsQgUKAnTHxxX5J0
 unzip spider.zip
 bash data/spider/generate.sh ./spider
+rm spider.zip
 ```
 
 ### Build English dataset directory
@@ -79,8 +88,8 @@ ln -s $(pwd)/spider/database data/spider-pt/database
 The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, respecting ShareAlike.
 ```bash
 mkdir data/spider-en-pt
-cd data/spider-en-pt
 cp ./spider/tables.json data/spider-en-pt/
+cd data/spider-en-pt
 gdown --id 1qFaSvUU1d4ZxYA7q4fRqjPTfZH9zjQ-x
 gdown --id 1c6CEnenCkpW9Ugk_OHhawGb39_-DeY1y
 gdown --id 1ZRIlwCOwi2VjaxADisf7QpFSVIyMONGe
