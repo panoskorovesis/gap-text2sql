@@ -1,5 +1,9 @@
 #!/bin/bash
 
+mkdir logdir
+mkdir ie_dirs
+mkdir models
+
 echo "Downdoad and unzip Spider Dataset"
 gdown --id 1_AckYkinAnhqmRQtGsQgUKAnTHxxX5J0
 unzip spider.zip
