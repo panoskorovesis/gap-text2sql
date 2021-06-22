@@ -781,8 +781,8 @@ class SpiderEncoderBert(torch.nn.Module):
         super().__init__()
         self._device = device
         self.preproc = preproc
-        self.bert_token_type = bert_token_type
-        self.base_enc_hidden_size = 1024 if bert_version == "bert-large-uncased-whole-word-masking" else 768
+        self.bert_token_type = bert_token_type        
+        self.base_enc_hidden_size = 1024 if bert_version == "bert-large-uncased-whole-word-masking" or bert_version == "neuralmind/bert-large-portuguese-cased" else 768
 
         assert summarize_header in ["first", "avg"]
         self.summarize_header = summarize_header
