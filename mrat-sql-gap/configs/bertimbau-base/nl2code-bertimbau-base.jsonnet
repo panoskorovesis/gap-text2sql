@@ -50,7 +50,7 @@ function(args) _base(output_from=_output_from, data_path=args.data_path) + {
             fix_issue_16_primary_keys: true,
             bert_version: args.bert_version,
             count_tokens_in_word_emb_for_vocab:: null,
-            save_path: data_path + 'nl2code,output_from=%s,fs=%d,emb=bert,cvlink' % [_output_from, _fs],
+            save_path: data_path + 'BERTimbau-base_nl2code,output_from=%s,fs=%d,emb=bert,cvlink' % [_output_from, _fs],
         },
         decoder_preproc+: {
             grammar+: {
@@ -59,7 +59,7 @@ function(args) _base(output_from=_output_from, data_path=args.data_path) + {
                 infer_from_conditions: true,
                 factorize_sketch: _fs,
             },
-            save_path: data_path + 'nl2code,output_from=%s,fs=%d,emb=bert,cvlink' % [_output_from, _fs],
+            save_path: data_path + BERTimbau-base_nl2code,output_from=%s,fs=%d,emb=bert,cvlink' % [_output_from, _fs],
 
             compute_sc_link:: null,
             compute_cv_link:: null,

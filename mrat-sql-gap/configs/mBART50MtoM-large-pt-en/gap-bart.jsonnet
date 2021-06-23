@@ -48,7 +48,7 @@ function(args) _0428_base(output_from=_output_from, data_path=_data_path) + {
             fix_issue_16_primary_keys: true,
             bart_version: args.bart_version,
             count_tokens_in_word_emb_for_vocab:: null,
-            save_path: _data_path + 'nl2code-1115,output_from=%s,fs=%d,emb=bart,cvlink' % [_output_from, _fs],
+            save_path: _data_path + 'mBART50MtoM-large-nl2code-1115,output_from=%s,fs=%d,emb=bart,cvlink' % [_output_from, _fs],
         },
         decoder_preproc+: {
             grammar+: {
@@ -57,7 +57,7 @@ function(args) _0428_base(output_from=_output_from, data_path=_data_path) + {
                 infer_from_conditions: true,
                 factorize_sketch: _fs,
             },
-            save_path: _data_path + 'nl2code-1115,output_from=%s,fs=%d,emb=bart,cvlink' % [_output_from, _fs],
+            save_path: _data_path + 'mBART50MtoM-large-nl2code-1115,output_from=%s,fs=%d,emb=bart,cvlink' % [_output_from, _fs],
 
             compute_sc_link:: null,
             compute_cv_link:: null,

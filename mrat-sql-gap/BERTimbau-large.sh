@@ -3,7 +3,6 @@ echo "Folders preparation"
 Name="BERTimbau-large"
 
 
-mkdir configs/${Name}
 mkdir logdir/${Name}-pt-train
 mkdir ie_dirs/${Name}-pt-train
 mkdir models/${Name}

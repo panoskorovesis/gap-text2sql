@@ -1,5 +1,5 @@
 {
-    logdir: "/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/logdir/BERTimbau-large-pt-train",
+    logdir: "logdir/BERTimbau-large-pt-train",
     model_config: "configs/BERTimbau-large/nl2code-bertimbau-large.jsonnet",
     model_config_args: {
         data_path: 'data/spider-pt/',

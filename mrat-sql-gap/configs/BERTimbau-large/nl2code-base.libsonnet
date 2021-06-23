@@ -13,7 +13,7 @@
 #   - batch_size 10
 #   - Adam with lr 1e-3
 
-function(output_from, data_path='data/spider/') {
+function(output_from, data_path='data/spider-pt/') {
     local PREFIX = data_path,
     
     data: {

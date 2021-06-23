@@ -13,7 +13,7 @@
 #   - batch_size 10
 #   - Adam with lr 1e-3
 
-function(output_from, data_path='data/spider/') {
+function(output_from, data_path='data/spider-pt/') {
     local PREFIX = data_path,
     
     data: {
@@ -65,7 +65,7 @@ function(output_from, data_path='data/spider/') {
             max_count: 5000,
             include_table_name_in_column: false,
 
-            save_path: PREFIX + 'nl2code,output_from=%s,emb=glove-42B,min_freq=50/' % [output_from],
+            save_path: PREFIX + 'BERTimbau-base_nl2code,output_from=%s,emb=glove-42B,min_freq=50/' % [output_from],
         },
         decoder_preproc: self.encoder_preproc {
             grammar: {

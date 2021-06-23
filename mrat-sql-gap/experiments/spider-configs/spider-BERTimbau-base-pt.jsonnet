@@ -1,6 +1,6 @@
 {
     logdir: "logdir/BERTimbau-base-pt-train",
-    model_config: "configs/bertimbau-base/nl2code-bertimbau-base.jsonnet",
+    model_config: "configs/BERTimbau-base/nl2code-bertimbau-base.jsonnet",
     model_config_args: {
         data_path: 'data/spider-pt/',
         bs: 6,
@@ -24,7 +24,7 @@
         clause_order: null, # strings like "SWGOIF", it will be prioriotized over end_with_from 
     },
 
-    eval_name: "bertimbau-base_run_%s_%d" % [self.eval_use_heuristic, self.eval_beam_size],
+    eval_name: "bertimbau-base-pt-eval_%s_%d" % [self.eval_use_heuristic, self.eval_beam_size],
     eval_output: "ie_dirs/BERTimbau-base-pt-train",
     eval_beam_size: 1,
     eval_use_heuristic: true,
