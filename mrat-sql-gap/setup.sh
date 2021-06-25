@@ -39,9 +39,9 @@ echo "The modified versions of train_spider.json, train_others.json, and dev.jso
 mkdir data/spider-en-pt
 cp ./spider/tables.json data/spider-en-pt/
 cd data/spider-en-pt
-gdown --id 1qFaSvUU1d4ZxYA7q4fRqjPTfZH9zjQ-x
-gdown --id 1c6CEnenCkpW9Ugk_OHhawGb39_-DeY1y
-gdown --id 1ZRIlwCOwi2VjaxADisf7QpFSVIyMONGe
+gdown --id 1WA7fcDjXcqvgNbR9zeDE3MIBkrU2CkUj
+gdown --id 12tH9OljA1BlhQblh4LWORnNXLOyaHNId
+gdown --id 13REA81vx2Zk0SSdCNS5HeYFW10oOTasf
 cd ..
 cd ..
 ln -s $(pwd)/spider/database data/spider-en-pt/database
