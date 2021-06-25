@@ -1,7 +1,6 @@
 #!/bin/bash
-echo "Folders preparation"
+echo "Folders structure preparation"
 Name="BERTimbau-large"
-
 
 mkdir logdir/${Name}-pt-train
 mkdir ie_dirs/${Name}-pt-train
