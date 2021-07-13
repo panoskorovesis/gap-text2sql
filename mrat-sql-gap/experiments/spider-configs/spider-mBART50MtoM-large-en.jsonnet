@@ -1,7 +1,7 @@
 {
     local exp_id = 1,
     logdir: "logdir/mBART50MtoM-large-en-train",
-    model_config: "configs/gap/gap-bart.jsonnet",
+    model_config: "configs/mBART50MtoM-large-en/gap-bart.jsonnet",
     model_config_args: {
         bs: 12,
         num_batch_accumulated: 2,
