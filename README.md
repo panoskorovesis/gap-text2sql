@@ -13,7 +13,7 @@ The results are in the directory [inference-results](https://github.com/C4AI/gap
 
 ## Checkpoints
 
-The checkpoints are available:
+The checkpoints are available here:
 * BART-large trained in English [Checkpoint 40300](https://drive.google.com/file/d/1F4R-WkJKtJ4lFni3q4lBug6tzSo0H5Qe/view?usp=sharing)
 * BERTimbau-base trained in Portuguese [Checkpoint 24100](https://drive.google.com/file/d/1gIZS0RuIxdjmm7sNbA3R6p6--9iMJmW8/view?usp=sharing)
 * mBART50MtoM-large trained in English [Checkpoint 23100](https://drive.google.com/file/d/16mQf1gMTVGkvONUGpzELzkjCFX5M74cO/view?usp=sharing)
