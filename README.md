@@ -13,7 +13,13 @@ The results are in the directory [inference-results](https://github.com/C4AI/gap
 
 ## Checkpoints
 
-The checkpoints are available [here](https://drive.google.com/drive/folders/1XSmCsb-xrIzrrMFmRzS7iaAn9QthDm05?usp=sharing)
+The checkpoints are available:
+BART-large trained in English [Checkpoint 40300] (https://drive.google.com/file/d/1F4R-WkJKtJ4lFni3q4lBug6tzSo0H5Qe/view?usp=sharing)
+BERTimbau-base trained in Portuguese [Checkpoint 24100] (https://drive.google.com/file/d/1gIZS0RuIxdjmm7sNbA3R6p6--9iMJmW8/view?usp=sharing)
+mBART50MtoM-large trained in English [Checkpoint 23100] (https://drive.google.com/file/d/16mQf1gMTVGkvONUGpzELzkjCFX5M74cO/view?usp=sharing)
+mBART50MtoM-large trained in Portuguese [Checkpoint 39100] (https://drive.google.com/file/d/1fWPH4bG9-UjW-p6OgmpINWLLsnOopWLh/view?usp=sharing)
+mBART50MtoM-large trained in English and Portuguese (together) [Checkpint 41000 Best inferences in Portuguese] (https://drive.google.com/file/d/1szb44h_2t3fK2Vc02PdaAjDqnkWqM-0U/view?usp=sharing)
+mBART50MtoM-large trained in English and Portuguese (together) [Checkpint 21100 Best inferences in English] (https://drive.google.com/file/d/1MeLkvGf9-5it1JXnUvU9AmXVnnbAAfP0/view?usp=sharing)
 
 
 ## Updates
