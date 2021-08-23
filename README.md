@@ -24,7 +24,6 @@ The checkpoints are available here:
 
 ## Updates
 
-[2020/02/05] Support to run the model on own databases and queries. Check out the [notebook](rat-sql-gap/notebook.ipynb). 
 
 ## Abstract
 
@@ -82,9 +81,9 @@ The modified versions of train_spider.json, train_others.json, and dev.json are 
 mkdir data/spider-pt
 cp ./spider/tables.json data/spider-pt/
 cd data/spider-pt
-gdown --id 12JjlnOsWxLDtOV2cK-3ggsAtBeqU1vYp
-gdown --id 1FeVYW3fR1A3Ls-Es-0H_QkB3mRw8QCFx
-gdown --id 1UvEFBTAqcrmibUfxTOLo41viIifh7g6K
+gdown --id 1rU79PipqU6XDIzqtYuS2Lg_LTYLbyN9U
+gdown --id 1no9qKojtDTAwFTm9MqZTOjjTupiEy7Ir
+gdown --id 1HTNEUihVDuEg1hvLDbJd3yxXngJp3u4v
 cd ..
 cd ..
 ln -s $(pwd)/spider/database data/spider-pt/database
@@ -96,9 +95,9 @@ The modified versions of train_spider.json, train_others.json, and dev.json are 
 mkdir data/spider-en-pt
 cp ./spider/tables.json data/spider-en-pt/
 cd data/spider-en-pt
-gdown --id 1WA7fcDjXcqvgNbR9zeDE3MIBkrU2CkUj
-gdown --id 12tH9OljA1BlhQblh4LWORnNXLOyaHNId
-gdown --id 13REA81vx2Zk0SSdCNS5HeYFW10oOTasf
+gdown --id 1ph3ttcoaHMJvsI4yFhENHHuH_4M-UH53
+gdown --id 1odAFfyTM3N5y8QqQE5oUEt9CZZQ60CpS
+gdown --id 1HOM5GNPiO_o4NeQTVzpgymyABPgUPbbr
 cd ..
 cd ..
 ln -s $(pwd)/spider/database data/spider-en-pt/database
