@@ -25,34 +25,21 @@ echo "The modified versions of train_spider.json, train_others.json, and dev.jso
 mkdir data/spider-pt
 cp ./spider/tables.json data/spider-pt/
 cd data/spider-pt
-gdown --id 12JjlnOsWxLDtOV2cK-3ggsAtBeqU1vYp
-gdown --id 1FeVYW3fR1A3Ls-Es-0H_QkB3mRw8QCFx
-gdown --id 1UvEFBTAqcrmibUfxTOLo41viIifh7g6K
+gdown --id 1rU79PipqU6XDIzqtYuS2Lg_LTYLbyN9U
+gdown --id 1no9qKojtDTAwFTm9MqZTOjjTupiEy7Ir
+gdown --id 1HTNEUihVDuEg1hvLDbJd3yxXngJp3u4v
 cd ..
 cd ..
 ln -s $(pwd)/spider/database data/spider-pt/database
-
-
-echo "Build English and Portuguese dataset directory"
-echo "The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
-mkdir data/spider-en-pt
-cp ./spider/tables.json data/spider-en-pt/
-cd data/spider-en-pt
-gdown --id 1WA7fcDjXcqvgNbR9zeDE3MIBkrU2CkUj
-gdown --id 12tH9OljA1BlhQblh4LWORnNXLOyaHNId
-gdown --id 13REA81vx2Zk0SSdCNS5HeYFW10oOTasf
-cd ..
-cd ..
-ln -s $(pwd)/spider/database data/spider-en-pt/database
 
 echo "Build Spanish dataset directory"
 echo "The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
 mkdir data/spider-es
 cp ./spider/tables.json data/spider-es/
 cd data/spider-es
-gdown --id 1ELxDV-HI6fT0Vup5m1s7s8RgRE_MOeeU
-gdown --id 1k4ous-ilXz52uvIq9uYHYnQO3yr_8JUV
-gdown --id 1FMM1W6w0JouiwnmIKaK9h3EhbOlUJ-Ci
+gdown --id 1utYMsytUVRaozo50qjkQGwS2vDUWp4kD
+gdown --id 1aSNetfAote7eG0lzDCJSPukT84abEtIN
+gdown --id 1UoFGQMvRkV7wBRyqhqu49Luu1Gs_HSi8
 cd ..
 cd ..
 ln -s $(pwd)/spider/database data/spider-es/database
@@ -62,21 +49,34 @@ echo "The modified versions of train_spider.json, train_others.json, and dev.jso
 mkdir data/spider-fr
 cp ./spider/tables.json data/spider-fr/
 cd data/spider-fr
-gdown --id 1If4Pvhi2kc2hxuLo35_YwjGUSsf4l-tH
-gdown --id 1bauP3V6DVQKNhZIhERA-ltXWUZ7_jc8Y
-gdown --id 1HqN9hQU7Yqlavk2UNLy9wx9phPjTLF5t
+gdown --id 1VC8IiOSY2Oaq6eCJJjf0pplHtVXPhOXi
+gdown --id 1GmqiKa3-W1soEKadpY3L2fXiKLzf_6Ps
+gdown --id 1NdALreT67okWPwIKuiVP6y2xWyZUtUf7
 cd ..
 cd ..
 ln -s $(pwd)/spider/database data/spider-fr/database
+
+
+echo "Build English and Portuguese dataset directory"
+echo "The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
+mkdir data/spider-en-pt
+cp ./spider/tables.json data/spider-en-pt/
+cd data/spider-en-pt
+gdown --id 1ph3ttcoaHMJvsI4yFhENHHuH_4M-UH53
+gdown --id 1odAFfyTM3N5y8QqQE5oUEt9CZZQ60CpS
+gdown --id 1HOM5GNPiO_o4NeQTVzpgymyABPgUPbbr
+cd ..
+cd ..
+ln -s $(pwd)/spider/database data/spider-en-pt/database
 
 echo "Build English, Portuguese, Spanish and French dataset directory"
 echo "The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
 mkdir data/spider-en-pt-es-fr
 cp ./spider/tables.json data/spider-en-pt-es-fr/
 cd data/spider-en-pt-es-fr
-gdown --id 1CdQuLKtF4FBHwd5_VfDLa5GHrMY9kgK2 
-gdown --id 1hDCZTxEsgZ9EFUIaMNwMM3UT9aqc5v9z 
-gdown --id 1DeLYa97cn16EOOUaNoVqTorSZp8i5Ik1 
+gdown --id 18xoEkF5XdbfaN5SwqsbbMw89Y3iNvAa9
+gdown --id 1n2U1pBzzRDAZuqmjloj6CV4Btf5sKfvd
+gdown --id 1diKAP4BGccFzupvf3HCcPleRP5EMqSHM
 cd ..
 cd ..
 ln -s $(pwd)/spider/database data/spider-en-pt-es-fr/database

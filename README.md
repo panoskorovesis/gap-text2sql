@@ -89,6 +89,34 @@ cd ..
 ln -s $(pwd)/spider/database data/spider-pt/database
 ```
 
+### Build Spanish dataset directory
+The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, respecting ShareAlike.
+```bash
+mkdir data/spider-es
+cp ./spider/tables.json data/spider-es/
+cd data/spider-es
+gdown --id 1utYMsytUVRaozo50qjkQGwS2vDUWp4kD
+gdown --id 1aSNetfAote7eG0lzDCJSPukT84abEtIN
+gdown --id 1UoFGQMvRkV7wBRyqhqu49Luu1Gs_HSi8
+cd ..
+cd ..
+ln -s $(pwd)/spider/database data/spider-es/database
+```
+
+### Build French dataset directory
+The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, respecting ShareAlike.
+```bash
+mkdir data/spider-fr
+cp ./spider/tables.json data/spider-fr/
+cd data/spider-fr
+gdown --id 1VC8IiOSY2Oaq6eCJJjf0pplHtVXPhOXi
+gdown --id 1GmqiKa3-W1soEKadpY3L2fXiKLzf_6Ps
+gdown --id 1NdALreT67okWPwIKuiVP6y2xWyZUtUf7
+cd ..
+cd ..
+ln -s $(pwd)/spider/database data/spider-fr/database
+```
+
 ### Build English and Portuguese dataset directory
 The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, respecting ShareAlike.
 ```bash
@@ -101,6 +129,21 @@ gdown --id 1HOM5GNPiO_o4NeQTVzpgymyABPgUPbbr
 cd ..
 cd ..
 ln -s $(pwd)/spider/database data/spider-en-pt/database
+```
+
+
+### Build English, Portuguese, Spanish and French dataset directory
+The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, respecting ShareAlike.
+```bash
+mkdir data/spider-en-pt-es-fr
+cp ./spider/tables.json data/spider-en-pt-es-fr/
+cd data/spider-en-pt
+gdown --id 18xoEkF5XdbfaN5SwqsbbMw89Y3iNvAa9
+gdown --id 1n2U1pBzzRDAZuqmjloj6CV4Btf5sKfvd
+gdown --id 1diKAP4BGccFzupvf3HCcPleRP5EMqSHM
+cd ..
+cd ..
+ln -s $(pwd)/spider/database data/spider-en-pt-es-fr/database
 ```
 
 ### Download the BART checkpoint
