@@ -18,10 +18,7 @@ cd ..
 cd ..
 cd ..
 
-echo "Symbolic link to the pretrained checkpoint"
-cd ~/nl2sql/gap-text2sql/rat-sql-gap
-rm -r pretrained_checkpoint
-ln -s models/${Name}/pretrained_checkpoint pretrained_checkpoint
+
 
 
 

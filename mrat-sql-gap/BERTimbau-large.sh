@@ -20,8 +20,5 @@ cd ..
 cd ..
 
 
-echo "Symbolic link to the pretrained checkpoint"
-rm -r pretrained_checkpoint
-ln -s models/${Name}/pretrained_checkpoint pretrained_checkpoint
 
 

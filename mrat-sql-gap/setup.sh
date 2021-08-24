@@ -3,6 +3,11 @@
 mkdir logdir
 mkdir ie_dirs
 mkdir models
+chmod +x BART_large.sh
+chmod +x BERTimbau-base.sh
+chmod +x BERTimbau-large.sh
+chmod +x mBART50MtoM-large.sh
+chmod +x mT5_large.sh
 
 echo "Downdoad and unzip Spider Dataset"
 gdown --id 1_AckYkinAnhqmRQtGsQgUKAnTHxxX5J0
