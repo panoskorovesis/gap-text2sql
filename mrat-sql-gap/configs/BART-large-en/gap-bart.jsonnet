@@ -35,6 +35,7 @@ function(args) _0428_base(output_from=_output_from, data_path=_data_path) + {
             summarize_header: args.summarize_header,
             use_column_type: args.use_column_type,
             bart_version: args.bart_version,
+			pretrained_checkpoint: args.pretrained_checkpoint,
             top_k_learnable:: null,
             word_emb_size:: null,
         },
@@ -47,6 +48,7 @@ function(args) _0428_base(output_from=_output_from, data_path=_data_path) + {
             compute_cv_link: args.cv_link,
             fix_issue_16_primary_keys: true,
             bart_version: args.bart_version,
+			pretrained_checkpoint: args.pretrained_checkpoint,
             count_tokens_in_word_emb_for_vocab:: null,
             save_path: _data_path + 'BART-large-nl2code-1115,output_from=%s,fs=%d,emb=bart,cvlink' % [_output_from, _fs],
         },
@@ -64,6 +66,7 @@ function(args) _0428_base(output_from=_output_from, data_path=_data_path) + {
             db_path:: null,
             fix_issue_16_primary_keys:: null,
             bart_version:: null,
+			pretrained_checkpoint:: null,
         },
         decoder+: {
             name: 'NL2Code',

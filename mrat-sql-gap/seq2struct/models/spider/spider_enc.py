@@ -27,9 +27,9 @@ from seq2struct.models.spider.spider_match_utils import (
 
 import simplemma
 from simplemma import text_lemmatizer
-langdata = simplemma.load_data('en')
+#langdata = simplemma.load_data('en')
 #langdata = simplemma.load_data('pt','en')
-#langdata = simplemma.load_data('en','pt','es','fr')
+langdata = simplemma.load_data('en','pt','es','fr')
 
 @attr.s
 class SpiderEncoderState:
