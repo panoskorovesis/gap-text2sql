@@ -20,6 +20,13 @@ The checkpoints are available here:
 * mBART50MtoM-large trained in Portuguese [Checkpoint 39100](https://drive.google.com/file/d/1fWPH4bG9-UjW-p6OgmpINWLLsnOopWLh/view?usp=sharing)
 * mBART50MtoM-large trained in English and Portuguese (together) [Checkpint 41000 Best inferences in Portuguese](https://drive.google.com/file/d/1szb44h_2t3fK2Vc02PdaAjDqnkWqM-0U/view?usp=sharing)
 * mBART50MtoM-large trained in English and Portuguese (together) [Checkpint 21100 Best inferences in English](https://drive.google.com/file/d/1MeLkvGf9-5it1JXnUvU9AmXVnnbAAfP0/view?usp=sharing)
+* mBART50MtoM-large trained in English, Portuguese, Spanish and French (together) [Checkpint 39100 Best inferences in English](https://drive.google.com/file/d/18nioEDEpZf-6CNH_sU3IMZxsSNts_a4y/view?usp=sharing)
+* mBART50MtoM-large trained in English, Portuguese, Spanish and French (together) [Checkpint 42100 Best inferences in Portuguese and Spanish](https://drive.google.com/file/d/1AmJjyVHiP9V-FzW9Q1sXge4YMWAP-srg/view?usp=sharing)
+* mBART50MtoM-large trained in English, Portuguese, Spanish and French (together) [Checkpint 44100 Best inferences in French](https://drive.google.com/file/d/1P0F218tNkW42Pb7okn3uFyTT5sy4zGZR/view?usp=sharing)
+* mT5-large trained in English [Checkpoint 50100](https://drive.google.com/file/d/1BZ519XxYtXpxxO1iiBy8kSLG4eq34yEX/view?usp=sharing)
+* mT5-large trained in English, Portuguese, Spanish and French (together) [Checkpint 51100 Best inferences in English](https://drive.google.com/file/d/15C8H-OrnmBF5W-UCaMsq-UvpBTPkUCYN/view?usp=sharing)
+* mT5-large trained in English, Portuguese, Spanish and French (together) [Checkpint 42100 Best inferences in Portuguese](https://drive.google.com/file/d/1mIXtBIaQpWJOHi_iCTkwm8xdPW9S8vtd/view?usp=sharing)
+* mT5-large trained in English, Portuguese, Spanish and French (together) [Checkpint 50100 Best inferences in Spanish and French](https://drive.google.com/file/d/1i731DxdcNVbpegCNGMHi7jOR26qaPmbO/view?usp=sharing)
 
 
 ## Updates
