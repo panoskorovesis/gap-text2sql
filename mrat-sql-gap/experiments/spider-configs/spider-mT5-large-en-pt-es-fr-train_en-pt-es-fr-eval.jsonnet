@@ -28,6 +28,6 @@
     eval_output: "ie_dirs/mT5-large-en-pt-es-fr-train",
     eval_beam_size: 1,
     eval_use_heuristic: true,
-    eval_steps: [ 1000 * x + 100 for x in std.range(18, 51)] + [51300],
+    eval_steps: [ 1000 * x + 100 for x in std.range(50, 51)] + [42100],
     eval_section: "val",
 }

@@ -28,6 +28,6 @@
     eval_output: "ie_dirs/mBART50MtoM-large-en-pt-es-fr-train",
     eval_beam_size: 1,
     eval_use_heuristic: true,
-    eval_steps: [ 1000 * x + 100 for x in std.range(8, 44)],
+    eval_steps: [39100] + [42100] + [44100],
     eval_section: "val",
 }

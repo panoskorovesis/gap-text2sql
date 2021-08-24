@@ -28,6 +28,6 @@
     eval_output: "ie_dirs/BERTimbau-large-pt-train",
     eval_beam_size: 1,
     eval_use_heuristic: true,
-    eval_steps: [24100],
+    eval_steps: [40100],
     eval_section: "val",
 }
