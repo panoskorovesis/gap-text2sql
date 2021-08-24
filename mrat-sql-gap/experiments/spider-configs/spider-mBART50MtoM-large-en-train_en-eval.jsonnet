@@ -6,6 +6,7 @@
         bs: 12,
         num_batch_accumulated: 2,
         bart_version: "facebook/mbart-large-50-many-to-many-mmt",
+        pretrained_checkpoint: "models/mBART50MtoM-large/pretrained_checkpoint/pytorch_model.bin",
         summarize_header: "avg",
         use_column_type: false,
         num_layers: 8,

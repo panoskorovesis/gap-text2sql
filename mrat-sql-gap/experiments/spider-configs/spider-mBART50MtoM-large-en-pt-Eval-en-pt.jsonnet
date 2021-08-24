@@ -6,6 +6,7 @@
         bs: 12,
         num_batch_accumulated: 2,
         bart_version: "facebook/mbart-large-50-many-to-many-mmt",
+        pretrained_checkpoint: "models/mBART50MtoM-large/pretrained_checkpoint/pytorch_model.bin",
         summarize_header: "avg",
         use_column_type: false,
         num_layers: 8,
@@ -23,7 +24,7 @@
         clause_order: null, # strings like "SWGOIF", it will be prioriotized over end_with_from 
     },
 
-    eval_name: "mBART50MtoM-large-pt-en-Eval-en-pt_run_%d_%s_%d" % [exp_id, self.eval_use_heuristic, self.eval_beam_size],
+    eval_name: "mBART50MtoM-large-pt-en-train_en-pt-eval_run_%d_%s_%d" % [exp_id, self.eval_use_heuristic, self.eval_beam_size],
     eval_output: "ie_dirs/mBART50MtoM-large-en-pt-train",
     eval_beam_size: 1,
     eval_use_heuristic: true,
