@@ -59,7 +59,7 @@ function(args) _base(output_from=_output_from, data_path=args.data_path) + {
                 infer_from_conditions: true,
                 factorize_sketch: _fs,
             },
-            save_path: data_path + BERTimbau-base_nl2code,output_from=%s,fs=%d,emb=bert,cvlink' % [_output_from, _fs],
+            save_path: data_path + 'BERTimbau-base_nl2code,output_from=%s,fs=%d,emb=bert,cvlink' % [_output_from, _fs],
 
             compute_sc_link:: null,
             compute_cv_link:: null,
