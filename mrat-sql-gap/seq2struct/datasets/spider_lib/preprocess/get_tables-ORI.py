@@ -93,7 +93,7 @@ if __name__ == '__main__':
     ex_tab_file = sys.argv[3]
 
     all_fs = [df for df in listdir(input_dir) if exists(join(input_dir, df, df+'.sqlite'))]
-    with open(ex_tab_file, encoding='utf8') as f:
+    with open(ex_tab_file) as f:
         ex_tabs = json.load(f)
         #for tab in ex_tabs:
         #    tab["foreign_keys"] = convert_fk_index(tab)
@@ -122,5 +122,5 @@ if __name__ == '__main__':
             print("\n----------------------------------problem db: ", df)
         tables.append(table)
     print("final db num: ", len(tables))
-    with open(output_file, 'wt', encoding='utf8') as out:
-        json.dump(tables, out, sort_keys=True, indent=2, separators=(',', ': '), ensure_ascii=False)
+    with open(output_file, 'wt') as out:
+        json.dump(tables, out, sort_keys=True, indent=2, separators=(',', ': '))

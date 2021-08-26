@@ -603,10 +603,10 @@ def print_scores(scores, etype):
 
 
 def evaluate(gold, predict, db_dir, etype, kmaps):
-    with open(gold, encoding='utf8') as f:
+    with open(gold) as f:
         glist = [l.strip().split('\t') for l in f.readlines() if len(l.strip()) > 0]
 
-    with open(predict, encoding='utf8') as f:
+    with open(predict) as f:
         plist = [l.strip().split('\t') for l in f.readlines() if len(l.strip()) > 0]
     # plist = [("select max(Share),min(Share) from performance where Type != 'terminal'", "orchestra")]
     # glist = [("SELECT max(SHARE) ,  min(SHARE) FROM performance WHERE TYPE != 'Live final'", "orchestra")]
@@ -852,7 +852,7 @@ def build_foreign_key_map(entry):
 
 
 def build_foreign_key_map_from_json(table):
-    with open(table, encoding='utf8') as f:
+    with open(table) as f:
         data = json.load(f)
     tables = {}
     for entry in data:
@@ -882,5 +882,5 @@ if __name__ == "__main__":
 
     results = evaluate(gold, pred, db_dir, etype, kmaps)
     if args.output:
-        with open(args.output, 'w', encoding='utf8') as f:
-            json.dump(results, f, ensure_ascii=False)
+        with open(args.output, 'w') as f:
+            json.dump(results, f)

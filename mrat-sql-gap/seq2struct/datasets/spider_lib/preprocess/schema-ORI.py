@@ -38,7 +38,7 @@ class Schema:
         return idMap
 
 def get_schemas_from_json(fpath):
-    with open(fpath, encoding='utf8') as f:
+    with open(fpath) as f:
         data = json.load(f)
     db_names = [db['db_id'] for db in data]
 

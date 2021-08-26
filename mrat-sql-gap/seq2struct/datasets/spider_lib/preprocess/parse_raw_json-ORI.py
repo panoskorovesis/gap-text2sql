@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     schemas, db_names, tables = get_schemas_from_json(table_file)
 
-    with open(sql_path, encoding='utf8') as inf:
+    with open(sql_path) as inf:
         sql_data = json.load(inf)
 
     sql_data_new = []
@@ -41,5 +41,5 @@ if __name__ == '__main__':
             print("sql: ", sql)
             raise
     
-    with open(output_file, 'wt', encoding='utf8') as out:
-        json.dump(sql_data_new, out, sort_keys=True, indent=4, separators=(',', ': '), ensure_ascii=False)
+    with open(output_file, 'wt') as out:
+        json.dump(sql_data_new, out, sort_keys=True, indent=4, separators=(',', ': '))
