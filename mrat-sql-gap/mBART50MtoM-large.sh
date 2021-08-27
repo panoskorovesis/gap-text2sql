@@ -2,6 +2,15 @@
 echo "Folders structure preparation"
 Name="mBART50MtoM-large"
 
+mkdir logdir/${Name}-en-train
+mkdir ie_dirs/${Name}-en-train
+
+mkdir logdir/${Name}-pt-train
+mkdir ie_dirs/${Name}-pt-train
+
+mkdir logdir/${Name}-en-pt-train
+mkdir ie_dirs/${Name}-en-pt-train
+
 mkdir logdir/${Name}-en-pt-es-fr-train
 mkdir ie_dirs/${Name}-en-pt-es-fr-train
 mkdir models/${Name}
@@ -18,7 +27,41 @@ cd ..
 cd ..
 cd ..
 
+echo "Download Checkpoint"
+cd logdir/${Name}-en-train
+mkdir bs=12,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
+cd bs=12,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
+gdown --id 16mQf1gMTVGkvONUGpzELzkjCFX5M74cO
+cd ..
+cd ..
+cd ..
 
 
+cd logdir/${Name}-pt-train
+mkdir bs=12,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
+cd bs=12,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
+gdown --id 1fWPH4bG9-UjW-p6OgmpINWLLsnOopWLh
+cd ..
+cd ..
+cd ..
 
 
+cd logdir/${Name}-en-pt-train
+mkdir bs=12,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
+cd bs=12,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
+gdown --id 1szb44h_2t3fK2Vc02PdaAjDqnkWqM-0U
+gdown --id 1MeLkvGf9-5it1JXnUvU9AmXVnnbAAfP0
+cd ..
+cd ..
+cd ..
+
+
+cd logdir/${Name}-en-pt-es-fr-train
+mkdir bs=12,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
+cd bs=12,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
+gdown --id 18nioEDEpZf-6CNH_sU3IMZxsSNts_a4y
+gdown --id 1AmJjyVHiP9V-FzW9Q1sXge4YMWAP-srg
+gdown --id 1P0F218tNkW42Pb7okn3uFyTT5sy4zGZR
+cd ..
+cd ..
+cd ..

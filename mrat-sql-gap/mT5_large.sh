@@ -2,6 +2,9 @@
 echo "Folders structure preparation"
 Name="mt5-large"
 
+mkdir logdir/${Name}-en-train
+mkdir ie_dirs/${Name}-en-train
+
 mkdir logdir/${Name}-en-pt-es-fr-train
 mkdir ie_dirs/${Name}-en-pt-es-fr-train
 mkdir models/${Name}
@@ -20,11 +23,24 @@ cd ..
 cd ..
 cd ..
 
+echo "Download Checkpoint"
+cd logdir/${Name}-en-train
+mkdir bs=4,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
+cd bs=4,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
+gdown --id 1BZ519XxYtXpxxO1iiBy8kSLG4eq34yEX
+cd ..
+cd ..
+cd ..
 
- 
 
-
-
-
+cd logdir/${Name}-en-pt-es-fr-train
+mkdir bs=4,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
+cd bs=4,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
+gdown --id 15C8H-OrnmBF5W-UCaMsq-UvpBTPkUCYN
+gdown --id 1mIXtBIaQpWJOHi_iCTkwm8xdPW9S8vtd
+gdown --id 1i731DxdcNVbpegCNGMHi7jOR26qaPmbO
+cd ..
+cd ..
+cd ..
 
 
