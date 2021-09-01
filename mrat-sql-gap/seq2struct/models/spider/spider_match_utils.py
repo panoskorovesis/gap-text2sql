@@ -3,7 +3,7 @@ import string
 import sqlite3
 import nltk.corpus
 import re
-from seq2struct.resources import corenlp
+#from seq2struct.resources import corenlp
 
 STOPWORDS = set(nltk.corpus.stopwords.words('english'))
 PUNKS = set(a for a in string.punctuation)

@@ -4,11 +4,11 @@ import os
 import time
 
 import bpemb
-import corenlp
+#import corenlp
 import torch
 import torchtext
 
-from seq2struct.resources import corenlp
+#from seq2struct.resources import corenlp
 from seq2struct.utils import registry
 
 
