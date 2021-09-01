@@ -38,22 +38,23 @@ The checkpoints are available here:
 mRAT-SQL+GAP is a multilingual version of the RAT-SQL+GAP, wich start with Portuguese Language. Here is available the code, dataset and the results.
 
 
-
-## Setup
-```bash
-conda create --name gap-text2sql python=3.7
-conda activate gap-text2sql
-conda install pytorch=1.5 cudatoolkit=10.2 -c pytorch
-pip install -r requirements.txt
-python -c "import nltk; nltk.download('stopwords'); nltk.download('punkt')"
-```
-
 ## Directory Structure
 Go to the directory where you want to install the structure
 ```bash
 git clone https://github.com/C4AI/gap-text2sql
 cd gap-text2sql/mrat-sql-gap 
 ```
+
+## Environment Setup
+```bash
+conda create --name mtext2sql python=3.7
+conda activate gap-text2sql
+conda install pytorch=1.5 cudatoolkit=10.2 -c pytorch
+pip install -r requirements.txt
+python -c "import nltk; nltk.download('stopwords'); nltk.download('punkt')"
+```
+
+
 
 ## Setup Script
 Just run this script below 
