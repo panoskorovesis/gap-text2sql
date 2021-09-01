@@ -7,3 +7,8 @@ pyrsistent~=0.14.9
 bpemb~=0.2.11
 simplemma
 torchtext~=0.3.1
+attr
+attrs
+asdl
+astor
+pudb
