@@ -45,10 +45,10 @@ git clone https://github.com/C4AI/gap-text2sql
 cd gap-text2sql/mrat-sql-gap 
 ```
 
-## Environment Setup
+## Conda mtext2slq Environment Setup
 ```bash
 conda create --name mtext2sql python=3.7
-conda activate gap-text2sql
+conda activate mtext2sql
 conda install pytorch=1.5 cudatoolkit=10.2 -c pytorch
 pip install -r requirements.txt
 python -c "import nltk; nltk.download('stopwords'); nltk.download('punkt')"
