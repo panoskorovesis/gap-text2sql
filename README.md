@@ -2,11 +2,6 @@
 
 Based on: RAT-SQL+GAP: [Github] https://github.com/awslabs/gap-text2sql Paper [AAAI 2021 paper](https://arxiv.org/abs/2012.10309)
 
-## Dataset
-
-The Spider dataset translated to Portuguese and a double-size (English and Portuguese) version are available [here](https://drive.google.com/drive/folders/1U5-3eqX8vQSkVechxTViRSWD11bh-Fa-?usp=sharing)  (distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, respecting ShareAlike. The source of [Spider Dataset](https://yale-lily.github.io/spider) that follow this license ) different from the other contents that is available under Apache-2.0 license.
-
-
 
 ## Abstract
 
@@ -32,7 +27,7 @@ python -c "import nltk; nltk.download('stopwords'); nltk.download('punkt')"
 
 
 ## Setup Script
-Just run this script below, it will install the datasets.
+Just run this script below, it will copy the datasets.
 The original version of the Spider dataset is distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license.
 The modified versions (translated to Portuguese, Spanish, French, double-size(English and Portuguese) and quad-size (English, Portuguese, Spanish and French)) of train_spider.json, train_others.json, and dev.json are distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, respecting ShareAlike.
 
