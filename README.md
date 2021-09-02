@@ -57,139 +57,45 @@ python -c "import nltk; nltk.download('stopwords'); nltk.download('punkt')"
 
 
 ## Setup Script
-Just run this script below 
+Just run this script below, it will install the datasets.
+The original version of the Spider dataset is distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license.
+
 ```bash
 chmod +x setup.sh
 ./setup.sh
 ```
 or follow this steps:
 
-### Download the Spider dataset (english)
-The original version of the Spider dataset is distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license.
+## Specific setup
+The models and checkpoints have big files (GBytes), so if you have enough disk space you can run all shell scripts. To understand how things work, run just BART_large.sh and after run the others.
 ```bash
-pip install gdown
-gdown --id 1_AckYkinAnhqmRQtGsQgUKAnTHxxX5J0
-unzip spider.zip
-bash data/spider/generate.sh ./spider
-rm spider.zip
+./BART_large.sh
+./mBART50MtoM-large.sh
+./mT5_large.sh
+./BERTimbau-base.sh
+./BERTimbau-large.sh
 ```
 
-### Build English dataset directory
-```bash
-mkdir data/spider-en
-cp ./spider/train_spider.json data/spider-en/
-cp ./spider/train_others.json data/spider-en/
-cp ./spider/dev.json data/spider-en/
-cp ./spider/tables.json data/spider-en/
-ln -s $(pwd)/spider/database data/spider-en/database
-```
-
-### Build Portuguese dataset directory
-The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, respecting ShareAlike.
-```bash
-mkdir data/spider-pt
-cp ./spider/tables.json data/spider-pt/
-cd data/spider-pt
-gdown --id 1rU79PipqU6XDIzqtYuS2Lg_LTYLbyN9U
-gdown --id 1no9qKojtDTAwFTm9MqZTOjjTupiEy7Ir
-gdown --id 1HTNEUihVDuEg1hvLDbJd3yxXngJp3u4v
-cd ..
-cd ..
-ln -s $(pwd)/spider/database data/spider-pt/database
-```
-
-### Build Spanish dataset directory
-The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, respecting ShareAlike.
-```bash
-mkdir data/spider-es
-cp ./spider/tables.json data/spider-es/
-cd data/spider-es
-gdown --id 1utYMsytUVRaozo50qjkQGwS2vDUWp4kD
-gdown --id 1aSNetfAote7eG0lzDCJSPukT84abEtIN
-gdown --id 1UoFGQMvRkV7wBRyqhqu49Luu1Gs_HSi8
-cd ..
-cd ..
-ln -s $(pwd)/spider/database data/spider-es/database
-```
-
-### Build French dataset directory
-The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, respecting ShareAlike.
-```bash
-mkdir data/spider-fr
-cp ./spider/tables.json data/spider-fr/
-cd data/spider-fr
-gdown --id 1VC8IiOSY2Oaq6eCJJjf0pplHtVXPhOXi
-gdown --id 1GmqiKa3-W1soEKadpY3L2fXiKLzf_6Ps
-gdown --id 1NdALreT67okWPwIKuiVP6y2xWyZUtUf7
-cd ..
-cd ..
-ln -s $(pwd)/spider/database data/spider-fr/database
-```
-
-### Build English and Portuguese dataset directory
-The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, respecting ShareAlike.
-```bash
-mkdir data/spider-en-pt
-cp ./spider/tables.json data/spider-en-pt/
-cd data/spider-en-pt
-gdown --id 1ph3ttcoaHMJvsI4yFhENHHuH_4M-UH53
-gdown --id 1odAFfyTM3N5y8QqQE5oUEt9CZZQ60CpS
-gdown --id 1HOM5GNPiO_o4NeQTVzpgymyABPgUPbbr
-cd ..
-cd ..
-ln -s $(pwd)/spider/database data/spider-en-pt/database
-```
-
-
-### Build English, Portuguese, Spanish and French dataset directory
-The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license, respecting ShareAlike.
-```bash
-mkdir data/spider-en-pt-es-fr
-cp ./spider/tables.json data/spider-en-pt-es-fr/
-cd data/spider-en-pt
-gdown --id 18xoEkF5XdbfaN5SwqsbbMw89Y3iNvAa9
-gdown --id 1n2U1pBzzRDAZuqmjloj6CV4Btf5sKfvd
-gdown --id 1diKAP4BGccFzupvf3HCcPleRP5EMqSHM
-cd ..
-cd ..
-ln -s $(pwd)/spider/database data/spider-en-pt-es-fr/database
-```
-
-### Download the BART checkpoint
-```bash
-mkdir ie_dirs
-
-mkdir -p logdir/BART-large-en-train/bs\=12\,lr\=1.0e-04\,bert_lr\=1.0e-05\,end_lr\=0e0\,att\=1/
-curl https://gap-text2sql-public.s3.amazonaws.com/checkpoint-artifacts/gap-finetuned-checkpoint -o logdir/BART-large-en-train/bs\=12\,lr\=1.0e-04\,bert_lr\=1.0e-05\,end_lr\=0e0\,att\=1/model_checkpoint-00041000
-
-mkdir -p pretrained_checkpoint
-curl https://gap-text2sql-public.s3.amazonaws.com/checkpoint-artifacts/pretrained-checkpoint -o pretrained_checkpoint/pytorch_model.bin
-
-```
-
-Alternatively, you can download them here if you don't have awscli:
-[gap-finetuned-checkpoint](https://gap-text2sql-public.s3.amazonaws.com/checkpoint-artifacts/gap-finetuned-checkpoint)
-and [pretrained-checkpoint](https://gap-text2sql-public.s3.amazonaws.com/checkpoint-artifacts/pretrained-checkpoint)
-
-If you prefer to use:
-```bash
-aws s3 cp s3://gap-text2sql-public/checkpoint-artifacts/gap-finetuned-checkpoint logdir/BART-large-en-train/bs\=12\,lr\=1.0e-04\,bert_lr\=1.0e-05\,end_lr\=0e0\,att\=1/model_checkpoint-00041000
-aws s3 cp s3://gap-text2sql-public/checkpoint-artifacts/pretrained-checkpoint pretrained_checkpoint/pytorch_model.bin
-```
-
+## Environment Test
+Now the environment is ready for training (fine-tune) and inferences. The training is very slow more than 60 hours for BART, BERTimbau, mBART50, and 28 hours for mT5. Therefore I recommend testing the environment with the inference.
 
 ### Preprocess dataset
-This is good to validate the setup. It will take some time, maybe 40 minutes.
+This preprocess step is necessary both for inference and for training. It will take some time, maybe 40 minutes.
+I will use the script for BART, but you can use the other, look the directory experiments/spider-configs
 ```bash
-python run.py preprocess experiments/spider-configs/gap-run.jsonnet
+python run.py preprocess experiments/spider-configs/spider-BART-large-en-train_en-eval.jsonnet
 ```
 You can see the files processed in the paths:
 `data/spider-en/nl2code-1115,output_from=true,fs=2,emb=bart,cvlink`
 
 ## Inference
-This is good to validate de setup. 
+I will use the script for BART again. 
+Note: We are making inferences using the checkpoint already trained (directory logdir) and defined in:
+`experiments/spider-configs/spider-BART-large-en-train_en-eval.jsonnet`
+`logdir: "logdir/BART-large-en-train",` and  
+`eval_steps: [40300],`
 ```bash
-python run.py eval experiments/spider-configs/gap-run.jsonnet
+python run.py eval experiments/spider-configs/spider-BART-large-en-train_en-eval.jsonnet
 ```
 
 You then get the inference results and evaluation results in the paths:
@@ -204,7 +110,7 @@ and
 Execute if it is really necessary, if you want to fine-tune the model, this will take a long time... some days. But if you have a good machine available and want to see different checkpoints in the logdir, do it.
 
 ```bash
-python run.py train experiments/spider-configs/gap-run.jsonnet
+python run.py train experiments/spider-configs/spider-BART-large-en-train_en-eval.jsonnet
 ```
 You then get the training checkpoints in the paths:
 `logdir/BART-large-en-train`
