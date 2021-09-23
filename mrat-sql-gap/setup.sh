@@ -85,3 +85,16 @@ gdown --id 1diKAP4BGccFzupvf3HCcPleRP5EMqSHM
 cd ..
 cd ..
 ln -s $(pwd)/spider/database data/spider-en-pt-es-fr/database
+
+
+echo "Build English, Portuguese, Spanish, French, English data augmentation by rules and English data augmentation by backtranslation dataset directory"
+echo "The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
+mkdir data/spider-en-pt-es-fr-enr-enb
+cp ./spider/tables.json data/spider-en-pt-es-fr-enr-enb/
+cd data/spider-en-pt-es-fr-enr-enb
+gdown --id 1gvrpgytqswz8wKx2qTZqofVqM3S32Wm8
+gdown --id 1M2ZWYAXK-28I6ovlGSJ_D6pJzo0wliJP
+gdown --id 1lir8r3NcvrpthT5aK4TXz4eYSDHXQmcy
+cd ..
+cd ..
+ln -s $(pwd)/spider/database data/spider-en-pt-es-fr-enr-enb/database

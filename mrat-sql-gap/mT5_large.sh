@@ -7,6 +7,12 @@ mkdir ie_dirs/${Name}-en-train
 
 mkdir logdir/${Name}-en-pt-es-fr-train
 mkdir ie_dirs/${Name}-en-pt-es-fr-train
+
+
+mkdir logdir/${Name}-en-pt-es-fr-enr-enb-train
+mkdir ie_dirs/${Name}-en-pt-es-fr-enr-enb-train
+
+
 #mkdir models/${Name}
 #mkdir models/${Name}/pretrained_checkpoint
 
