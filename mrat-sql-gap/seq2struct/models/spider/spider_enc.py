@@ -1383,8 +1383,7 @@ class SpiderEncoderBart(torch.nn.Module):
         )
 
         #Adicionado para tratamento para model MBART50
-        print(f"SpiderEncoderBart Model: {bart_version}")
-        print(f"SpiderEncoderBart Pretrained Checkpoint: {pretrained_checkpoint}")
+        print(f"SpiderEncoderBart Model: {bart_version}")        
         if(bart_version != "facebook/bart-large" and
            bart_version != "facebook/mbart-large-50-many-to-many-mmt"): assert False, "Model version not defined."
         if bart_version == "facebook/bart-large": self.bert_model = BartModel.from_pretrained(bart_version)
@@ -1409,12 +1408,16 @@ class SpiderEncoderBart(torch.nn.Module):
            bart_version != "facebook/mbart-large-50-many-to-many-mmt"): assert False, "Model version not defined."
         
         if bart_version == "facebook/bart-large":
+            print(f"SpiderEncoderBart Pretrained Checkpoint: {pretrained_checkpoint}")
             self.bert_model.resize_token_embeddings(50266)  # several tokens added
             replace_model_with_pretrained(self.bert_model.encoder, pretrained_checkpoint, "bert.model.encoder.") #"bert.model.encoder." caracteristico do BART
                  
+        
         if bart_version == "facebook/mbart-large-50-many-to-many-mmt":
-            #self.bert_model.resize_token_embeddings(50266)  # several tokens added #Especifico do BART, nao usar no MBART50
-            replace_model_with_pretrained(self.bert_model.encoder, pretrained_checkpoint, "model.encoder.") #"model.encoder." caracteristico do MBART50, para descobrir de outro modelo, faça print key em replace_model_with_pretrained
+            print("No GAP - Generation-Augmented Pre-Training")
+        #desativando GAP - Generation-Augmented Pre-Training 
+        #    #self.bert_model.resize_token_embeddings(50266)  # several tokens added #Especifico do BART, nao usar no MBART50
+        #    replace_model_with_pretrained(self.bert_model.encoder, pretrained_checkpoint, "model.encoder.") #"model.encoder." caracteristico do MBART50, para descobrir de outro modelo, faça print key em replace_model_with_pretrained
       		
         self.bert_model.resize_token_embeddings(len(self.tokenizer))
         self.bert_model = self.bert_model.encoder		
@@ -1843,7 +1846,8 @@ class SpiderEncoderT5Preproc(SpiderEncoderV2Preproc):
 
         #Adicionado para tratamento para model mt5
         print(f"SpiderEncoderT5Preproc Model: {t5_version}")
-        print(f"SpiderEncoderT5Preproc Pretrained Checkpoint: {pretrained_checkpoint}")
+        print("No GAP - Generation-Augmented Pre-Training")
+        #print(f"SpiderEncoderT5Preproc Pretrained Checkpoint (not used): {pretrained_checkpoint}")
         if t5_version == "facebook/bart-large": self.tokenizer = BartTokenizer.from_pretrained(t5_version)
         if t5_version == "facebook/mbart-large-50-many-to-many-mmt": self.tokenizer = MBart50Tokenizer.from_pretrained(t5_version)
         if t5_version == "google/mt5-large": self.tokenizer = MT5Tokenizer.from_pretrained(t5_version)
@@ -2003,7 +2007,8 @@ class SpiderEncoderT5(torch.nn.Module):
         )
         #Adicionado para tratamento para model mt5
         print(f"SpiderEncoderT5 Model: {t5_version}")
-        print(f"SpiderEncoderT5 Pretrained Checkpoint: {pretrained_checkpoint}")
+        print("No GAP - Generation-Augmented Pre-Training")
+        #print(f"SpiderEncoderT5 Pretrained Checkpoint (not used): {pretrained_checkpoint}")
         if(t5_version != "facebook/bart-large" and
            t5_version != "facebook/mbart-large-50-many-to-many-mmt" and
            t5_version != "google/mt5-large"): assert False, "Model version not defined."
@@ -2012,34 +2017,35 @@ class SpiderEncoderT5(torch.nn.Module):
         if t5_version == "google/mt5-large": self.bert_model = MT5Model.from_pretrained(t5_version)     
 
         print(next(self.bert_model.encoder.parameters()))
-
-        def replace_model_with_pretrained(model, path, prefix):
-            restore_state_dict = torch.load(
-                path, map_location=lambda storage, location: storage)
-            keep_keys = []
-            for key in restore_state_dict.keys():
-                if key.startswith(prefix):
-                    keep_keys.append(key)
-            loaded_dict = {k.replace(prefix, ""): restore_state_dict[k] for k in keep_keys}
-            model.load_state_dict(loaded_dict)
-            print("Updated the model with {}".format(path))
+        
+        #desativando GAP - Generation-Augmented Pre-Training
+        # def replace_model_with_pretrained(model, path, prefix):
+            # restore_state_dict = torch.load(
+                # path, map_location=lambda storage, location: storage)
+            # keep_keys = []
+            # for key in restore_state_dict.keys():
+                # if key.startswith(prefix):
+                    # keep_keys.append(key)
+            # loaded_dict = {k.replace(prefix, ""): restore_state_dict[k] for k in keep_keys}
+            # model.load_state_dict(loaded_dict)
+            # print("Updated the model with {}".format(path))
 
         self.tokenizer = self.preproc.tokenizer
             
         if(t5_version != "facebook/bart-large" and
            t5_version != "facebook/mbart-large-50-many-to-many-mmt" and
            t5_version != "google/mt5-large"): assert False, "Model version not defined."
-           
-        if t5_version == "facebook/bart-large":
-            self.bert_model.resize_token_embeddings(50266)  # several tokens added
-            replace_model_with_pretrained(self.bert_model.encoder, pretrained_checkpoint, "bert.model.encoder.") #"bert.model.encoder." caracteristico do BART
+        #desativando GAP - Generation-Augmented Pre-Training   
+        # if t5_version == "facebook/bart-large":
+            # self.bert_model.resize_token_embeddings(50266)  # several tokens added
+            # replace_model_with_pretrained(self.bert_model.encoder, pretrained_checkpoint, "bert.model.encoder.") #"bert.model.encoder." caracteristico do BART
                  
-        if t5_version == "facebook/mbart-large-50-many-to-many-mmt":
-            #self.bert_model.resize_token_embeddings(50266)  # several tokens added #Especifico do BART, nao usar no MBART50
-            replace_model_with_pretrained(self.bert_model.encoder, pretrained_checkpoint, "model.encoder.") #"model.encoder." caracteristico do MBART50, para descobrir de outro modelo, faça print key em replace_model_with_pretrained
+        # if t5_version == "facebook/mbart-large-50-many-to-many-mmt":
+            # #self.bert_model.resize_token_embeddings(50266)  # several tokens added #Especifico do BART, nao usar no MBART50
+            # replace_model_with_pretrained(self.bert_model.encoder, pretrained_checkpoint, "model.encoder.") #"model.encoder." caracteristico do MBART50, para descobrir de outro modelo, faça print key em replace_model_with_pretrained
                  
-        if t5_version == "google/mt5-large":                   
-            replace_model_with_pretrained(self.bert_model.encoder, pretrained_checkpoint, "encoder.") # "encoder." caracteristico do mT5, para descobrir de outro modelo, faça print key em replace_model_with_pretrained                      
+        # if t5_version == "google/mt5-large":                   
+            # replace_model_with_pretrained(self.bert_model.encoder, pretrained_checkpoint, "encoder.") # "encoder." caracteristico do mT5, para descobrir de outro modelo, faça print key em replace_model_with_pretrained                      
           
         self.bert_model.resize_token_embeddings(len(self.tokenizer))
         self.bert_model = self.bert_model.encoder		
@@ -2047,7 +2053,7 @@ class SpiderEncoderT5(torch.nn.Module):
         
         self.bert_model.decoder = None
 
-        print(next(self.bert_model.parameters()))
+        print(next(self.bert_model.parameters()))        
 
     def forward(self, descs):
         batch_token_lists = []
