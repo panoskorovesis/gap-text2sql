@@ -1,4 +1,5 @@
 # mRAT-SQL+GAP - Multilingual version of the RAT-SQL+GAP
+Code and model from our BRACIS 2021 paper, [here the pre-print in arXiv] https://arxiv.org/abs/2110.03546.
 
 Based on: RAT-SQL+GAP: [Github] https://github.com/awslabs/gap-text2sql Paper [AAAI 2021 paper](https://arxiv.org/abs/2012.10309)
 
