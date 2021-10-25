@@ -64,6 +64,7 @@ class Inferer:
                 else:
                     sliced_orig_data = orig_data
                     sliced_preproc_data = preproc_data
+                print(f"Orig_data={len(orig_data)} Peproc_data={len(preproc_data)}")
                 assert len(orig_data) == len(preproc_data)
                 self._inner_infer(model, args.beam_size, args.output_history, sliced_orig_data, sliced_preproc_data, output, args.use_heuristic)
             elif args.mode == 'debug':
