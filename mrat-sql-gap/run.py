@@ -55,6 +55,7 @@ def main():
         model_config_args = json.dumps(exp_config["model_config_args"])
     else:
         model_config_args = None
+    other_config = json.loads(_jsonnet.evaluate_file(model_config_file, tla_codes={'args': model_config_args}))
     
     if args.mode == "preprocess":
         preprocess_config = PreprocessConfig(model_config_file, \
@@ -65,8 +66,10 @@ def main():
             model_config_args, exp_config["logdir"]) 
         train.main(train_config)
     elif args.mode == "eval":
+        result = open(f"{exp_config['eval_output']}/eval-results.csv", "a", encoding='utf8')
+        result.write(f"checkpoint;type;easy;medium;hard;extra;all\n") 
         for step in exp_config["eval_steps"]:
-            infer_output_path = "{}/{}-step{}.infer".format(
+            infer_output_path = "{}/{}-step{}".format( #infer_output_path = "{}/{}-step{}.infer".format(
                 exp_config["eval_output"], 
                 exp_config["eval_name"], 
                 step)
@@ -91,14 +94,40 @@ def main():
                 model_config_args,
                 exp_config["logdir"],
                 exp_config["eval_section"],
-                infer_output_path,
+                f"{infer_output_path}.infer",
                 eval_output_path
             )
             eval.main(eval_config)
 
             res_json = json.load(open(eval_output_path))
             print(step, res_json['total_scores']['all']['exact'])
-
+            print(f"*;count;{res_json['total_scores']['easy']['count']};{res_json['total_scores']['medium']['count']};{res_json['total_scores']['hard']['count']};{res_json['total_scores']['extra']['count']};{res_json['total_scores']['all']['count']}") 
+            print(f"checkpoint;type;easy;medium;hard;extra;all") 
+            print(f"{step};exact match;{res_json['total_scores']['easy']['exact']:.3f};{res_json['total_scores']['medium']['exact']:.3f};{res_json['total_scores']['hard']['exact']:.3f};{res_json['total_scores']['extra']['exact']:.3f};{res_json['total_scores']['all']['exact']:.3f}") 
+                        
+            result.write(f"{step};count;{res_json['total_scores']['easy']['count']};{res_json['total_scores']['medium']['count']};{res_json['total_scores']['hard']['count']};{res_json['total_scores']['extra']['count']};{res_json['total_scores']['all']['count']}\n") 
+            result.write(f"{step};exact match;{res_json['total_scores']['easy']['exact']:.3f};{res_json['total_scores']['medium']['exact']:.3f};{res_json['total_scores']['hard']['exact']:.3f};{res_json['total_scores']['extra']['exact']:.3f};{res_json['total_scores']['all']['exact']:.3f}\n") 
+            
+            #Clean version of original .eval file
+            eval_clean = open(f"{exp_config['eval_output']}/{exp_config['eval_name']}-step{step}.csv", "w", encoding='utf8')
+            for per_item in res_json['per_item']:  
+                if per_item['exact'] == 0 or per_item['exact'] == "false": exact = "false" #in original .eval file some appear as 0 others as "false"
+                if per_item['exact'] == 1 or per_item['exact'] == "true": exact = "true" #in original .eval fiel all appear as "true", but I did the same to be standard 
+                eval_clean.write(f"{exact};{per_item['hardness']};{per_item['gold']};{per_item['predicted']}\n")                                   
+            eval_clean.close()
+            
+        result.close()
+            
+        #File with gold queries from dev.json
+        gold = open(f"{exp_config['eval_output']}/gold.txt", "w", encoding='utf8')
+        print(f"Open file {other_config['data']['val']['paths'][0]}")
+        with open(f"{other_config['data']['val']['paths'][0]}", encoding='utf8') as json_data_file:
+            data = json.load(json_data_file)
+            length = len(data) #tive que fazer pelo tamanho porque o arquivo .json começa com [ em branco ]    
+            for i in range(length):
+                gold.write(f"{data[i]['query']}\t{data[i]['db_id']}\n")
+        json_data_file.close()
+        gold.close()
 
 if __name__ == "__main__":
     main()
