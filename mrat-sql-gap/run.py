@@ -48,7 +48,7 @@ def main():
     parser.add_argument('mode', help="preprocess/train/eval")
     parser.add_argument('exp_config_file', help="jsonnet file for experiments")
     args = parser.parse_args()
-    
+        
     exp_config = json.loads(_jsonnet.evaluate_file(args.exp_config_file))
     model_config_file = exp_config["model_config"]
     if "model_config_args" in exp_config:
@@ -68,6 +68,8 @@ def main():
     elif args.mode == "eval":
         result = open(f"{exp_config['eval_output']}/eval-results.csv", "a", encoding='utf8')
         result.write(f"checkpoint;type;easy;medium;hard;extra;all\n") 
+        result.close()
+        first_loop = True
         for step in exp_config["eval_steps"]:
             infer_output_path = "{}/{}-step{}".format( #infer_output_path = "{}/{}-step{}.infer".format(
                 exp_config["eval_output"], 
@@ -104,9 +106,14 @@ def main():
             print(f"*;count;{res_json['total_scores']['easy']['count']};{res_json['total_scores']['medium']['count']};{res_json['total_scores']['hard']['count']};{res_json['total_scores']['extra']['count']};{res_json['total_scores']['all']['count']}") 
             print(f"checkpoint;type;easy;medium;hard;extra;all") 
             print(f"{step};exact match;{res_json['total_scores']['easy']['exact']:.3f};{res_json['total_scores']['medium']['exact']:.3f};{res_json['total_scores']['hard']['exact']:.3f};{res_json['total_scores']['extra']['exact']:.3f};{res_json['total_scores']['all']['exact']:.3f}") 
-                        
-            result.write(f"{step};count;{res_json['total_scores']['easy']['count']};{res_json['total_scores']['medium']['count']};{res_json['total_scores']['hard']['count']};{res_json['total_scores']['extra']['count']};{res_json['total_scores']['all']['count']}\n") 
+            
+            #Open, write, close - to leave memory free
+            result = open(f"{exp_config['eval_output']}/eval-results.csv", "a", encoding='utf8')            
+            first_loop == True: 
+                result.write(f"*;count;{res_json['total_scores']['easy']['count']};{res_json['total_scores']['medium']['count']};{res_json['total_scores']['hard']['count']};{res_json['total_scores']['extra']['count']};{res_json['total_scores']['all']['count']}\n") 
+            first_loop = False   
             result.write(f"{step};exact match;{res_json['total_scores']['easy']['exact']:.3f};{res_json['total_scores']['medium']['exact']:.3f};{res_json['total_scores']['hard']['exact']:.3f};{res_json['total_scores']['extra']['exact']:.3f};{res_json['total_scores']['all']['exact']:.3f}\n") 
+            result.close()
             
             #Clean version of original .eval file
             eval_clean = open(f"{exp_config['eval_output']}/{exp_config['eval_name']}-step{step}.csv", "w", encoding='utf8')
@@ -116,7 +123,6 @@ def main():
                 eval_clean.write(f"{exact};{per_item['hardness']};{per_item['gold']};{per_item['predicted']}\n")                                   
             eval_clean.close()
             
-        result.close()
             
         #File with gold queries from dev.json
         gold = open(f"{exp_config['eval_output']}/gold.txt", "w", encoding='utf8')
