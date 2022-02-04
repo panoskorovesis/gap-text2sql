@@ -165,7 +165,7 @@ def main():
         #print(step, res_json['total_scores'])
         #print("Easy ******************************")
         #print(step, {res_json['total_scores']['easy']['count']})
-        print(f"\nResults for dataset {args.data_file}\nPrediction saved in {args.path_output_file}.json and {args.path_output_file}.txt\nGold file is gold_for_{args.path_output_file}.txt\nEvaluaton results saved in results_for_{args.path_output_file}.csv\n")
+        print(f"\nResults for dataset {args.data_file}\nPrediction saved in {args.path_output_file}.json and {args.path_output_file}.txt\nGold file is gold_for_{args.path_output_file}.txt\nEvaluation results saved in results_for_{args.path_output_file}.csv\n")
         print(f"*;count;{res_json['total_scores']['easy']['count']};{res_json['total_scores']['medium']['count']};{res_json['total_scores']['hard']['count']};{res_json['total_scores']['extra']['count']};{res_json['total_scores']['all']['count']}") 
         print(f"checkpoint;type;easy;medium;hard;extra;all") 
         print(f"{step};exact match;{res_json['total_scores']['easy']['exact']:.3f};{res_json['total_scores']['medium']['exact']:.3f};{res_json['total_scores']['hard']['exact']:.3f};{res_json['total_scores']['extra']['exact']:.3f};{res_json['total_scores']['all']['exact']:.3f}") 

@@ -109,7 +109,7 @@ def main():
             
             #Open, write, close - to leave memory free
             result = open(f"{exp_config['eval_output']}/eval-results.csv", "a", encoding='utf8')            
-            first_loop == True: 
+            if first_loop == True: 
                 result.write(f"*;count;{res_json['total_scores']['easy']['count']};{res_json['total_scores']['medium']['count']};{res_json['total_scores']['hard']['count']};{res_json['total_scores']['extra']['count']};{res_json['total_scores']['all']['count']}\n") 
             first_loop = False   
             result.write(f"{step};exact match;{res_json['total_scores']['easy']['exact']:.3f};{res_json['total_scores']['medium']['exact']:.3f};{res_json['total_scores']['hard']['exact']:.3f};{res_json['total_scores']['extra']['exact']:.3f};{res_json['total_scores']['all']['exact']:.3f}\n") 
