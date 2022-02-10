@@ -53,12 +53,20 @@ def main():
     parser.add_argument('data_file', help="Input data json file, ex.: data/")
     parser.add_argument('path_output_file', help="Path to output json file with prediction")
     args = parser.parse_args()
-    print(args)
-    print(args.data_file)
-    print(args.path_output_file)
-    args.path_output_file = os.path.splitext(args.path_output_file)[0]#remove the extension, for further inclusion (.infer, .txt, .json)
-    print(args.path_output_file)
     
+    #print(args)
+    #print(args.data_file)
+    #print(args.path_output_file)
+    args.path_output_file = os.path.splitext(args.path_output_file)[0]#remove the extension, for further inclusion (.infer, .txt, .json)
+    #print(args.path_output_file)
+    
+    if not os.path.exists(args.data_file + "dev.json"):
+        print(f"\n{args.data_file}dev.json not found.")
+        sys.exit(1)
+        
+    if not os.path.exists(args.data_file + "tables.json"):
+        print(f"\n{args.data_file}tables.json not found.")
+        sys.exit(1)
  
     
     #Codalab Run-time directory structure
@@ -126,9 +134,20 @@ def main():
     print(f"\n*********************************************\npreprocess_config={preprocess_config}\n*********************************************\n")
     preprocess.main2(preprocess_config, args.data_file) 
 
-    #"eval"
-    result = open(f"results_for_{args.path_output_file}.csv", "w", encoding='utf8')
-    result.write(f"checkpoint;type;easy;medium;hard;extra;all\n")
+   
+    #File with gold queries 
+    gold = open(f"gold_for_{args.path_output_file}.txt", "w", encoding='utf8')
+    with open(f"{args.data_file}dev.json", encoding='utf8') as json_data_file:
+        data = json.load(json_data_file)
+        length = len(data) #tive que fazer pelo tamanho porque o arquivo .json começa com [ em branco ]    
+        for i in range(length):
+            gold.write(f"{data[i]['query']}\t{data[i]['db_id']}\n")
+    json_data_file.close()
+    gold.close()
+    
+   #"Infer and Eval"
+    #result = open(f"results_for_{args.path_output_file}.csv", "w", encoding='utf8')
+    #result.write(f"checkpoint;type;easy;medium;hard;extra;all\n")
     for step in exp_config["eval_steps"]:
         print("\nInfer\n")
         infer_output_path = f"{args.path_output_file}"
@@ -144,54 +163,47 @@ def main():
         )
         infer.main2(infer_config, args.data_file)
 
-        print("\nEval\n")
-        eval_output_path = f"{args.path_output_file}.eval"
+        # print("\nEval\n")
+        # eval_output_path = f"{args.path_output_file}.eval"
         
-        eval_config = EvalConfig(
-            model_config_file,
-            model_config_args,
-            exp_config["logdir"],
-            exp_config["eval_section"],
-            f"{infer_output_path}.infer",
-            eval_output_path
-        )
-        eval.main2(eval_config, args.data_file)
+        # eval_config = EvalConfig(
+            # model_config_file,
+            # model_config_args,
+            # exp_config["logdir"],
+            # exp_config["eval_section"],
+            # f"{infer_output_path}.infer",
+            # eval_output_path
+        # )
+        # eval.main2(eval_config, args.data_file)
 
-        res_json = json.load(open(eval_output_path))
-        #print(step, res_json['total_scores']['all']['exact'])
-        #print("res_json ******************************")
-        #print(step, res_json)
-        #print("Total Scores******************************")
-        #print(step, res_json['total_scores'])
-        #print("Easy ******************************")
-        #print(step, {res_json['total_scores']['easy']['count']})
-        print(f"\nResults for dataset {args.data_file}\nPrediction saved in {args.path_output_file}.json and {args.path_output_file}.txt\nGold file is gold_for_{args.path_output_file}.txt\nEvaluation results saved in results_for_{args.path_output_file}.csv\n")
-        print(f"*;count;{res_json['total_scores']['easy']['count']};{res_json['total_scores']['medium']['count']};{res_json['total_scores']['hard']['count']};{res_json['total_scores']['extra']['count']};{res_json['total_scores']['all']['count']}") 
-        print(f"checkpoint;type;easy;medium;hard;extra;all") 
-        print(f"{step};exact match;{res_json['total_scores']['easy']['exact']:.3f};{res_json['total_scores']['medium']['exact']:.3f};{res_json['total_scores']['hard']['exact']:.3f};{res_json['total_scores']['extra']['exact']:.3f};{res_json['total_scores']['all']['exact']:.3f}") 
+        # res_json = json.load(open(eval_output_path))
+        # #print(step, res_json['total_scores']['all']['exact'])
+        # #print("res_json ******************************")
+        # #print(step, res_json)
+        # #print("Total Scores******************************")
+        # #print(step, res_json['total_scores'])
+        # #print("Easy ******************************")
+        # #print(step, {res_json['total_scores']['easy']['count']})
+        # print(f"\nResults for dataset {args.data_file}\nPrediction saved in {args.path_output_file}.json and {args.path_output_file}.txt\nGold file is gold_for_{args.path_output_file}.txt\nEvaluation results saved in results_for_{args.path_output_file}.csv\n")
+        # print(f"*;count;{res_json['total_scores']['easy']['count']};{res_json['total_scores']['medium']['count']};{res_json['total_scores']['hard']['count']};{res_json['total_scores']['extra']['count']};{res_json['total_scores']['all']['count']}") 
+        # print(f"checkpoint;type;easy;medium;hard;extra;all") 
+        # print(f"{step};exact match;{res_json['total_scores']['easy']['exact']:.3f};{res_json['total_scores']['medium']['exact']:.3f};{res_json['total_scores']['hard']['exact']:.3f};{res_json['total_scores']['extra']['exact']:.3f};{res_json['total_scores']['all']['exact']:.3f}") 
 
-        result.write(f"{step};count;{res_json['total_scores']['easy']['count']};{res_json['total_scores']['medium']['count']};{res_json['total_scores']['hard']['count']};{res_json['total_scores']['extra']['count']};{res_json['total_scores']['all']['count']}\n") 
-        result.write(f"{step};exact match;{res_json['total_scores']['easy']['exact']:.3f};{res_json['total_scores']['medium']['exact']:.3f};{res_json['total_scores']['hard']['exact']:.3f};{res_json['total_scores']['extra']['exact']:.3f};{res_json['total_scores']['all']['exact']:.3f}") 
+        # result.write(f"{step};count;{res_json['total_scores']['easy']['count']};{res_json['total_scores']['medium']['count']};{res_json['total_scores']['hard']['count']};{res_json['total_scores']['extra']['count']};{res_json['total_scores']['all']['count']}\n") 
+        # result.write(f"{step};exact match;{res_json['total_scores']['easy']['exact']:.3f};{res_json['total_scores']['medium']['exact']:.3f};{res_json['total_scores']['hard']['exact']:.3f};{res_json['total_scores']['extra']['exact']:.3f};{res_json['total_scores']['all']['exact']:.3f}") 
         
-        #Clean version of original .eval file        
-        eval_clean = open(f"clean_eval_for_{args.path_output_file}.csv", "w", encoding='utf8')
-        for per_item in res_json['per_item']:  
-            if per_item['exact'] == 0 or per_item['exact'] == "false": exact = "false" #in original .eval file some appear as 0 others as "false"
-            if per_item['exact'] == 1 or per_item['exact'] == "true": exact = "true" #in original .eval fiel all appear as "true", but I did the same to be standard 
-            eval_clean.write(f"{exact};{per_item['hardness']};{per_item['gold']};{per_item['predicted']}\n")                                   
-        eval_clean.close()
-    result.close()
+        # #Clean version of original .eval file        
+        # eval_clean = open(f"clean_eval_for_{args.path_output_file}.csv", "w", encoding='utf8')
+        # for per_item in res_json['per_item']:  
+            # if per_item['exact'] == 0 or per_item['exact'] == "false": exact = "false" #in original .eval file some appear as 0 others as "false"
+            # if per_item['exact'] == 1 or per_item['exact'] == "true": exact = "true" #in original .eval fiel all appear as "true", but I did the same to be standard 
+            # eval_clean.write(f"{exact};{per_item['hardness']};{per_item['gold']};{per_item['predicted']}\n")                                   
+        # eval_clean.close()
+    #result.close()
+    print(f"\nDataset {args.data_file}\nPrediction saved in {args.path_output_file}.json (key 'predicted') and {args.path_output_file}.txt (just text)\nGold file is gold_for_{args.path_output_file}.txt\n")
     
     
-    #File with gold queries 
-    gold = open(f"gold_for_{args.path_output_file}.txt", "w", encoding='utf8')
-    with open(f"{args.data_file}dev.json", encoding='utf8') as json_data_file:
-        data = json.load(json_data_file)
-        length = len(data) #tive que fazer pelo tamanho porque o arquivo .json começa com [ em branco ]    
-        for i in range(length):
-            gold.write(f"{data[i]['query']}\t{data[i]['db_id']}\n")
-    json_data_file.close()
-    gold.close()
+
 
 
 if __name__ == "__main__":
