@@ -70,6 +70,18 @@ def main():
         result.write(f"checkpoint;type;easy;medium;hard;extra;all\n") 
         result.close()
         first_loop = True
+
+        #File with gold queries from dev.json
+        gold = open(f"{exp_config['eval_output']}/gold.txt", "w", encoding='utf8')
+        print(f"Open file {other_config['data']['val']['paths'][0]}")
+        with open(f"{other_config['data']['val']['paths'][0]}", encoding='utf8') as json_data_file:
+            data = json.load(json_data_file)
+            length = len(data) #tive que fazer pelo tamanho porque o arquivo .json começa com [ em branco ]    
+            for i in range(length):
+                gold.write(f"{data[i]['query']}\t{data[i]['db_id']}\n")
+        json_data_file.close()
+        gold.close()        
+      
         for step in exp_config["eval_steps"]:
             infer_output_path = "{}/{}-step{}".format( #infer_output_path = "{}/{}-step{}.infer".format(
                 exp_config["eval_output"], 
@@ -121,19 +133,7 @@ def main():
                 if per_item['exact'] == 0 or per_item['exact'] == "false": exact = "false" #in original .eval file some appear as 0 others as "false"
                 if per_item['exact'] == 1 or per_item['exact'] == "true": exact = "true" #in original .eval fiel all appear as "true", but I did the same to be standard 
                 eval_clean.write(f"{exact};{per_item['hardness']};{per_item['gold']};{per_item['predicted']}\n")                                   
-            eval_clean.close()
-            
-            
-        #File with gold queries from dev.json
-        gold = open(f"{exp_config['eval_output']}/gold.txt", "w", encoding='utf8')
-        print(f"Open file {other_config['data']['val']['paths'][0]}")
-        with open(f"{other_config['data']['val']['paths'][0]}", encoding='utf8') as json_data_file:
-            data = json.load(json_data_file)
-            length = len(data) #tive que fazer pelo tamanho porque o arquivo .json começa com [ em branco ]    
-            for i in range(length):
-                gold.write(f"{data[i]['query']}\t{data[i]['db_id']}\n")
-        json_data_file.close()
-        gold.close()
+            eval_clean.close() 
 
 if __name__ == "__main__":
     main()
