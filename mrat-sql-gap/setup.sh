@@ -214,7 +214,7 @@ cd data/spider-FIT-en-extra-3enr-1enb
 gdown --id 1nO2KkWWcug-wl9pEUbu41k4CVkXOfjoM
 cd ..
 cd ..
-ln -s $(pwd)/spider-FIT/database data/spider-en-extra-3enr-1enb/database
+ln -s $(pwd)/spider-FIT/database data/spider-FIT-en-extra-3enr-1enb/database
 
 
 
