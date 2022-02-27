@@ -1,7 +1,7 @@
 {
     local exp_id = 1,
     logdir: "logdir/mT5-large-en-pt-es-fr-train",
-    model_config: "configs/mT5-large-en-pt-es-fr/gap-mT5.jsonnet",
+    model_config: "experiments/spider-configs/mT5-large-en-pt-es-fr/gap-mT5.jsonnet",
     model_config_args: {
         bs: 4,
         num_batch_accumulated: 2,

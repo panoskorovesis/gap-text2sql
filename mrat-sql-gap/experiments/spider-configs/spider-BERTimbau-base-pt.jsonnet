@@ -1,6 +1,6 @@
 {
     logdir: "logdir/BERTimbau-base-pt-train",
-    model_config: "configs/BERTimbau-base/nl2code-bertimbau-base.jsonnet",
+    model_config: "experiments/spider-configs/BERTimbau-base/nl2code-bertimbau-base.jsonnet",
     model_config_args: {
         data_path: 'data/spider-pt/',
         bs: 6,

@@ -1,7 +1,7 @@
 {
     local exp_id = 1,
     logdir: "logdir/BART-large-en-train",
-    model_config: "configs/BART-large-en/gap-bart.jsonnet",
+    model_config: "experiments/spider-configs/BART-large-en/gap-bart.jsonnet",
     model_config_args: {
         bs: 12,
         num_batch_accumulated: 2,

@@ -1,12 +1,12 @@
 {
     local exp_id = 1,
-    logdir: "logdir/mBART50MtoM-large-en-train",
-    model_config: "experiments/spider-configs/mBART50MtoM-large-en/gap-bart.jsonnet",
+    logdir: "/mnt/Databases/nl2sql/gap-text2sql/mrat-sql-gap/logdir/T5-v1_1-large-NoGAP-150Ksteps-FIT-en-enr-enb-train",
+    model_config: "experiments/spider-configs/T5-v1_1-large-NoGAP-150Ksteps-FIT-en-enr-enb/T5-v1_1.jsonnet",
     model_config_args: {
-        bs: 12,
+        bs: 4,
         num_batch_accumulated: 2,
-        bart_version: "facebook/mbart-large-50-many-to-many-mmt",
-        pretrained_checkpoint: "models/mBART50MtoM-large/pretrained_checkpoint/pytorch_model.bin",
+        t5_version: "google/t5-v1_1-large",
+        pretrained_checkpoint: "None",
         summarize_header: "avg",
         use_column_type: false,
         num_layers: 8,
@@ -24,10 +24,10 @@
         clause_order: null, # strings like "SWGOIF", it will be prioriotized over end_with_from 
     },
 
-    eval_name: "mBART50MtoM-large-en_run_%d_%s_%d" % [exp_id, self.eval_use_heuristic, self.eval_beam_size],
-    eval_output: "ie_dirs/mBART50MtoM-large-en-train",
+    eval_name: "T5-v1_1-large-NoGAP-150Ksteps-FIT-en-enr-enb-train_en-eval_%d_%s_%d" % [exp_id, self.eval_use_heuristic, self.eval_beam_size],
+    eval_output: "ie_dirs/T5-v1_1-large-NoGAP-150Ksteps-FIT-en-enr-enb",
     eval_beam_size: 1,
     eval_use_heuristic: true,
-    eval_steps: [23100],
+    eval_steps: [ 1000 * x + 100 for x in std.range(90, 170)] + [170300],
     eval_section: "val",
 }
