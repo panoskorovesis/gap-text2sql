@@ -13,7 +13,7 @@
 #   - batch_size 10
 #   - Adam with lr 1e-3
 
-function(output_from, data_path='data/spider-FIT-en/') {
+function(output_from, data_path='data/spider-FIT-en-extra-3enr-1enb/') {
     local PREFIX = data_path,
     
     data: {
@@ -91,7 +91,7 @@ function(output_from, data_path='data/spider-FIT-en/') {
         save_every_n: 100,
         report_every_n: 10,
 
-        max_steps: 150300,
+        max_steps: 170300,
         num_eval_items: 50,
     },
     optimizer: {

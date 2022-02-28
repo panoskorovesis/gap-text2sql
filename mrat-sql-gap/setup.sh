@@ -298,3 +298,52 @@ gdown --id 1WfQNZf-oIsBfNhyosNgklgSL1gnFjh1a
 cd ..
 cd ..
 ln -s $(pwd)/spider-FIT/database data/spider-FIT-en-pt-es-fr-enr-enb/database
+
+
+
+echo "Folders structure preparation"
+Name_mT5="mt5-large"
+
+mkdir logdir/${Name_mT5}-en-train
+mkdir ie_dirs/${Name_mT5}-en-train
+
+mkdir logdir/${Name_mT5}-en-pt-es-fr-train
+mkdir ie_dirs/${Name_mT5}-en-pt-es-fr-train
+
+mkdir logdir/${Name_mT5}-en-pt-es-fr-enr-enb-train
+mkdir ie_dirs/${Name_mT5}-en-pt-es-fr-enr-enb-train
+
+mkdir logdir/${Name_mT5}-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr-train
+mkdir ie_dirs/${Name_mT5}-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr-train
+
+mkdir logdir/${Name_mT5}-FIT-en-train
+mkdir ie_dirs/${Name_mT5}-FIT-en-train
+
+mkdir logdir/${Name_mT5}-FIT-en-pt-es-fr-train
+mkdir ie_dirs/${Name_mT5}-FIT-en-pt-es-fr-train
+
+mkdir logdir/${Name_mT5}-FIT-en-pt-es-fr-enr-enb-train
+mkdir ie_dirs/${Name_mT5}-FIT-en-pt-es-fr-enr-enb-train
+
+mkdir logdir/${Name_mT5}-FIT-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr-train
+mkdir ie_dirs/${Name_mT5}-FIT-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr-train
+
+Name_T5-v1_1="T5-v1_1-large"
+
+mkdir logdir/${Name_T5-v1_1}-en-train
+mkdir ie_dirs/${Name_T5-v1_1}-en-train
+
+#mkdir logdir/${Name_T5-v1_1}-en-enr-enb-train
+#mkdir ie_dirs/${Name_T5-v1_1}-en-enr-enb-train
+
+#mkdir logdir/${Name_T5-v1_1}-en-extra-3enr-1enb-train
+#mkdir ie_dirs/${Name_T5-v1_1}-en-extra-3enr-1enb-train
+
+mkdir logdir/${Name_T5-v1_1}-FIT-en-train
+mkdir ie_dirs/${Name_T5-v1_1}-FIT-en-train
+
+mkdir logdir/${Name_T5-v1_1}-FIT-en-enr-enb-train
+mkdir ie_dirs/${Name_T5-v1_1}-FIT-en-enr-enb-train
+
+mkdir logdir/${Name_T5-v1_1}-FIT-en-extra-3enr-1enb-train
+mkdir ie_dirs/${Name_T5-v1_1}-FIT-en-extra-3enr-1enb-train

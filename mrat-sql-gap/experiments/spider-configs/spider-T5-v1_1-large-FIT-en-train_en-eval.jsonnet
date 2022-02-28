@@ -1,7 +1,7 @@
 {
     local exp_id = 1,
-    logdir: "/mnt/Databases/nl2sql/gap-text2sql/mrat-sql-gap/logdir/T5-v1_1-large-NoGAP-150Ksteps-FIT-en-enr-enb-train",
-    model_config: "experiments/spider-configs/T5-v1_1-large-NoGAP-150Ksteps-FIT-en-enr-enb/T5-v1_1.jsonnet",
+    logdir: "logdir/T5-v1_1-large-FIT-en-train",
+    model_config: "experiments/spider-configs/T5-v1_1-large-170Ksteps-FIT-en/T5-v1_1.jsonnet",
     model_config_args: {
         bs: 4,
         num_batch_accumulated: 2,
@@ -24,8 +24,8 @@
         clause_order: null, # strings like "SWGOIF", it will be prioriotized over end_with_from 
     },
 
-    eval_name: "T5-v1_1-large-NoGAP-150Ksteps-FIT-en-enr-enb-train_en-eval_%d_%s_%d" % [exp_id, self.eval_use_heuristic, self.eval_beam_size],
-    eval_output: "ie_dirs/T5-v1_1-large-NoGAP-150Ksteps-FIT-en-enr-enb",
+    eval_name: "T5-v1_1-large-170Ksteps-FIT-en-train_en-eval_%d_%s_%d" % [exp_id, self.eval_use_heuristic, self.eval_beam_size],
+    eval_output: "ie_dirs/T5-v1_1-large-FIT-en",
     eval_beam_size: 1,
     eval_use_heuristic: true,
     eval_steps: [ 1000 * x + 100 for x in std.range(90, 170)] + [170300],
