@@ -2,17 +2,19 @@
 echo "Folders structure preparation"
 Name="mBART50MtoM-large"
 
-mkdir logdir/${Name}-en-train
-mkdir ie_dirs/${Name}-en-train
+#mkdir logdir/${Name}-en-train
+#mkdir ie_dirs/${Name}-en-train
 
-mkdir logdir/${Name}-pt-train
-mkdir ie_dirs/${Name}-pt-train
+#mkdir logdir/${Name}-pt-train
+#mkdir ie_dirs/${Name}-pt-train
 
-mkdir logdir/${Name}-en-pt-train
-mkdir ie_dirs/${Name}-en-pt-train
+#mkdir logdir/${Name}-en-pt-train
+#mkdir ie_dirs/${Name}-en-pt-train
 
-mkdir logdir/${Name}-en-pt-es-fr-train
-mkdir ie_dirs/${Name}-en-pt-es-fr-train
+#mkdir logdir/${Name}-en-pt-es-fr-train
+#mkdir ie_dirs/${Name}-en-pt-es-fr-train
+#--
+
 #mkdir models/${Name}
 #mkdir models/${Name}/pretrained_checkpoint
 

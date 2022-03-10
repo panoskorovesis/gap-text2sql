@@ -2,8 +2,9 @@
 echo "Folders structure preparation"
 Name="BERTimbau-base"
 
-mkdir logdir/${Name}-pt-train
-mkdir ie_dirs/${Name}-pt-train
+#mkdir logdir/${Name}-pt-train
+#mkdir ie_dirs/${Name}-pt-train
+#--
 #mkdir models/${Name}
 #mkdir models/${Name}/pretrained_checkpoint
 

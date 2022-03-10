@@ -2,15 +2,14 @@
 echo "Folders structure preparation"
 Name="mt5-large"
 
-mkdir logdir/${Name}-en-train
-mkdir ie_dirs/${Name}-en-train
+#mkdir logdir/${Name}-en-train
+#mkdir ie_dirs/${Name}-en-train
 
-mkdir logdir/${Name}-en-pt-es-fr-train
-mkdir ie_dirs/${Name}-en-pt-es-fr-train
+#mkdir logdir/${Name}-en-pt-es-fr-train
+#mkdir ie_dirs/${Name}-en-pt-es-fr-train
 
-
-mkdir logdir/${Name}-en-pt-es-fr-enr-enb-train
-mkdir ie_dirs/${Name}-en-pt-es-fr-enr-enb-train
+#mkdir logdir/${Name}-en-pt-es-fr-enr-enb-train
+#mkdir ie_dirs/${Name}-en-pt-es-fr-enr-enb-train
 
 
 #mkdir models/${Name}

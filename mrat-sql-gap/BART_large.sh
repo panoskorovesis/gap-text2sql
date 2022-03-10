@@ -2,8 +2,9 @@
 echo "Folders structure preparation"
 Name="BART-large"
 
-mkdir logdir/${Name}-en-train
-mkdir ie_dirs/${Name}-en-train
+#mkdir logdir/${Name}-en-train
+#mkdir ie_dirs/${Name}-en-train
+#--
 mkdir models/${Name}
 mkdir models/${Name}/pretrained_checkpoint
 

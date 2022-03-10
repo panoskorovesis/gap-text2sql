@@ -347,3 +347,35 @@ mkdir ie_dirs/${Name_T5-v1_1}-FIT-en-enr-enb-train
 
 mkdir logdir/${Name_T5-v1_1}-FIT-en-extra-3enr-1enb-train
 mkdir ie_dirs/${Name_T5-v1_1}-FIT-en-extra-3enr-1enb-train
+
+
+Name_mBART50MtoM="mBART50MtoM-large"
+
+mkdir logdir/${Name_mBART50MtoM}-en-train
+mkdir ie_dirs/${Name_mBART50MtoM}-en-train
+
+mkdir logdir/${Name_mBART50MtoM}-pt-train
+mkdir ie_dirs/${Name_mBART50MtoM}-pt-train
+
+mkdir logdir/${Name_mBART50MtoM}-en-pt-train
+mkdir ie_dirs/${Name_mBART50MtoM}-en-pt-train
+
+mkdir logdir/${Name_mBART50MtoM}-en-pt-es-fr-train
+mkdir ie_dirs/${Name_mBART50MtoM}-en-pt-es-fr-train
+
+
+Name_BERTimbau-base="BERTimbau-base"
+
+mkdir logdir/${Name_BERTimbau-base}-pt-train
+mkdir ie_dirs/${Name_BERTimbau-base}-pt-train
+
+
+Name_BERTimbau-large="BERTimbau-large"
+
+mkdir logdir/${Name_BERTimbau-large}-pt-train
+mkdir ie_dirs/${Name_BERTimbau-large}-pt-train
+
+Name_BART-large="BART-large"
+
+mkdir logdir/${Name_BART-large}-en-train
+mkdir ie_dirs/${Name_BART-large}-en-train
