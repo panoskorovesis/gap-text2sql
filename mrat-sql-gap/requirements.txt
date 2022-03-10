@@ -1,5 +1,4 @@
 transformers
-jsonnet~=0.14.0
 nltk~=3.4
 networkx~=2.2
 entmax

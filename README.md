@@ -21,11 +21,13 @@ cd gap-text2sql/mrat-sql-gap
 conda create --name mtext2sql python=3.7
 conda activate mtext2sql
 conda install pytorch=1.5 cudatoolkit=10.2 -c pytorch
+pip install gdown
+conda install -c conda-forge jsonnet
 pip install -r requirements.txt
 python -c "import nltk; nltk.download('stopwords'); nltk.download('punkt')"
 conda install jupyter notebook
 conda install -c conda-forge jupyter_contrib_nbextensions
-pip install gdown
+
 ```
 
 
