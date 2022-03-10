@@ -21,12 +21,14 @@ echo "Preparing Spider FIT Dataset"
 cp -r spider spider-FIT
 cd spider-FIT
 rm *.*
-gdown --id 1WRZRIRIq_sjWwgXPVGj9942tjiQtmZm-
+gdown https://drive.google.com/uc?id=1WRZRIRIq_sjWwgXPVGj9942tjiQtmZm-
+#gdown --id 1WRZRIRIq_sjWwgXPVGj9942tjiQtmZm-
 cd database
 rm -r baseball_1
 rm -r cre_Drama_Workshop_Groups
 rm -r soccer_1
-gdown --id 1iWAKxH0hSk98dlI9-oSuuMpfMdtJ29Yn
+gdown https://drive.google.com/uc?id=1iWAKxH0hSk98dlI9-oSuuMpfMdtJ29Yn
+#gdown --id 1iWAKxH0hSk98dlI9-oSuuMpfMdtJ29Yn
 unzip resized.zip
 rm resized.zip
 cd ..
@@ -332,80 +334,78 @@ ln -s $(pwd)/spider-FIT/database data/spider-FIT-en-pt-es-fr-enr-enb/database
 
 
 echo "Folders structure preparation"
-Name_mT5="mt5-large"
+#mt5-large
+mkdir logdir/mt5-large-en-train
+mkdir ie_dirs/mt5-large-en-train
 
-mkdir logdir/${Name_mT5}-en-train
-mkdir ie_dirs/${Name_mT5}-en-train
+mkdir logdir/mt5-large-en-pt-es-fr-train
+mkdir ie_dirs/mt5-large-en-pt-es-fr-train
 
-mkdir logdir/${Name_mT5}-en-pt-es-fr-train
-mkdir ie_dirs/${Name_mT5}-en-pt-es-fr-train
+mkdir logdir/mt5-large-en-pt-es-fr-enr-enb-train
+mkdir ie_dirs/mt5-large-en-pt-es-fr-enr-enb-train
 
-mkdir logdir/${Name_mT5}-en-pt-es-fr-enr-enb-train
-mkdir ie_dirs/${Name_mT5}-en-pt-es-fr-enr-enb-train
+mkdir logdir/mt5-large-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr-train
+mkdir ie_dirs/mt5-large-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr-train
 
-mkdir logdir/${Name_mT5}-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr-train
-mkdir ie_dirs/${Name_mT5}-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr-train
+mkdir logdir/mt5-large-FIT-en-train
+mkdir ie_dirs/mt5-large-FIT-en-train
 
-mkdir logdir/${Name_mT5}-FIT-en-train
-mkdir ie_dirs/${Name_mT5}-FIT-en-train
+mkdir logdir/mt5-large-FIT-en-pt-es-fr-train
+mkdir ie_dirs/mt5-large-FIT-en-pt-es-fr-train
 
-mkdir logdir/${Name_mT5}-FIT-en-pt-es-fr-train
-mkdir ie_dirs/${Name_mT5}-FIT-en-pt-es-fr-train
+mkdir logdir/mt5-large-FIT-en-pt-es-fr-enr-enb-train
+mkdir ie_dirs/mt5-large-FIT-en-pt-es-fr-enr-enb-train
 
-mkdir logdir/${Name_mT5}-FIT-en-pt-es-fr-enr-enb-train
-mkdir ie_dirs/${Name_mT5}-FIT-en-pt-es-fr-enr-enb-train
+mkdir logdir/mt5-large-FIT-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr-train
+mkdir ie_dirs/mt5-large-FIT-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr-train
 
-mkdir logdir/${Name_mT5}-FIT-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr-train
-mkdir ie_dirs/${Name_mT5}-FIT-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr-train
+#T5-v1_1-large
+mkdir logdir/T5-v1_1-large-en-train
+mkdir ie_dirs/T5-v1_1-large-en-train
 
-Name_T5-v1_1="T5-v1_1-large"
+#mkdir logdir/T5-v1_1-large-en-enr-enb-train
+#mkdir ie_dirs/T5-v1_1-large-en-enr-enb-train
 
-mkdir logdir/${Name_T5-v1_1}-en-train
-mkdir ie_dirs/${Name_T5-v1_1}-en-train
+#mkdir logdir/T5-v1_1-large-en-extra-3enr-1enb-train
+#mkdir ie_dirs/T5-v1_1-large-en-extra-3enr-1enb-train
 
-#mkdir logdir/${Name_T5-v1_1}-en-enr-enb-train
-#mkdir ie_dirs/${Name_T5-v1_1}-en-enr-enb-train
+mkdir logdir/T5-v1_1-large-FIT-en-train
+mkdir ie_dirs/T5-v1_1-large-FIT-en-train
 
-#mkdir logdir/${Name_T5-v1_1}-en-extra-3enr-1enb-train
-#mkdir ie_dirs/${Name_T5-v1_1}-en-extra-3enr-1enb-train
+mkdir logdir/T5-v1_1-large-FIT-en-enr-enb-train
+mkdir ie_dirs/T5-v1_1-large-FIT-en-enr-enb-train
 
-mkdir logdir/${Name_T5-v1_1}-FIT-en-train
-mkdir ie_dirs/${Name_T5-v1_1}-FIT-en-train
-
-mkdir logdir/${Name_T5-v1_1}-FIT-en-enr-enb-train
-mkdir ie_dirs/${Name_T5-v1_1}-FIT-en-enr-enb-train
-
-mkdir logdir/${Name_T5-v1_1}-FIT-en-extra-3enr-1enb-train
-mkdir ie_dirs/${Name_T5-v1_1}-FIT-en-extra-3enr-1enb-train
+mkdir logdir/T5-v1_1-large-FIT-en-extra-3enr-1enb-train
+mkdir ie_dirs/T5-v1_1-large-FIT-en-extra-3enr-1enb-train
 
 
-Name_mBART50MtoM="mBART50MtoM-large"
+#mBART50MtoM-large
 
-mkdir logdir/${Name_mBART50MtoM}-en-train
-mkdir ie_dirs/${Name_mBART50MtoM}-en-train
+mkdir logdir/mBART50MtoM-large-en-train
+mkdir ie_dirs/mBART50MtoM-large-en-train
 
-mkdir logdir/${Name_mBART50MtoM}-pt-train
-mkdir ie_dirs/${Name_mBART50MtoM}-pt-train
+mkdir logdir/mBART50MtoM-large-pt-train
+mkdir ie_dirs/mBART50MtoM-large-pt-train
 
-mkdir logdir/${Name_mBART50MtoM}-en-pt-train
-mkdir ie_dirs/${Name_mBART50MtoM}-en-pt-train
+mkdir logdir/mBART50MtoM-large-en-pt-train
+mkdir ie_dirs/mBART50MtoM-large-en-pt-train
 
-mkdir logdir/${Name_mBART50MtoM}-en-pt-es-fr-train
-mkdir ie_dirs/${Name_mBART50MtoM}-en-pt-es-fr-train
-
-
-Name_BERTimbau-base="BERTimbau-base"
-
-mkdir logdir/${Name_BERTimbau-base}-pt-train
-mkdir ie_dirs/${Name_BERTimbau-base}-pt-train
+mkdir logdir/mBART50MtoM-large-en-pt-es-fr-train
+mkdir ie_dirs/mBART50MtoM-large-en-pt-es-fr-train
 
 
-Name_BERTimbau-large="BERTimbau-large"
+#BERTimbau-base
 
-mkdir logdir/${Name_BERTimbau-large}-pt-train
-mkdir ie_dirs/${Name_BERTimbau-large}-pt-train
+mkdir logdir/BERTimbau-base-pt-train
+mkdir ie_dirs/BERTimbau-base-pt-train
 
-Name_BART-large="BART-large"
 
-mkdir logdir/${Name_BART-large}-en-train
-mkdir ie_dirs/${Name_BART-large}-en-train
+#BERTimbau-large
+
+mkdir logdir/BERTimbau-large-pt-train
+mkdir ie_dirs/BERTimbau-large-pt-train
+
+#BART-large"
+
+mkdir logdir/BART-large-en-train
+mkdir ie_dirs/BART-large-en-train
