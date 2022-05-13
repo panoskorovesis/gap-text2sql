@@ -119,9 +119,9 @@ Artigo mRAT-SQL-FIT
 
 * mT5-large trained in English [Checkpoint 50100, ESM all: 0.](https://drive.google.com/file/d/1BZ519XxYtXpxxO1iiBy8kSLG4eq34yEX/view?usp=sharing)
 
-* mT5-large trained in English, Portuguese, Spanish and French (together) [Checkpint 102100, ESM all: 0.687 Best inferences in Portuguese](https://drive.google.com/file/d/1VCfLnQgZsrb8lJFkhxzPoyfqc7dEY_K-/view?usp=sharing)
-* mT5-large trained in English, Portuguese, Spanish and French (together) [Checkpint 105100, ESM all: 0.735 Best inferences in English](https://drive.google.com/file/d/1h0knsFfD6XCXxoEVSFR_I1WdYvMOkcvA/view?usp=sharing)
-* mT5-large trained in English, Portuguese, Spanish and French (together) [Checkpint 114100, ESM all: 0.689 Best inferences in Spanish and 0.698 French](https://drive.google.com/file/d/13DIB5p97bUnquLpd-dO0-Q1bA9LWjIXD/view?usp=sharing)
+* mT5-large trained in English, Portuguese, Spanish and French (together) FIT [Checkpint 102100, ESM all: 0.687 Best inferences in Portuguese](https://drive.google.com/file/d/1VCfLnQgZsrb8lJFkhxzPoyfqc7dEY_K-/view?usp=sharing)
+* mT5-large trained in English, Portuguese, Spanish and French (together) FIT [Checkpint 105100, ESM all: 0.735 Best inferences in English](https://drive.google.com/file/d/1h0knsFfD6XCXxoEVSFR_I1WdYvMOkcvA/view?usp=sharing)
+* mT5-large trained in English, Portuguese, Spanish and French (together) FIT [Checkpint 114100, ESM all: 0.689 Best inferences in Spanish and 0.698 French](https://drive.google.com/file/d/13DIB5p97bUnquLpd-dO0-Q1bA9LWjIXD/view?usp=sharing)
 
 
 
