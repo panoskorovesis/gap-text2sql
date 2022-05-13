@@ -117,11 +117,17 @@ Future work of the paper mRAT-SQL+GAP
 Artigo mRAT-SQL-FIT
 
 
-* mT5-large trained in English [Checkpoint 50100, ESM all: 0.](https://drive.google.com/file/d/1BZ519XxYtXpxxO1iiBy8kSLG4eq34yEX/view?usp=sharing)
+* mT5-large trained in English 51Ksteps[Checkpoint 50100, ESM all: 0.684](https://drive.google.com/file/d/1BZ519XxYtXpxxO1iiBy8kSLG4eq34yEX/view?usp=sharing)
 
-* mT5-large trained in English, Portuguese, Spanish and French (together) FIT [Checkpint 102100, ESM all: 0.687 Best inferences in Portuguese](https://drive.google.com/file/d/1VCfLnQgZsrb8lJFkhxzPoyfqc7dEY_K-/view?usp=sharing)
-* mT5-large trained in English, Portuguese, Spanish and French (together) FIT [Checkpint 105100, ESM all: 0.735 Best inferences in English](https://drive.google.com/file/d/1h0knsFfD6XCXxoEVSFR_I1WdYvMOkcvA/view?usp=sharing)
-* mT5-large trained in English, Portuguese, Spanish and French (together) FIT [Checkpint 114100, ESM all: 0.689 Best inferences in Spanish and 0.698 French](https://drive.google.com/file/d/13DIB5p97bUnquLpd-dO0-Q1bA9LWjIXD/view?usp=sharing)
+
+* mT5-large trained in English, Portuguese, Spanish and French (together) 120Ksteps[Checkpint 77500, ESM all: 0.718 Best inferences in English](https://drive.google.com/file/d/1eUYr_i5O9U1ldm_pBdGozmiRt_42BCh8/view?usp=sharing)
+* mT5-large trained in English, Portuguese, Spanish and French (together) 120Ksteps[Checkpint 85500, ESM all: 0.675 Best inferences in Portuguese](https://drive.google.com/file/d/1n55OlnyE3RDQtUXMHPwC99Za0xfQavrK/view?usp=sharing)
+* mT5-large trained in English, Portuguese, Spanish and French (together) 120Ksteps[Checkpint 76500, ESM all: 0.675 Best inferences in Spanish](https://drive.google.com/file/d/1Qs-f2gIgWTJWiWrYGsiULxTBwwpgGatc/view?usp=sharing)
+* mT5-large trained in English, Portuguese, Spanish and French (together) 120Ksteps[Checkpint 67500, ESM all: 0.681 Best inferences in French](https://drive.google.com/file/d/1cpTEXMhJXVbJfDc8sW1nfSX91p5VSJtn/view?usp=sharing)
+
+* mT5-large trained in English, Portuguese, Spanish and French (together) FIT 120Ksteps[Checkpint 102100, ESM all: 0.687 Best inferences in Portuguese](https://drive.google.com/file/d/1VCfLnQgZsrb8lJFkhxzPoyfqc7dEY_K-/view?usp=sharing)
+* mT5-large trained in English, Portuguese, Spanish and French (together) FIT 120Ksteps[Checkpint 105100, ESM all: 0.735 or 0.736 Best inferences in English](https://drive.google.com/file/d/1h0knsFfD6XCXxoEVSFR_I1WdYvMOkcvA/view?usp=sharing)
+* mT5-large trained in English, Portuguese, Spanish and French (together) FIT 120Ksteps[Checkpint 114100, ESM all: 0.689 Best inferences in Spanish and 0.698 in French](https://drive.google.com/file/d/13DIB5p97bUnquLpd-dO0-Q1bA9LWjIXD/view?usp=sharing)
 
 
 
