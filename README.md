@@ -128,7 +128,7 @@ Future work of the paper mRAT-SQL+GAP
 	* Checkpoint: [39100](https://drive.google.com/file/d/18nioEDEpZf-6CNH_sU3IMZxsSNts_a4y/view?usp=sharing)
 		* Inference - English: [ESM all: 0.696](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mBART50MtoM-large-en-pt-es-fr-train/39100/spider_eval_match_ratsqlgap-mBART50MtoM-large-en-pt-es-fr-train_en-eval-step39100.txt)
 	* Checkpoint: [42100](https://drive.google.com/file/d/1AmJjyVHiP9V-FzW9Q1sXge4YMWAP-srg/view?usp=sharing)
-		* Inference - Portuguese: [[ESM all pt: 0.626](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mBART50MtoM-large-en-pt-es-fr-train/42100/spider_eval_match_ratsqlgap-mBART50MtoM-large-en-pt-es-fr-train_pt-eval-step42100.txt)
+		* Inference - Portuguese: [ESM all pt: 0.626](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mBART50MtoM-large-en-pt-es-fr-train/42100/spider_eval_match_ratsqlgap-mBART50MtoM-large-en-pt-es-fr-train_pt-eval-step42100.txt)
 		* Inference - Spanish: [ESM all: 0.628](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mBART50MtoM-large-en-pt-es-fr-train/42100/spider_eval_match_ratsqlgap-mBART50MtoM-large-en-pt-es-fr-train_es-eval-step42100.txt)
 	* Checkpoint: [44100](https://drive.google.com/file/d/1P0F218tNkW42Pb7okn3uFyTT5sy4zGZR/view?usp=sharing)
 		* Inference - French: [ESM all: 0.649](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mBART50MtoM-large-en-pt-es-fr-train/44100/spider_eval_match_ratsqlgap-mBART50MtoM-large-en-pt-es-fr-train_fr-eval-step44100.txt)
