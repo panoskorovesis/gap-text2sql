@@ -152,7 +152,7 @@ Artigo mRAT-SQL-FIT
 		* Inference - French: [ESM all: 0.681](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-pt-es-fr-120Ksteps/67500/spider_eval_match_ratsqlgap-mT5-large-NoGAP-en-pt-es-fr-train_Div-fr-eval-step67500.txt)
 
 
-* mT5-large trained in English, Portuguese, Spanish and French (together) FIT 120Ksteps:
+* mT5-large trained in English, Portuguese, Spanish and French (together) FIT 120Ksteps - just best inferences
 	* Checkpoint: [105100](https://drive.google.com/file/d/1h0knsFfD6XCXxoEVSFR_I1WdYvMOkcvA/view?usp=sharing)
 		* Inference - English: (simplemma.load_data('en','pt','es','fr')): [ESM all: 0.735 Best inferences in English](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-en-pt-es-fr-120Ksteps/105100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-120Ksteps-FIT-en-pt-es-fr_Div-en-eval-step105100.txt)
 		* Inference - English: (simplemma.load_data('en'): [ESM all: 0.736 Best inferences in English](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-en-pt-es-fr-120Ksteps/105100/0.736/spider_eval_match_ratsqlgap-mT5-large-NoGAP-120Ksteps-FIT-en-pt-es-fr_Div-en-eval-step105100.txt)
@@ -163,7 +163,7 @@ Artigo mRAT-SQL-FIT
 		* Inference - French: [ESM all: 0.698](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-en-pt-es-fr-120Ksteps/114100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-120Ksteps-FIT-en-pt-es-fr_Div-fr-eval-step114100.txt)
 		
 
-* mT5-large trained in English, Portuguese, Spanish and French (together) 2048TKs - 480Ksteps
+* mT5-large trained in English, Portuguese, Spanish and French (together) 2048TKs - 480Ksteps - just inference in English
 	* Checkpoint: [290100](https://drive.google.com/file/d/19Uvfw7QL-8i3yKvybRe9ADLDuSa-MeJv/view?usp=sharing)
 
 
