@@ -165,7 +165,7 @@ Artigo mRAT-SQL-FIT
 
 * mT5-large trained in English, Portuguese, Spanish and French (together) 2048TKs - 480Ksteps - just inference in English
 	* Checkpoint: [290100](https://drive.google.com/file/d/19Uvfw7QL-8i3yKvybRe9ADLDuSa-MeJv/view?usp=sharing)
-
+		* Inference - English: [ESM all: 0.697]
 
 
 ## Security
