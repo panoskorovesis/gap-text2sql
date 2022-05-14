@@ -122,9 +122,9 @@ Paper mRAT-SQL+GAP - Multilingual version of the RAT-SQL+GAP
 
 Future work of the paper mRAT-SQL+GAP
 * BERTimbau-large trained in Portuguese
-	* Checkpoint: [Checkpoint 40100](https://drive.google.com/file/d/1q1NOxisOcIdkMftzGPVxBDn989LDDG3X/view?usp=sharing)
+	* Checkpoint: [40100](https://drive.google.com/file/d/1q1NOxisOcIdkMftzGPVxBDn989LDDG3X/view?usp=sharing)
 		* Inference - Portuguese: [ESM all: 0.418](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/BERTimbau-large-pt-train/spider_eval_match_ratsqlgap-BERTimbau-large-pt-train-Eval-pt-step40100.txt)
-* mBART50MtoM-large trained in English, Portuguese, Spanish and French (together)
+* mBART50MtoM-large trained in English, Portuguese, Spanish and French (together) - just best inferences
 	* Checkpoint: [39100](https://drive.google.com/file/d/18nioEDEpZf-6CNH_sU3IMZxsSNts_a4y/view?usp=sharing)
 		* Inference - English: [ESM all: 0.696](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mBART50MtoM-large-en-pt-es-fr-train/39100/spider_eval_match_ratsqlgap-mBART50MtoM-large-en-pt-es-fr-train_en-eval-step39100.txt)
 	* Checkpoint: [42100](https://drive.google.com/file/d/1AmJjyVHiP9V-FzW9Q1sXge4YMWAP-srg/view?usp=sharing)
@@ -137,24 +137,35 @@ Future work of the paper mRAT-SQL+GAP
 Artigo mRAT-SQL-FIT
 
 
-* mT5-large trained in English 51Ksteps[Checkpoint 50100, ESM all: 0.684](https://drive.google.com/file/d/1BZ519XxYtXpxxO1iiBy8kSLG4eq34yEX/view?usp=sharing)
+* mT5-large trained in English 51Ksteps
+	* Checkpoint: [50100](https://drive.google.com/file/d/1BZ519XxYtXpxxO1iiBy8kSLG4eq34yEX/view?usp=sharing)
+		* Inference - English: [ESM all: 0.684](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-train/spider_eval_match_ratsqlgap-mT5-large-en-train_en-eval-step50100.txt)
+
+* mT5-large trained in English, Portuguese, Spanish and French (together) 120Ksteps - just best inferences
+	* Checkpoint: [77500](https://drive.google.com/file/d/1eUYr_i5O9U1ldm_pBdGozmiRt_42BCh8/view?usp=sharing)
+		* Inference - English: [ESM all: 0.718](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-pt-es-fr-120Ksteps/77500/spider_eval_match_ratsqlgap-mT5-large-NoGAP-en-pt-es-fr-train_Div-en-eval-step77500.txt)
+	* Checkpoint: [85500](https://drive.google.com/file/d/1n55OlnyE3RDQtUXMHPwC99Za0xfQavrK/view?usp=sharing)
+		* Inference - Portuguese: [ESM all: 0.675](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-pt-es-fr-120Ksteps/85500/spider_eval_match_ratsqlgap-mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval-step85500.txt)
+	* Checkpoint: [76500](https://drive.google.com/file/d/1Qs-f2gIgWTJWiWrYGsiULxTBwwpgGatc/view?usp=sharing)
+		* Inference - Spanish: [ESM all: 0.675](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-pt-es-fr-120Ksteps/76500/spider_eval_match_ratsqlgap-mT5-large-NoGAP-en-pt-es-fr-train_Div-es-eval-step76500.txt)
+	* Checkpoint: [67500](https://drive.google.com/file/d/1cpTEXMhJXVbJfDc8sW1nfSX91p5VSJtn/view?usp=sharing)
+		* Inference - French: [ESM all: 0.681](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-pt-es-fr-120Ksteps/67500/spider_eval_match_ratsqlgap-mT5-large-NoGAP-en-pt-es-fr-train_Div-fr-eval-step67500.txt)
 
 
-* mT5-large trained in English, Portuguese, Spanish and French (together) 120Ksteps[Checkpint 77500, ESM all: 0.718 Best inferences in English](https://drive.google.com/file/d/1eUYr_i5O9U1ldm_pBdGozmiRt_42BCh8/view?usp=sharing)
-* mT5-large trained in English, Portuguese, Spanish and French (together) 120Ksteps[Checkpint 85500, ESM all: 0.675 Best inferences in Portuguese](https://drive.google.com/file/d/1n55OlnyE3RDQtUXMHPwC99Za0xfQavrK/view?usp=sharing)
-* mT5-large trained in English, Portuguese, Spanish and French (together) 120Ksteps[Checkpint 76500, ESM all: 0.675 Best inferences in Spanish](https://drive.google.com/file/d/1Qs-f2gIgWTJWiWrYGsiULxTBwwpgGatc/view?usp=sharing)
-* mT5-large trained in English, Portuguese, Spanish and French (together) 120Ksteps[Checkpint 67500, ESM all: 0.681 Best inferences in French](https://drive.google.com/file/d/1cpTEXMhJXVbJfDc8sW1nfSX91p5VSJtn/view?usp=sharing)
-
-* mT5-large trained in English, Portuguese, Spanish and French (together) FIT 120Ksteps[Checkpint 102100, ESM all: 0.687 Best inferences in Portuguese](https://drive.google.com/file/d/1VCfLnQgZsrb8lJFkhxzPoyfqc7dEY_K-/view?usp=sharing)
 * mT5-large trained in English, Portuguese, Spanish and French (together) FIT 120Ksteps:
 	* Checkpoint: [105100](https://drive.google.com/file/d/1h0knsFfD6XCXxoEVSFR_I1WdYvMOkcvA/view?usp=sharing)
-	* Inference (simplemma.load_data('en','pt','es','fr')): [ESM all: 0.735 Best inferences in English](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-en-pt-es-fr-120Ksteps/105100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-120Ksteps-FIT-en-pt-es-fr_Div-en-eval-step105100.txt)
-	* Inference (simplemma.load_data('en'): [ESM all: 0.736 Best inferences in English](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-en-pt-es-fr-120Ksteps/105100/0.736/spider_eval_match_ratsqlgap-mT5-large-NoGAP-120Ksteps-FIT-en-pt-es-fr_Div-en-eval-step105100.txt)
-
-* mT5-large trained in English, Portuguese, Spanish and French (together) FIT 120Ksteps[Checkpint 114100, ESM all: 0.689 Best inferences in Spanish and 0.698 in French](https://drive.google.com/file/d/13DIB5p97bUnquLpd-dO0-Q1bA9LWjIXD/view?usp=sharing)
+		* Inference - English: (simplemma.load_data('en','pt','es','fr')): [ESM all: 0.735 Best inferences in English](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-en-pt-es-fr-120Ksteps/105100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-120Ksteps-FIT-en-pt-es-fr_Div-en-eval-step105100.txt)
+		* Inference - English: (simplemma.load_data('en'): [ESM all: 0.736 Best inferences in English](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-en-pt-es-fr-120Ksteps/105100/0.736/spider_eval_match_ratsqlgap-mT5-large-NoGAP-120Ksteps-FIT-en-pt-es-fr_Div-en-eval-step105100.txt)
+	* Checkpoint: [102100](https://drive.google.com/file/d/1VCfLnQgZsrb8lJFkhxzPoyfqc7dEY_K-/view?usp=sharing)
+		* Inference - Portuguese: [ESM all: 0.687](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-en-pt-es-fr-120Ksteps/102100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-120Ksteps-FIT-en-pt-es-fr_Div-pt-eval-step102100.txt)
+	* Checkpoint: [114100](https://drive.google.com/file/d/13DIB5p97bUnquLpd-dO0-Q1bA9LWjIXD/view?usp=sharing)
+		* Inference - Spanish: [ESM all: 0.689](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-en-pt-es-fr-120Ksteps/114100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-120Ksteps-FIT-en-pt-es-fr_Div-es-eval-step114100.txt)
+		* Inference - French: [ESM all: 0.698](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-en-pt-es-fr-120Ksteps/114100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-120Ksteps-FIT-en-pt-es-fr_Div-fr-eval-step114100.txt)
+		
 
 * mT5-large trained in English, Portuguese, Spanish and French (together) 2048TKs - 480Ksteps
 	* Checkpoint: [290100](https://drive.google.com/file/d/19Uvfw7QL-8i3yKvybRe9ADLDuSa-MeJv/view?usp=sharing)
+
 
 
 ## Security
