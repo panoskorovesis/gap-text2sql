@@ -127,9 +127,9 @@ Artigo mRAT-SQL-FIT
 
 * mT5-large trained in English, Portuguese, Spanish and French (together) FIT 120Ksteps[Checkpint 102100, ESM all: 0.687 Best inferences in Portuguese](https://drive.google.com/file/d/1VCfLnQgZsrb8lJFkhxzPoyfqc7dEY_K-/view?usp=sharing)
 * mT5-large trained in English, Portuguese, Spanish and French (together) FIT 120Ksteps:
-	* Checkpoint: [Checkpint 105100] https://drive.google.com/file/d/1h0knsFfD6XCXxoEVSFR_I1WdYvMOkcvA/view?usp=sharing)
-	* Inference(simplemma.load_data('en','pt','es','fr')): [ESM all: 0.735 Best inferences in English](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-en-pt-es-fr-120Ksteps/105100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-120Ksteps-FIT-en-pt-es-fr_Div-en-eval-step105100.txt)
-	* Inferencesimplemma.load_data('en'): [ESM all: 0.736 Best inferences in English](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-en-pt-es-fr-120Ksteps/105100/0.736/spider_eval_match_ratsqlgap-mT5-large-NoGAP-120Ksteps-FIT-en-pt-es-fr_Div-en-eval-step105100.txt)
+	* Checkpoint: [Checkpint 105100](https://drive.google.com/file/d/1h0knsFfD6XCXxoEVSFR_I1WdYvMOkcvA/view?usp=sharing)
+	* Inference (simplemma.load_data('en','pt','es','fr')): [ESM all: 0.735 Best inferences in English](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-en-pt-es-fr-120Ksteps/105100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-120Ksteps-FIT-en-pt-es-fr_Div-en-eval-step105100.txt)
+	* Inference (simplemma.load_data('en'): [ESM all: 0.736 Best inferences in English](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-en-pt-es-fr-120Ksteps/105100/0.736/spider_eval_match_ratsqlgap-mT5-large-NoGAP-120Ksteps-FIT-en-pt-es-fr_Div-en-eval-step105100.txt)
 
 * mT5-large trained in English, Portuguese, Spanish and French (together) FIT 120Ksteps[Checkpint 114100, ESM all: 0.689 Best inferences in Spanish and 0.698 in French](https://drive.google.com/file/d/13DIB5p97bUnquLpd-dO0-Q1bA9LWjIXD/view?usp=sharing)
 
