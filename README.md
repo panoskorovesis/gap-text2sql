@@ -91,12 +91,8 @@ python run.py train experiments/spider-configs/spider-BART-large-en-train_en-eva
 You then get the training checkpoints in the paths:
 `logdir/BART-large-en-train`
 
-## Results
 
-The results are in the directory [inference-results](https://github.com/C4AI/gap-text2sql/tree/main/mrat-sql-gap/inference-results).
-
-
-## Checkpoints
+## Checkpoints and Inferences
 
 The checkpoints are available here (ESM - Exact Set Matching Accuracy):
 Paper mRAT-SQL+GAP - Multilingual version of the RAT-SQL+GAP
@@ -134,7 +130,7 @@ Future work of the paper mRAT-SQL+GAP
 		* Inference - French: [ESM all: 0.649](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mBART50MtoM-large-en-pt-es-fr-train/44100/spider_eval_match_ratsqlgap-mBART50MtoM-large-en-pt-es-fr-train_fr-eval-step44100.txt)
 	
 
-Artigo mRAT-SQL-FIT
+Paper mRAT-SQL-FIT
 
 
 * mT5-large trained in English 51Ksteps
@@ -167,6 +163,25 @@ Artigo mRAT-SQL-FIT
 	* Checkpoint: [290100](https://drive.google.com/file/d/19Uvfw7QL-8i3yKvybRe9ADLDuSa-MeJv/view?usp=sharing)
 		* Inference - English: [ESM all: 0.697]
 
+
+Other Best Results
+* T5-v1_1-large  trained in English FIT 150Ksteps
+	* Checkpoint: [150300](https://drive.google.com/file/d/14iAERUfhNdU7Gdx9gD9HGuGrnumHaPtq/view?usp=sharing)			
+		* Inference - English: [ESM all: 0.736]
+		
+* mT5-large trained in English, Portuguese, Spanish and French (together) + Non Linear Data Augmentation by rules for extra question 3enr-3ptr-3esr-3frr FIT 150Ksteps
+	* Checkpoint: [128100](https://drive.google.com/file/d/1OjBr9CR0B9feRuk5-Wjh5VpAosB15uNR/view?usp=sharing)
+		* Inference - English: [ESM all: 0.726]
+	* Checkpoint: [125100](https://drive.google.com/file/d/1bLkTK7qJmwQatK_r6tjSmo6fYYtR4oJ3/view?usp=sharing)
+		* Inference - Portuguese: [ESM all: 0.698]	
+		* Inference - French: [ESM all: 0.700]
+		
+	* Checkpoint: [136100](https://drive.google.com/file/d/1zAcHQS0iNOXRm4iaiqybuAFETfitwBnR/view?usp=sharing)
+		* Inference - Spanish: [ESM all: 0.691]
+
+## Results
+
+The results are in the directory [inference-results](https://github.com/C4AI/gap-text2sql/tree/main/mrat-sql-gap/inference-results).
 
 ## Security
 
