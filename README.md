@@ -177,7 +177,7 @@ Paper mRAT-SQL-FIT
 Other Best Results
 * T5-v1_1-large  trained in English FIT 150Ksteps
 	* Checkpoint: [150300](https://drive.google.com/file/d/14iAERUfhNdU7Gdx9gD9HGuGrnumHaPtq/view?usp=sharing)			
-		* Inference - English: [ESM all: 0.736]
+		* Inference - English: [ESM all: 0.736](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/T5-v1_1-large-FIT-en-150Ksteps-train/spider_eval_match_ratsqlgap-T5-v1_1-large-NoGAP-150Ksteps-FIT-en_One-en-eval-step150300.txt)
 		
 * mT5-large trained in English, Portuguese, Spanish and French (together) + Non Linear Data Augmentation by rules for extra question 3enr-3ptr-3esr-3frr FIT 150Ksteps
 	* Checkpoint: [128100](https://drive.google.com/file/d/1OjBr9CR0B9feRuk5-Wjh5VpAosB15uNR/view?usp=sharing)
