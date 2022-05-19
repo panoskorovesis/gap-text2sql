@@ -181,13 +181,13 @@ Other Best Results
 		
 * mT5-large trained in English, Portuguese, Spanish and French (together) + Non Linear Data Augmentation by rules for extra question 3enr-3ptr-3esr-3frr FIT 150Ksteps
 	* Checkpoint: [128100](https://drive.google.com/file/d/1OjBr9CR0B9feRuk5-Wjh5VpAosB15uNR/view?usp=sharing)
-		* Inference - English: [ESM all: 0.726]
+		* Inference - English: [ESM all: 0.726](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-extra-150Ksteps-train/128100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-150Ksteps-FIT-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr_Div-en-eval-step128100.txt)
 	* Checkpoint: [125100](https://drive.google.com/file/d/1bLkTK7qJmwQatK_r6tjSmo6fYYtR4oJ3/view?usp=sharing)
-		* Inference - Portuguese: [ESM all: 0.698]	
-		* Inference - French: [ESM all: 0.700]
+		* Inference - Portuguese: [ESM all: 0.698](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-extra-150Ksteps-train/125100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-150Ksteps-FIT-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr_Div-pt-eval-step125100.txt)
+		* Inference - French: [ESM all: 0.700](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-extra-150Ksteps-train/125100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-150Ksteps-FIT-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr_Div-fr-eval-step125100.txt)
 		
 	* Checkpoint: [136100](https://drive.google.com/file/d/1zAcHQS0iNOXRm4iaiqybuAFETfitwBnR/view?usp=sharing)
-		* Inference - Spanish: [ESM all: 0.691]
+		* Inference - Spanish: [ESM all: 0.691](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-FIT-extra-150Ksteps-train/136100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-150Ksteps-FIT-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr_Div-es-eval-step136100.txt)
 
 ## Results
 
