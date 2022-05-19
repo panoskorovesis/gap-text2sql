@@ -1,0 +1,18 @@
+Date= sex 02 jul 2021 17:26:51 -03
+Folder=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap
+SubFolder=iedir/mBART50MtoM-large-en-pt-es-fr-train
+Gold File=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/ie_dirs/mBART50MtoM-large-en-pt-es-fr-train/divided/gold-pt_mBART50MtoM-large-en-pt-es-fr-Eval-en-pt-es-fr.txt
+Predict File=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/ie_dirs/mBART50MtoM-large-en-pt-es-fr-train/divided/predict-pt_mBART50MtoM-large-en-pt-es-fr-Eval-en-pt-es-fr_1_true_1-step-step.txt
+Database=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/data/spider-pt/database
+Type=exec
+Command example:
+python3 evaluation.py --gold=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/ie_dirs/mBART50MtoM-large-en-pt-es-fr-train/divided/gold-pt_mBART50MtoM-large-en-pt-es-fr-Eval-en-pt-es-fr.txt --pred=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/ie_dirs/mBART50MtoM-large-en-pt-es-fr-train/divided/predict-pt_mBART50MtoM-large-en-pt-es-fr-Eval-en-pt-es-fr_1_true_1-step44100.txt --db=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/data/spider-pt/database --table=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/data/spider-pt/tables.json --etype exec --plug_value
+===================== EXECUTION ACCURACY =====================
+. . . count 248 446 174 166 1034
+Train Infer Checkpoint Type Easy Medium Hard Extra All
+mBART50MtoM-large-en-pt-es-fr-train pt-eval 39100 execution 0.831 0.482 0.494 0.187 0.520
+mBART50MtoM-large-en-pt-es-fr-train pt-eval 40100 execution 0.823 0.482 0.494 0.175 0.516
+mBART50MtoM-large-en-pt-es-fr-train pt-eval 41100 execution 0.823 0.478 0.500 0.169 0.515
+mBART50MtoM-large-en-pt-es-fr-train pt-eval 42100 execution 0.839 0.507 0.500 0.181 0.533
+mBART50MtoM-large-en-pt-es-fr-train pt-eval 43100 execution 0.839 0.496 0.500 0.187 0.529
+mBART50MtoM-large-en-pt-es-fr-train pt-eval 44100 execution 0.843 0.489 0.500 0.187 0.527

@@ -1,0 +1,17 @@
+Date= qui 23 set 2021 10:25:12 -03
+Folder=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap
+SubFolder=iedir/mT5-large-NoGAP-en-pt-es-fr-train
+Gold File=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/ie_dirs/mT5-large-NoGAP-en-pt-es-fr-train/divided/gold-pt_mT5-large-NoGAP-en-pt-es-fr-train_en-pt-es-fr-eval.txt
+Predict File=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/ie_dirs/mT5-large-NoGAP-en-pt-es-fr-train/divided/predict-pt_mT5-large-NoGAP-en-pt-es-fr-train_en-pt-es-fr-eval_1_true_1-step-step.txt
+Database=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/data/spider-pt/database
+Type=match
+Command example:
+python3 evaluation.py --gold=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/ie_dirs/mT5-large-NoGAP-en-pt-es-fr-train/divided/gold-pt_mT5-large-NoGAP-en-pt-es-fr-train_en-pt-es-fr-eval.txt --pred=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/ie_dirs/mT5-large-NoGAP-en-pt-es-fr-train/divided/predict-pt_mT5-large-NoGAP-en-pt-es-fr-train_en-pt-es-fr-eval_1_true_1-step51300.txt --db=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/data/spider-pt/database --table=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/data/spider-pt/tables.json --etype match --plug_value
+====================== EXACT MATCHING ACCURACY =====================
+. . . . count 248 446 174 166 1034
+Train Infer Checkpoint Type Type Easy Medium Hard Extra All
+mT5-large-NoGAP-en-pt-es-fr-train pt-eval 42100 exact match 0.851 0.729 0.557 0.422 0.680
+mT5-large-NoGAP-en-pt-es-fr-train pt-eval 49100 exact match 0.839 0.717 0.523 0.422 0.666
+mT5-large-NoGAP-en-pt-es-fr-train pt-eval 50100 exact match 0.855 0.720 0.546 0.416 0.674
+mT5-large-NoGAP-en-pt-es-fr-train pt-eval 51100 exact match 0.855 0.713 0.540 0.398 0.667
+mT5-large-NoGAP-en-pt-es-fr-train pt-eval 51300 exact match 0.851 0.704 0.534 0.392 0.661

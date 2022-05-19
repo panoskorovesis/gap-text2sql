@@ -1,0 +1,95 @@
+Date= qua 10 nov 2021 17:59:11 -03
+Folder=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap
+SubFolder=iedir/mT5-large-NoGAP-en-pt-es-fr-train
+Gold File=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/ie_dirs/mT5-large-NoGAP-en-pt-es-fr-train/divided/gold-pt_mT5-large-NoGAP-en-pt-es-fr-train_en-pt-es-fr-eval.txt
+Predict File=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/ie_dirs/mT5-large-NoGAP-en-pt-es-fr-train/divided/predict-pt_mT5-large-NoGAP-en-pt-es-fr-train_en-pt-es-fr-eval_1_true_1-step-step.txt
+Database=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/data/spider-pt/database
+Type=match
+Command example:
+python3 evaluation.py --gold=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/ie_dirs/mT5-large-NoGAP-en-pt-es-fr-train/divided/gold-pt_mT5-large-NoGAP-en-pt-es-fr-train_en-pt-es-fr-eval.txt --pred=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/ie_dirs/mT5-large-NoGAP-en-pt-es-fr-train/divided/predict-pt_mT5-large-NoGAP-en-pt-es-fr-train_en-pt-es-fr-eval_1_true_1-step120300.txt --db=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/data/spider-pt/database --table=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/data/spider-pt/tables.json --etype match --plug_value
+====================== EXACT MATCHING ACCURACY =====================
+. . . . count 248 446 174 166 1034
+Train_Infer Checkpoint Type Type Easy Medium Hard Extra All
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 38500 exact match 0.827 0.646 0.506 0.392 0.625
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 39500 exact match 0.843 0.693 0.500 0.386 0.647
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 40500 exact match 0.847 0.679 0.500 0.337 0.634
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 41500 exact match 0.794 0.650 0.494 0.355 0.611
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 42500 exact match 0.831 0.686 0.420 0.361 0.624
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 43500 exact match 0.839 0.709 0.471 0.392 0.649
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 44500 exact match 0.843 0.675 0.483 0.313 0.625
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 45500 exact match 0.843 0.673 0.523 0.361 0.638
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 46500 exact match 0.823 0.648 0.517 0.373 0.624
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 47500 exact match 0.831 0.670 0.517 0.349 0.632
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 48500 exact match 0.823 0.706 0.529 0.361 0.649
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 49500 exact match 0.806 0.610 0.529 0.373 0.605
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 50500 exact match 0.835 0.677 0.460 0.313 0.620
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 51500 exact match 0.827 0.666 0.511 0.355 0.629
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 52500 exact match 0.815 0.682 0.483 0.380 0.632
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 53500 exact match 0.843 0.664 0.511 0.380 0.635
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 54500 exact match 0.839 0.693 0.489 0.307 0.632
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 55500 exact match 0.806 0.675 0.500 0.355 0.626
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 56500 exact match 0.843 0.661 0.534 0.337 0.632
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 57500 exact match 0.815 0.697 0.506 0.398 0.645
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 58500 exact match 0.810 0.657 0.500 0.386 0.624
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 59500 exact match 0.810 0.652 0.511 0.386 0.624
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 60500 exact match 0.835 0.702 0.431 0.325 0.628
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 61500 exact match 0.843 0.639 0.506 0.337 0.617
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 62500 exact match 0.847 0.702 0.466 0.398 0.648
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 63500 exact match 0.831 0.677 0.489 0.404 0.638
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 64500 exact match 0.851 0.682 0.557 0.410 0.658
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 65500 exact match 0.851 0.675 0.540 0.325 0.638
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 66500 exact match 0.867 0.688 0.517 0.373 0.652
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 67500 exact match 0.867 0.686 0.540 0.422 0.662
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 68500 exact match 0.831 0.717 0.534 0.386 0.661
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 69500 exact match 0.827 0.668 0.534 0.355 0.633
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 70500 exact match 0.819 0.688 0.534 0.428 0.652
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 71500 exact match 0.839 0.693 0.489 0.349 0.638
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 72500 exact match 0.835 0.731 0.500 0.428 0.668
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 73500 exact match 0.851 0.713 0.563 0.416 0.673
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 74500 exact match 0.855 0.711 0.511 0.416 0.664
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 75500 exact match 0.815 0.677 0.511 0.410 0.639
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 76500 exact match 0.839 0.713 0.523 0.440 0.667
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 77500 exact match 0.827 0.695 0.511 0.404 0.649
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 78500 exact match 0.851 0.722 0.529 0.422 0.672
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 79500 exact match 0.863 0.720 0.523 0.398 0.669
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 80500 exact match 0.839 0.693 0.511 0.343 0.641
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 81500 exact match 0.847 0.720 0.517 0.416 0.667
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 82500 exact match 0.843 0.706 0.523 0.386 0.657
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 83500 exact match 0.851 0.722 0.517 0.392 0.665
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 84500 exact match 0.847 0.711 0.523 0.319 0.649
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 85500 exact match 0.855 0.733 0.517 0.416 0.675
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 86500 exact match 0.863 0.697 0.529 0.331 0.650
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 87500 exact match 0.859 0.693 0.523 0.410 0.659
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 88500 exact match 0.835 0.733 0.477 0.386 0.659
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 89500 exact match 0.810 0.702 0.511 0.404 0.648
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 90500 exact match 0.867 0.702 0.546 0.398 0.666
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 91500 exact match 0.831 0.682 0.511 0.398 0.643
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 92500 exact match 0.855 0.679 0.506 0.398 0.647
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 93500 exact match 0.835 0.679 0.540 0.386 0.646
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 94500 exact match 0.863 0.702 0.500 0.404 0.659
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 95500 exact match 0.859 0.693 0.511 0.392 0.654
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 96500 exact match 0.823 0.704 0.517 0.404 0.653
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 97500 exact match 0.859 0.695 0.517 0.440 0.663
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 98500 exact match 0.843 0.686 0.534 0.392 0.651
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 99500 exact match 0.859 0.704 0.563 0.392 0.667
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 100500 exact match 0.839 0.697 0.534 0.398 0.656
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 101500 exact match 0.839 0.693 0.540 0.392 0.654
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 102500 exact match 0.843 0.693 0.557 0.392 0.658
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 103500 exact match 0.835 0.700 0.523 0.392 0.653
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 104500 exact match 0.827 0.715 0.523 0.386 0.657
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 105500 exact match 0.831 0.711 0.557 0.404 0.664
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 106500 exact match 0.867 0.717 0.546 0.404 0.674
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 107500 exact match 0.827 0.722 0.534 0.404 0.664
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 108500 exact match 0.859 0.706 0.540 0.373 0.662
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 109500 exact match 0.835 0.700 0.534 0.380 0.653
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 110500 exact match 0.839 0.693 0.523 0.434 0.658
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 111500 exact match 0.831 0.702 0.529 0.398 0.655
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 112500 exact match 0.855 0.702 0.557 0.404 0.666
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 113500 exact match 0.847 0.693 0.563 0.392 0.660
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 114500 exact match 0.855 0.702 0.517 0.373 0.655
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 115500 exact match 0.839 0.706 0.529 0.337 0.649
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 116500 exact match 0.827 0.704 0.534 0.404 0.657
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 117500 exact match 0.843 0.704 0.575 0.380 0.663
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 118500 exact match 0.847 0.702 0.557 0.434 0.669
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 119500 exact match 0.855 0.700 0.563 0.398 0.665
+mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval 120300 exact match 0.851 0.706 0.546 0.392 0.663

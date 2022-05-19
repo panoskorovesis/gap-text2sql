@@ -1,0 +1,49 @@
+Date= qui 01 jul 2021 20:06:00 -03
+Folder=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap
+SubFolder=iedir/mBART50MtoM-large-en-pt-es-fr-train
+Gold File=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/ie_dirs/mBART50MtoM-large-en-pt-es-fr-train/divided/gold-fr_mBART50MtoM-large-en-pt-es-fr-Eval-en-pt-es-fr.txt
+Predict File=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/ie_dirs/mBART50MtoM-large-en-pt-es-fr-train/divided/predict-fr_mBART50MtoM-large-en-pt-es-fr-Eval-en-pt-es-fr_1_true_1-step-step.txt
+Database=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/data/spider-fr/database
+Type=match
+Command example:
+python3 evaluation.py --gold=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/ie_dirs/mBART50MtoM-large-en-pt-es-fr-train/divided/gold-fr_mBART50MtoM-large-en-pt-es-fr-Eval-en-pt-es-fr.txt --pred=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/ie_dirs/mBART50MtoM-large-en-pt-es-fr-train/divided/predict-fr_mBART50MtoM-large-en-pt-es-fr-Eval-en-pt-es-fr_1_true_1-step44100.txt --db=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/data/spider-fr/database --table=/mnt/Files/nl2sql/gap-text2sql/rat-sql-gap/data/spider-fr/tables.json --etype match --plug_value
+====================== EXACT MATCHING ACCURACY =====================
+- - - count 248 446 174 166 1034
+Train Infer Checkpoint Type Type Easy Medium Hard Extra All
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 8100 exact match 0.690 0.545 0.471 0.331 0.533
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 9100 exact match 0.778 0.549 0.460 0.337 0.555
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 10100 exact match 0.774 0.576 0.477 0.367 0.574
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 11100 exact match 0.782 0.614 0.523 0.343 0.596
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 12100 exact match 0.823 0.639 0.494 0.410 0.622
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 13100 exact match 0.815 0.617 0.494 0.410 0.610
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 14100 exact match 0.782 0.585 0.454 0.361 0.574
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 15100 exact match 0.815 0.612 0.483 0.386 0.603
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 16100 exact match 0.754 0.603 0.534 0.295 0.578
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 17100 exact match 0.802 0.639 0.494 0.367 0.610
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 18100 exact match 0.810 0.639 0.489 0.386 0.614
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 19100 exact match 0.827 0.646 0.529 0.380 0.627
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 20100 exact match 0.815 0.596 0.540 0.331 0.597
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 21100 exact match 0.750 0.614 0.511 0.325 0.583
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 22100 exact match 0.758 0.599 0.506 0.349 0.581
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 23100 exact match 0.770 0.655 0.534 0.373 0.617
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 24100 exact match 0.815 0.637 0.523 0.343 0.613
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 25100 exact match 0.802 0.632 0.552 0.404 0.623
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 26100 exact match 0.774 0.650 0.552 0.367 0.618
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 27100 exact match 0.770 0.664 0.540 0.337 0.616
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 28100 exact match 0.794 0.643 0.511 0.404 0.619
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 29100 exact match 0.790 0.670 0.546 0.349 0.627
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 30100 exact match 0.815 0.623 0.529 0.277 0.598
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 31100 exact match 0.819 0.628 0.546 0.355 0.616
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 32100 exact match 0.810 0.650 0.552 0.373 0.628
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 33100 exact match 0.790 0.643 0.552 0.386 0.622
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 34100 exact match 0.798 0.652 0.575 0.398 0.633
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 35100 exact match 0.806 0.639 0.552 0.355 0.619
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 36100 exact match 0.794 0.643 0.552 0.373 0.621
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 37100 exact match 0.802 0.652 0.563 0.355 0.626
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 38100 exact match 0.819 0.632 0.563 0.307 0.613
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 39100 exact match 0.831 0.659 0.569 0.355 0.636
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 40100 exact match 0.823 0.661 0.540 0.355 0.631
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 41100 exact match 0.815 0.643 0.580 0.380 0.632
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 42100 exact match 0.827 0.657 0.557 0.410 0.641
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 43100 exact match 0.819 0.655 0.592 0.367 0.637
+mBART50MtoM-large-en-pt-es-fr-train fr-eval 44100 exact match 0.815 0.684 0.580 0.380 0.649
