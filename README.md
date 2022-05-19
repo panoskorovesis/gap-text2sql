@@ -137,6 +137,16 @@ Paper mRAT-SQL-FIT
 	* Checkpoint: [50100](https://drive.google.com/file/d/1BZ519XxYtXpxxO1iiBy8kSLG4eq34yEX/view?usp=sharing)
 		* Inference - English: [ESM all: 0.684](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-train/spider_eval_match_ratsqlgap-mT5-large-en-train_en-eval-step50100.txt)
 
+* mT5-large trained in English, Portuguese, Spanish and French (together) 51Ksteps - just best inferences
+	* Checkpoint: [51100](https://drive.google.com/file/d/1GSQX0dJlsipQPBvYrBqY0SMFhFGCTW0E/view?usp=sharing)
+		* Inference - English: [ESM all: 0.715]()
+	* Checkpoint: [42100](https://drive.google.com/file/d/1qx2QeZhoygCstZP_QgtLkTlVfBVHzZin/view?usp=sharing)
+		* Inference - Portuguese: [ESM all: 0.680]()
+	* Checkpoint: [50100](https://drive.google.com/file/d/1eDm7SHz2il1RYryGLSYVGxt-ozHugJcf/view?usp=sharing)
+		* Inference - Spanish: [ESM all: 0.660]()
+		* Inference - French: [ESM all: 0.672]()
+
+
 * mT5-large trained in English, Portuguese, Spanish and French (together) 120Ksteps - just best inferences
 	* Checkpoint: [77500](https://drive.google.com/file/d/1eUYr_i5O9U1ldm_pBdGozmiRt_42BCh8/view?usp=sharing)
 		* Inference - English: [ESM all: 0.718](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-pt-es-fr-120Ksteps/77500/spider_eval_match_ratsqlgap-mT5-large-NoGAP-en-pt-es-fr-train_Div-en-eval-step77500.txt)
@@ -181,7 +191,7 @@ Other Best Results
 
 ## Results
 
-The results are in the directory [inference-results](https://github.com/C4AI/gap-text2sql/tree/main/mrat-sql-gap/inference-results).
+All intermediate files of the results are in the directory [inference-results](https://github.com/C4AI/gap-text2sql/tree/main/mrat-sql-gap/inference-results).
 
 ## Security
 
