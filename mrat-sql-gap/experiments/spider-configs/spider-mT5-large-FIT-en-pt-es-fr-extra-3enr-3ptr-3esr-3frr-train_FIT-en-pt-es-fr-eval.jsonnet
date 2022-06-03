@@ -1,7 +1,7 @@
 {
     local exp_id = 1,
-    logdir: "logdir/mT5-large-FIT-en-pt-es-fr-train",
-    model_config: "experiments/spider-configs/mT5-large-FIT-en-pt-es-fr/mT5.jsonnet",
+    logdir: "logdir/mT5-large-150Ksteps-FIT-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr-train",
+    model_config: "experiments/spider-configs/mT5-large-FIT-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr/mT5.jsonnet",
     model_config_args: {
         bs: 4,
         num_batch_accumulated: 2,
@@ -24,10 +24,10 @@
         clause_order: null, # strings like "SWGOIF", it will be prioriotized over end_with_from 
     },
 
-    eval_name: "mT5-large-120Ksteps-FIT-en-pt-es-fr-train_en-pt-es-fr-eval_%d_%s_%d" % [exp_id, self.eval_use_heuristic, self.eval_beam_size],
-    eval_output: "ie_dirs/mt5-large-FIT-en-pt-es-fr-train",
+    eval_name: "mT5-large-150Ksteps-FIT-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr-train_FIT-en-pt-es-fr-eval_%d_%s_%d" % [exp_id, self.eval_use_heuristic, self.eval_beam_size],
+    eval_output: "ie_dirs/mT5-large-150Ksteps-FIT-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr",
     eval_beam_size: 1,
     eval_use_heuristic: true,
-    eval_steps: [ 1000 * x + 100 for x in std.range(100, 190)] + [190300],
+    eval_steps: [ 1000 * x + 100 for x in std.range(38, 150)] + [150300],
     eval_section: "val",
 }
