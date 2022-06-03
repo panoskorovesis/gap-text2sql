@@ -91,7 +91,7 @@ function(output_from, data_path='data/spider-FIT-en-pt-es-fr/') {
         save_every_n: 100,
         report_every_n: 10,
 
-        max_steps: 190300,
+        max_steps: 120300,
         num_eval_items: 50,
     },
     optimizer: {

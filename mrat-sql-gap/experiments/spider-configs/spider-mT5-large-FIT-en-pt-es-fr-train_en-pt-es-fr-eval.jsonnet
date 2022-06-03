@@ -24,7 +24,7 @@
         clause_order: null, # strings like "SWGOIF", it will be prioriotized over end_with_from 
     },
 
-    eval_name: "mT5-large-190Ksteps-FIT-en-pt-es-fr-train_en-pt-es-fr-eval_%d_%s_%d" % [exp_id, self.eval_use_heuristic, self.eval_beam_size],
+    eval_name: "mT5-large-120Ksteps-FIT-en-pt-es-fr-train_en-pt-es-fr-eval_%d_%s_%d" % [exp_id, self.eval_use_heuristic, self.eval_beam_size],
     eval_output: "ie_dirs/mt5-large-FIT-en-pt-es-fr-train",
     eval_beam_size: 1,
     eval_use_heuristic: true,
