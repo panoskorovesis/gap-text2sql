@@ -1,6 +1,6 @@
 {
     local exp_id = 1,
-    logdir: "logdir/mT5-large-FIT-en-pt-es-fr-train",
+    logdir: "logdir/mT5-large-120Ksteps-FIT-en-pt-es-fr-train",
     model_config: "experiments/spider-configs/mT5-large-FIT-en-pt-es-fr/mT5.jsonnet",
     model_config_args: {
         bs: 4,
