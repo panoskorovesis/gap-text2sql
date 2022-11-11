@@ -198,7 +198,8 @@ echo
 echo "FIT"
 echo
 echo "Build English FIT dataset directory"
-echo "The original version of the Spider dataset is distributed under the CC BY-SA 4.0 license."
+echo "The original version of the Spider dataset (train_spider.json, train_others.json, and dev.json) is distributed under the CC BY-SA 4.0 license."
+echo "The modified versions of tables.json is distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
 mkdir data/spider-FIT-en
 cp ./spider-FIT/tables.json data/spider-FIT-en/
 cp ./spider/train_others.json data/spider-FIT-en/
@@ -214,7 +215,7 @@ ln -s $(pwd)/spider-FIT/database data/spider-FIT-en/database
 
 echo
 echo "Build English data augmentation by rules and data augmentation by backtranslation  FIT dataset directory"
-echo "The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
+echo "The modified versions of tables.json, train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
 echo "dev.json is the same of spider-en, train_others.json is the same of spider-en-enr-enb" 
 mkdir data/spider-FIT-en-enr-enb
 cp ./spider-FIT/tables.json data/spider-FIT-en-enr-enb/
@@ -230,7 +231,7 @@ ln -s $(pwd)/spider-FIT/database data/spider-FIT-en-enr-enb/database
 
 echo
 echo "Build English non-linear data augmentation (extra question/queries in train_spider.json) 3 x by rules and 1 x by backtranslation FIT dataset directory"
-echo "The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
+echo "The modified versions of tables.json, train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
 echo "dev.json is the same of spider-en, train_others.json is the same of spider-en"
 mkdir data/spider-FIT-en-extra-3enr-1enb
 cp ./spider-FIT/tables.json data/spider-FIT-en-extra-3enr-1enb/
@@ -247,7 +248,7 @@ ln -s $(pwd)/spider-FIT/database data/spider-FIT-en-extra-3enr-1enb/database
 
 echo
 echo "Build Portuguese FIT dataset directory"
-echo "The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
+echo "The modified versions of tables.json, train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
 mkdir data/spider-FIT-pt
 cp ./spider-FIT/tables.json data/spider-FIT-pt/
 cp ./data/spider-pt/train_others.json data/spider-FIT-pt/
@@ -261,7 +262,7 @@ ln -s $(pwd)/spider-FIT/database data/spider-FIT-pt/database
 
 echo
 echo "Build Spanish FIT dataset directory"
-echo "The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
+echo "The modified versions of tables.json, train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
 mkdir data/spider-FIT-es
 cp ./spider-FIT/tables.json data/spider-FIT-es/
 cp ./data/spider-es/train_others.json data/spider-FIT-es/
@@ -275,7 +276,7 @@ ln -s $(pwd)/spider-FIT/database data/spider-FIT-es/database
 
 echo
 echo "Build French FIT dataset directory"
-echo "The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
+echo "The modified versions of tables.json, train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
 mkdir data/spider-FIT-fr
 cp ./spider-FIT/tables.json data/spider-FIT-fr/
 cp ./data/spider-fr/train_others.json data/spider-FIT-fr/
@@ -289,7 +290,7 @@ ln -s $(pwd)/spider-FIT/database data/spider-FIT-fr/database
 
 echo
 echo "Build  English, Portuguese, Spanish and French FIT dataset directory"
-echo "The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
+echo "The modified versions of tables.json, train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
 mkdir data/spider-FIT-en-pt-es-fr
 cp ./spider-FIT/tables.json data/spider-FIT-en-pt-es-fr/
 cp ./data/spider-en-pt-es-fr/train_others.json data/spider-FIT-en-pt-es-fr/
@@ -303,7 +304,7 @@ ln -s $(pwd)/spider-FIT/database data/spider-FIT-en-pt-es-fr/database
 
 echo
 echo "Build English, Portuguese, Spanish, French; non-linear data augmentation (extra question/queries in train_spider.json) by rules in all four languages FIT dataset directory"
-echo "The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
+echo "The modified versions of tables.json, train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
 echo "dev.json is the same of spider-en-pt-es-fr, train_others.json is the same of spider-en-pt-es-fr"
 mkdir data/spider-FIT-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr
 cp ./spider-FIT/tables.json data/spider-FIT-en-pt-es-fr-extra-3enr-3ptr-3esr-3frr/
@@ -318,7 +319,7 @@ ln -s $(pwd)/spider-FIT/database data/spider-FIT-en-pt-es-fr-extra-3enr-3ptr-3es
 
 echo
 echo "Build English, Portuguese, Spanish, French; Data augmentation just in English by rules and by backtranslation FIT dataset directory"
-echo "The modified versions of train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
+echo "The modified versions of tables.json, train_spider.json, train_others.json, and dev.json are distributed under the CC BY-SA 4.0 license, respecting ShareAlike."
 echo "dev.json is the same of spider-en-pt-es-fr, train_others.json is the same of spider-en-pt-es-fr-enr-enb"
 mkdir data/spider-FIT-en-pt-es-fr-enr-enb
 cp ./spider-FIT/tables.json data/spider-FIT-en-pt-es-fr-enr-enb/
