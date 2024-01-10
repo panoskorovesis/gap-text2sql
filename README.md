@@ -112,10 +112,10 @@ Paper mRAT-SQL+GAP - Multilingual version of the RAT-SQL+GAP
 	* Checkpoint [39100](https://drive.google.com/file/d/1fWPH4bG9-UjW-p6OgmpINWLLsnOopWLh/view?usp=sharing)
 		* Inference - Portuguese: [ESM all: 0.588](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mBART50MtoM-large-pt-train/spider_eval_match_ratsqlgap-mBART50MtoM-largeSimplemmaPtEn-step39100.txt)
 * mBART50MtoM-large trained in English and Portuguese (together) 
-	* Checkpoint [41000](https://drive.google.com/file/d/1szb44h_2t3fK2Vc02PdaAjDqnkWqM-0U/view?usp=sharing)
+	* Checkpoint [41000](https://huggingface.co/Marchanjo/mRAT-SQL/resolve/main/mBART50MtoM-large-en-pt-train_model_checkpoint-00041000)
 		* Inference - English: [ESM all: 0.664](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mBART50MtoM-large-en-pt-train/41000/spider_eval_match_ratsqlgap-mBART50MtoM-largeSimplemmaPtEn-pt-en-Eval-en-step41000.txt)
 		* Inference - Portuguese: [ESM all: 0.595 Best inferences in Portuguese](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mBART50MtoM-large-en-pt-train/41000/spider_eval_match_ratsqlgap-mBART50MtoM-largeSimplemmaPtEn-pt-en-Eval-pt-step41000.txt)
-	* Checkpoint [21100](https://drive.google.com/file/d/1MeLkvGf9-5it1JXnUvU9AmXVnnbAAfP0/view?usp=sharing)
+	* Checkpoint [21100](https://huggingface.co/Marchanjo/mRAT-SQL/resolve/main/mBART50MtoM-large-en-pt-train_model_checkpoint-00021100)
 		* Inference - English: [ESM all: 0.678 Best inferences in English](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mBART50MtoM-large-en-pt-train/21100/spider_eval_match_ratsqlgap-mBART50MtoM-largeSimplemmaPtEn-pt-en-Eval-en-step21100.txt)
 		* Inference - Portuguese: [ESM all: 0.581](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mBART50MtoM-large-en-pt-train/21100/spider_eval_match_ratsqlgap-mBART50MtoM-largeSimplemmaPtEn-pt-en-Eval-pt-step21100.txt)
 
