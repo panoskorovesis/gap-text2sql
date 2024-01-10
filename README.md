@@ -100,7 +100,7 @@ You then get the training checkpoints in the paths:
 The checkpoints are available here (ESM - Exact Set Matching Accuracy):
 Paper mRAT-SQL+GAP - Multilingual version of the RAT-SQL+GAP
 * BART-large trained in English [, ESM all: 0.718]
-	* Checkpoint: [40300](https://huggingface.co/Marchanjo/mRAT-SQL/resolve/main/model_checkpoint-00040300)
+	* Checkpoint: [40300](https://huggingface.co/Marchanjo/mRAT-SQL/resolve/main/BART-large-en-train-model_checkpoint-00040300)
 		* Inference - English: [ESM all: 0.718 - Baseline](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/BART-large-en-train/spider_eval_match_ratsqlgap-BART-ori-step40300.txt)
 * BERTimbau-base trained in Portuguese 
 	* Checkpoint: [24100](https://drive.google.com/file/d/1gIZS0RuIxdjmm7sNbA3R6p6--9iMJmW8/view?usp=sharing)
