@@ -121,7 +121,7 @@ Paper mRAT-SQL+GAP - Multilingual version of the RAT-SQL+GAP
 
 Future work of the paper mRAT-SQL+GAP
 * BERTimbau-large trained in Portuguese
-	* Checkpoint: [40100](https://drive.google.com/file/d/1q1NOxisOcIdkMftzGPVxBDn989LDDG3X/view?usp=sharing)
+	* Checkpoint: [40100](https://huggingface.co/Marchanjo/mRAT-SQL/resolve/main/BERTimbau-large-pt-train_model_model_checkpoint-00040100)
 		* Inference - Portuguese: [ESM all: 0.418](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/BERTimbau-large-pt-train/spider_eval_match_ratsqlgap-BERTimbau-large-pt-train-Eval-pt-step40100.txt)
 * mBART50MtoM-large trained in English, Portuguese, Spanish and French (together) - just best inferences
 	* Checkpoint: [39100](https://drive.google.com/file/d/18nioEDEpZf-6CNH_sU3IMZxsSNts_a4y/view?usp=sharing)
