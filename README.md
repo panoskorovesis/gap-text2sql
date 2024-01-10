@@ -151,13 +151,13 @@ Paper mRAT-SQL-FIT
 
 
 * mT5-large trained in English, Portuguese, Spanish and French (together) 120Ksteps - just best inferences
-	* Checkpoint: [77500](https://drive.google.com/file/d/1eUYr_i5O9U1ldm_pBdGozmiRt_42BCh8/view?usp=sharing)
+	* Checkpoint: [77500](https://huggingface.co/Marchanjo/mRAT-SQL/resolve/main/mT5-large-en-pt-es-fr-120Ksteps_model_checkpoint-00077500)
 		* Inference - English: [ESM all: 0.718](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-pt-es-fr-120Ksteps-train//77500/spider_eval_match_ratsqlgap-mT5-large-NoGAP-en-pt-es-fr-train_Div-en-eval-step77500.txt)
-	* Checkpoint: [85500](https://drive.google.com/file/d/1n55OlnyE3RDQtUXMHPwC99Za0xfQavrK/view?usp=sharing)
+	* Checkpoint: [85500](https://huggingface.co/Marchanjo/mRAT-SQL/resolve/main/mT5-large-en-pt-es-fr-120Ksteps_model_checkpoint-00085500)
 		* Inference - Portuguese: [ESM all: 0.675](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-pt-es-fr-120Ksteps-train//85500/spider_eval_match_ratsqlgap-mT5-large-NoGAP-en-pt-es-fr-train_Div-pt-eval-step85500.txt)
-	* Checkpoint: [76500](https://drive.google.com/file/d/1Qs-f2gIgWTJWiWrYGsiULxTBwwpgGatc/view?usp=sharing)
+	* Checkpoint: [76500](https://huggingface.co/Marchanjo/mRAT-SQL/resolve/main/mT5-large-en-pt-es-fr-120Ksteps_model_checkpoint-00076500)
 		* Inference - Spanish: [ESM all: 0.675](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-pt-es-fr-120Ksteps-train//76500/spider_eval_match_ratsqlgap-mT5-large-NoGAP-en-pt-es-fr-train_Div-es-eval-step76500.txt)
-	* Checkpoint: [67500](https://drive.google.com/file/d/1cpTEXMhJXVbJfDc8sW1nfSX91p5VSJtn/view?usp=sharing)
+	* Checkpoint: [67500](https://huggingface.co/Marchanjo/mRAT-SQL/resolve/main/mT5-large-en-pt-es-fr-120Ksteps_model_checkpoint-00067500)
 		* Inference - French: [ESM all: 0.681](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-pt-es-fr-120Ksteps-train//67500/spider_eval_match_ratsqlgap-mT5-large-NoGAP-en-pt-es-fr-train_Div-fr-eval-step67500.txt)
 
 
