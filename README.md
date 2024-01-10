@@ -173,7 +173,7 @@ Paper mRAT-SQL-FIT
 		
 
 * mT5-large trained in English, Portuguese, Spanish and French (together) 2048TKs - 480Ksteps - just inference in English
-	* Checkpoint: [290100](https://drive.google.com/file/d/19Uvfw7QL-8i3yKvybRe9ADLDuSa-MeJv/view?usp=sharing)
+	* Checkpoint: [290100](https://huggingface.co/Marchanjo/mRAT-SQL/resolve/main/mT5-large-en-pt-es-fr-train-2048TKs-480Ksteps_model_checkpoint-00290100)
 		* Inference - English: [ESM all: 0.697](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-pt-es-fr-2048TKs-480Ksteps-train/290100/spider_eval_match_ratsqlgap-mT5-large-2048TKs-en-pt-es-fr_Div-en-eval-step290100.txt)
 
 
