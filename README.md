@@ -106,7 +106,7 @@ Paper mRAT-SQL+GAP - Multilingual version of the RAT-SQL+GAP
 	* Checkpoint: [24100](https://huggingface.co/Marchanjo/mRAT-SQL/resolve/main/BERTimbau-base-pt-train_model_checkpoint-00024100)
 		* Inference - Portuguese: [ESM all: 0.417](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/BERTimbau-base-pt-train/spider_eval_match_ratsqlgap-bertimbau-base-step24100.txt)
 * mBART50MtoM-large trained in English
-	* Checkpoint [23100](https://drive.google.com/file/d/16mQf1gMTVGkvONUGpzELzkjCFX5M74cO/view?usp=sharing)
+	* Checkpoint [23100](https://huggingface.co/Marchanjo/mRAT-SQL/resolve/main/mBART50MtoM-large-en-train_model_checkpoint-00023100-003)
 		* Inference - English: [ESM all: 0.651](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mBART50MtoM-large-en-train/spider_eval_match_ratsqlgap-mBART50MtoM-large-en-ori-data-step23100.txt)
 * mBART50MtoM-large trained in Portuguese 
 	* Checkpoint [39100](https://drive.google.com/file/d/1fWPH4bG9-UjW-p6OgmpINWLLsnOopWLh/view?usp=sharing)
