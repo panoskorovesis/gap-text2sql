@@ -141,11 +141,11 @@ Paper mRAT-SQL-FIT
 		* Inference - English: [ESM all: 0.684](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-train/spider_eval_match_ratsqlgap-mT5-large-en-train_en-eval-step50100.txt)
 
 * mT5-large trained in English, Portuguese, Spanish and French (together) 51Ksteps - just best inferences
-	* Checkpoint: [51100](https://drive.google.com/file/d/1GSQX0dJlsipQPBvYrBqY0SMFhFGCTW0E/view?usp=sharing)
+	* Checkpoint: [51100](https://huggingface.co/Marchanjo/mRAT-SQL/resolve/main/mT5-large-en-pt-es-fr-51Ksteps_model_checkpoint-00051100)
 		* Inference - English: [ESM all: 0.715](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-pt-es-fr-51Ksteps-train/51100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-en-pt-es-fr-train_en-eval-step51100.txt)
-	* Checkpoint: [42100](https://drive.google.com/file/d/1qx2QeZhoygCstZP_QgtLkTlVfBVHzZin/view?usp=sharing)
+	* Checkpoint: [42100](https://huggingface.co/Marchanjo/mRAT-SQL/resolve/main/mT5-large-en-pt-es-fr-51Ksteps_model_checkpoint-00042100)
 		* Inference - Portuguese: [ESM all: 0.680](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-pt-es-fr-51Ksteps-train/42100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-en-pt-es-fr-train_pt-eval-step42100.txt)
-	* Checkpoint: [50100](https://drive.google.com/file/d/1eDm7SHz2il1RYryGLSYVGxt-ozHugJcf/view?usp=sharing)
+	* Checkpoint: [50100](https://huggingface.co/Marchanjo/mRAT-SQL/resolve/main/mT5-large-en-pt-es-fr-51Ksteps_model_checkpoint-00050100)
 		* Inference - Spanish: [ESM all: 0.660](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-pt-es-fr-51Ksteps-train/50100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-en-pt-es-fr-train_es-eval-step50100.txt)
 		* Inference - French: [ESM all: 0.672](https://github.com/C4AI/gap-text2sql/blob/main/mrat-sql-gap/inference-results/mT5-large-en-pt-es-fr-51Ksteps-train/50100/spider_eval_match_ratsqlgap-mT5-large-NoGAP-en-pt-es-fr-train_fr-eval-step50100.txt)
 
