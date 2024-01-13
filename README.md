@@ -24,7 +24,7 @@ Go to you browser and download:
 
 https://drive.google.com/uc?id=1_AckYkinAnhqmRQtGsQgUKAnTHxxX5J0
 
-Put the spider.zip file in the directory;
+Put the spider.zip file into the directory:
 gap-text2sql/mrat-sql-gap
 
 
