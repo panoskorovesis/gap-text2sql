@@ -19,6 +19,15 @@ git clone https://github.com/C4AI/gap-text2sql
 cd gap-text2sql/mrat-sql-gap 
 ```
 
+## Download Spider Dataset
+Go to you browser and download:
+
+https://drive.google.com/uc?id=1_AckYkinAnhqmRQtGsQgUKAnTHxxX5J0
+
+Put the spider.zip file in the directory;
+gap-text2sql/mrat-sql-gap
+
+
 ## Conda mtext2slq Environment Setup
 ```bash
 conda create --name mtext2sql python=3.7
