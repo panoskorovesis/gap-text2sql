@@ -32,7 +32,9 @@ echo "Download Checkpoint"
 cd logdir/${Name}-en-train
 mkdir bs=4,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
 cd bs=4,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
-gdown --id 1BZ519XxYtXpxxO1iiBy8kSLG4eq34yEX
+huggingface-cli download Marchanjo/mRAT-SQL mT5-large-en-train_model_checkpoint-00050100 --local-dir .
+mv mT5-large-en-train_model_checkpoint-00050100 model_checkpoint-00050100
+#gdown --id 1BZ519XxYtXpxxO1iiBy8kSLG4eq34yEX
 cd ..
 cd ..
 cd ..
@@ -41,9 +43,15 @@ cd ..
 cd logdir/${Name}-en-pt-es-fr-train
 mkdir bs=4,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
 cd bs=4,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
-gdown --id 15C8H-OrnmBF5W-UCaMsq-UvpBTPkUCYN
-gdown --id 1mIXtBIaQpWJOHi_iCTkwm8xdPW9S8vtd
-gdown --id 1i731DxdcNVbpegCNGMHi7jOR26qaPmbO
+huggingface-cli download Marchanjo/mRAT-SQL mT5-large-en-pt-es-fr-51Ksteps_model_checkpoint-00051100 --local-dir .
+mv mT5-large-en-pt-es-fr-51Ksteps_model_checkpoint-00051100 model_checkpoint-00051100
+huggingface-cli download Marchanjo/mRAT-SQL mT5-large-en-pt-es-fr-51Ksteps_model_checkpoint-00042100 --local-dir .
+mv mT5-large-en-pt-es-fr-51Ksteps_model_checkpoint-00042100 model_checkpoint-00042100
+huggingface-cli download Marchanjo/mRAT-SQL mT5-large-en-pt-es-fr-51Ksteps_model_checkpoint-00050100 --local-dir .
+mv mT5-large-en-pt-es-fr-51Ksteps_model_checkpoint-00050100 model_checkpoint-00050100
+#gdown --id 15C8H-OrnmBF5W-UCaMsq-UvpBTPkUCYN
+#gdown --id 1mIXtBIaQpWJOHi_iCTkwm8xdPW9S8vtd
+#gdown --id 1i731DxdcNVbpegCNGMHi7jOR26qaPmbO
 cd ..
 cd ..
 cd ..

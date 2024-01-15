@@ -33,7 +33,9 @@ echo "Download Checkpoint"
 cd logdir/${Name}-en-train
 mkdir bs=12,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
 cd bs=12,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
-gdown --id 16mQf1gMTVGkvONUGpzELzkjCFX5M74cO
+huggingface-cli download Marchanjo/mRAT-SQL mBART50MtoM-large-en-train_model_checkpoint-00023100-003 --local-dir .
+mv mBART50MtoM-large-en-train_model_checkpoint-00023100-003  model_checkpoint-00023100-003
+#gdown --id 16mQf1gMTVGkvONUGpzELzkjCFX5M74cO
 cd ..
 cd ..
 cd ..
@@ -42,7 +44,9 @@ cd ..
 cd logdir/${Name}-pt-train
 mkdir bs=12,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
 cd bs=12,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
-gdown --id 1fWPH4bG9-UjW-p6OgmpINWLLsnOopWLh
+huggingface-cli download Marchanjo/mRAT-SQL mBART50MtoM-large-pt-train_model_checkpoint-00039100 --local-dir .
+mv mBART50MtoM-large-pt-train_model_checkpoint-00039100 model_checkpoint-00039100
+#gdown --id 1fWPH4bG9-UjW-p6OgmpINWLLsnOopWLh
 cd ..
 cd ..
 cd ..
@@ -51,8 +55,12 @@ cd ..
 cd logdir/${Name}-en-pt-train
 mkdir bs=12,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
 cd bs=12,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
-gdown --id 1szb44h_2t3fK2Vc02PdaAjDqnkWqM-0U
-gdown --id 1MeLkvGf9-5it1JXnUvU9AmXVnnbAAfP0
+huggingface-cli download Marchanjo/mRAT-SQL mBART50MtoM-large-en-pt-train_model_checkpoint-00021100 --local-dir .
+mv mBART50MtoM-large-en-pt-train_model_checkpoint-00021100 model_checkpoint-00021100
+huggingface-cli download Marchanjo/mRAT-SQL mBART50MtoM-large-en-pt-train_model_checkpoint-00041000 --local-dir .
+mv mBART50MtoM-large-en-pt-train_model_checkpoint-00041000 model_checkpoint-00041000
+#gdown --id 1szb44h_2t3fK2Vc02PdaAjDqnkWqM-0U
+#gdown --id 1MeLkvGf9-5it1JXnUvU9AmXVnnbAAfP0
 cd ..
 cd ..
 cd ..
@@ -61,9 +69,15 @@ cd ..
 cd logdir/${Name}-en-pt-es-fr-train
 mkdir bs=12,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
 cd bs=12,lr=1.0e-04,bert_lr=1.0e-05,end_lr=0e0,att=1
-gdown --id 18nioEDEpZf-6CNH_sU3IMZxsSNts_a4y
-gdown --id 1AmJjyVHiP9V-FzW9Q1sXge4YMWAP-srg
-gdown --id 1P0F218tNkW42Pb7okn3uFyTT5sy4zGZR
+huggingface-cli download Marchanjo/mRAT-SQL mBART50MtoM-large-en-pt-es-fr-train_model_checkpoint-00039100 --local-dir .
+mv mBART50MtoM-large-en-pt-es-fr-train_model_checkpoint-00039100 model_checkpoint-00039100
+huggingface-cli download Marchanjo/mRAT-SQL mBART50MtoM-large-en-pt-es-fr-train_model_checkpoint-00042100 --local-dir .
+mv mBART50MtoM-large-en-pt-es-fr-train_model_checkpoint-00042100 model_checkpoint-00042100
+huggingface-cli download Marchanjo/mRAT-SQL mBART50MtoM-large-en-pt-es-fr-train_model_checkpoint-000441000 --local-dir .
+mv mBART50MtoM-large-en-pt-es-fr-train_model_checkpoint-00044100 model_checkpoint-00044100
+#gdown --id 18nioEDEpZf-6CNH_sU3IMZxsSNts_a4y
+#gdown --id 1AmJjyVHiP9V-FzW9Q1sXge4YMWAP-srg
+#gdown --id 1P0F218tNkW42Pb7okn3uFyTT5sy4zGZR
 cd ..
 cd ..
 cd ..

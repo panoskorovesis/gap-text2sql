@@ -25,7 +25,9 @@ echo "Download Checkpoint"
 cd logdir/${Name}-pt-train
 mkdir bs=6,lr=7.4e-04,bert_lr=3.0e-06,end_lr=0e0,att=1
 cd bs=6,lr=7.4e-04,bert_lr=3.0e-06,end_lr=0e0,att=1
-gdown --id 1gIZS0RuIxdjmm7sNbA3R6p6--9iMJmW8
+huggingface-cli download Marchanjo/mRAT-SQL BERTimbau-base-pt-train_model_checkpoint-00024100 --local-dir .
+mv BERTimbau-base-pt-train_model_checkpoint-00024100 model_checkpoint-00024100
+#gdown --id 1gIZS0RuIxdjmm7sNbA3R6p6--9iMJmW8
 cd ..
 cd ..
 cd ..
