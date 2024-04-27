@@ -162,10 +162,17 @@ class Trainer:
                 val_data,
                 batch_size=self.train_config.eval_batch_size,
                 collate_fn=lambda x: x)
-
+        
+        total_batches = len(train_data) / self.train_config.batch_size
+        save_checkpoints = False
+        
+        
         # 4. Start training loop
         with self.data_random:
-            for batch in train_data_loader:
+            for idx, batch in enumerate(train_data_loader):
+
+                print(f'Processing batch {last_step + 1} / {total_batches}')
+
                 # Quit if too long
                 if last_step >= self.train_config.max_steps:
                     break
@@ -198,7 +205,7 @@ class Trainer:
 
                 last_step += 1
                 # Run saver
-                if last_step % self.train_config.save_every_n == 0:
+                if last_step % self.train_config.save_every_n == 0 and save_checkpoints:
                     saver.save(modeldir, last_step)
 
             # Save final model

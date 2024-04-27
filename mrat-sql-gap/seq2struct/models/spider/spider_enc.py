@@ -26,7 +26,6 @@ from seq2struct.models.spider.spider_match_utils import (
 )
 
 import simplemma
-from simplemma import text_lemmatizer
 #langdata = simplemma.load_data('en')
 #langdata = simplemma.load_data('pt','en')
 langdata = simplemma.load_data('en','pt','es','fr')
@@ -1674,6 +1673,7 @@ class T5Tokens:
         if(self.t5_version != "facebook/bart-large" and
            self.t5_version != "facebook/mbart-large-50-many-to-many-mmt" and
            self.t5_version != "google/mt5-large" and
+           self.t5_version != "google/mt5-base" and
            self.t5_version != "google/t5-v1_1-large"): assert False, "Model version not defined."
 
         if self.t5_version == "facebook/bart-large":
@@ -1687,6 +1687,11 @@ class T5Tokens:
                toks.extend(self.tokenizer.tokenize(tok))
                
         if self.t5_version == "google/mt5-large":
+            for i, tok in enumerate(tokens):
+               self.idx_map[i] = len(toks)
+               toks.extend(self.tokenizer.tokenize(tok))
+
+        if self.t5_version == "google/mt5-base":
             for i, tok in enumerate(tokens):
                self.idx_map[i] = len(toks)
                toks.extend(self.tokenizer.tokenize(tok))
@@ -1858,6 +1863,7 @@ class SpiderEncoderT5Preproc(SpiderEncoderV2Preproc):
         if t5_version == "facebook/mbart-large-50-many-to-many-mmt": self.tokenizer = MBart50Tokenizer.from_pretrained(t5_version)
         if t5_version == "google/mt5-large": self.tokenizer = MT5Tokenizer.from_pretrained(t5_version)
         if t5_version == "google/t5-v1_1-large": self.tokenizer = T5Tokenizer.from_pretrained(t5_version)
+        if t5_version == "google/mt5-base": self.tokenizer = MT5Tokenizer.from_pretrained(t5_version)
  
         column_types = ["text", "number", "time", "boolean", "others"]
         self.tokenizer.add_tokens([f"<type: {t}>" for t in column_types])
@@ -1871,6 +1877,7 @@ class SpiderEncoderT5Preproc(SpiderEncoderV2Preproc):
         if(self.t5_version != "facebook/bart-large" and
            self.t5_version != "facebook/mbart-large-50-many-to-many-mmt" and
            self.t5_version != "google/mt5-large" and
+           self.t5_version != "google/mt5-base" and
            self.t5_version != "google/t5-v1_1-large"): assert False, "Model version not defined."
         
         if self.t5_version == "facebook/bart-large": 
@@ -1884,8 +1891,16 @@ class SpiderEncoderT5Preproc(SpiderEncoderV2Preproc):
         if self.t5_version == "google/mt5-large":  
            for token in tokens:
                toks.extend(self.tokenizer.tokenize(token))       
+
+        if self.t5_version == "google/mt5-base":  
+           for token in tokens:
+               toks.extend(self.tokenizer.tokenize(token))       
                
         if self.t5_version == "google/t5-v1_1-large":  
+           for token in tokens:
+               toks.extend(self.tokenizer.tokenize(token)) 
+
+        if self.t5_version == "google/mt5-base":  
            for token in tokens:
                toks.extend(self.tokenizer.tokenize(token)) 
 #        for token in tokens:
@@ -1971,12 +1986,14 @@ class SpiderEncoderT5Preproc(SpiderEncoderV2Preproc):
         if(self.t5_version != "facebook/bart-large" and
            self.t5_version != "facebook/mbart-large-50-many-to-many-mmt" and
            self.t5_version != "google/mt5-large" and
-           self.t5_version != "google/t5-v1_1-large"): assert False, "Model version not defined."
+           self.t5_version != "google/mt5-base" and
+           self.t5_version != "google/t5-v1_1-large" and
+           self.t5_version != "google/mt5-base"): assert False, "Model version not defined."
         if self.t5_version == "facebook/bart-large":  self.tokenizer = BartTokenizer.from_pretrained(self.data_dir)
         if self.t5_version == "facebook/mbart-large-50-many-to-many-mmt": self.tokenizer = MBart50Tokenizer.from_pretrained(self.data_dir)
         if self.t5_version == "google/mt5-large": self.tokenizer = MT5Tokenizer.from_pretrained(self.data_dir)
+        if self.t5_version == "google/mt5-base": self.tokenizer = MT5Tokenizer.from_pretrained(self.data_dir)
         if self.t5_version == "google/t5-v1_1-large": self.tokenizer = T5Tokenizer.from_pretrained(self.data_dir)
-
         
 @registry.register('encoder', 'spider-t5')
 class SpiderEncoderT5(torch.nn.Module):
@@ -1996,7 +2013,7 @@ class SpiderEncoderT5(torch.nn.Module):
         super().__init__()
         self._device = device
         self.preproc = preproc
-        self.base_enc_hidden_size = 1024
+        self.base_enc_hidden_size = 1024 if t5_version != 'google/mt5-base' else 768
 
         assert summarize_header in ["first", "avg"]
         self.summarize_header = summarize_header
@@ -2026,9 +2043,11 @@ class SpiderEncoderT5(torch.nn.Module):
         if(t5_version != "facebook/bart-large" and
            t5_version != "facebook/mbart-large-50-many-to-many-mmt" and
            t5_version != "google/mt5-large" and
+           t5_version != "google/mt5-base" and
            t5_version != "google/t5-v1_1-large"): assert False, "Model version not defined."
         if t5_version == "facebook/bart-large": self.bert_model = BartModel.from_pretrained(t5_version)
         if t5_version == "facebook/mbart-large-50-many-to-many-mmt": self.bert_model = MBartModel.from_pretrained(t5_version)
+        if t5_version == "google/mt5-base": self.bert_model = MT5Model.from_pretrained(t5_version)
         if t5_version == "google/mt5-large": self.bert_model = MT5Model.from_pretrained(t5_version)
         if t5_version == "google/t5-v1_1-large": self.bert_model = T5ForConditionalGeneration.from_pretrained(t5_version)             
 
@@ -2051,6 +2070,7 @@ class SpiderEncoderT5(torch.nn.Module):
         if(t5_version != "facebook/bart-large" and
            t5_version != "facebook/mbart-large-50-many-to-many-mmt" and
            t5_version != "google/mt5-large" and
+           t5_version != "google/mt5-base" and
            t5_version != "google/t5-v1_1-large"): assert False, "Model version not defined."
         #desativando GAP - Generation-Augmented Pre-Training   
         # if t5_version == "facebook/bart-large":
