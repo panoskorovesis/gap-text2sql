@@ -29,8 +29,8 @@ from seq2struct.utils import vocab
 class TrainConfig:
     eval_every_n = attr.ib(default=100)
     report_every_n = attr.ib(default=100)
-    save_every_n = attr.ib(default=100)
-    keep_every_n = attr.ib(default=1000)
+    save_every_n = attr.ib(default=1000)
+    keep_every_n = attr.ib(default=3000)
 
     batch_size = attr.ib(default=32)
     eval_batch_size = attr.ib(default=32)
@@ -164,7 +164,7 @@ class Trainer:
                 collate_fn=lambda x: x)
         
         total_batches = len(train_data) / self.train_config.batch_size
-        save_checkpoints = False
+        save_checkpoints = True
         
         
         # 4. Start training loop
@@ -175,8 +175,9 @@ class Trainer:
 
                 # Quit if too long
                 if last_step >= self.train_config.max_steps:
+                    print(f'FInal batch no: {idx}')
                     break
-
+                    
                 # Evaluate model
                 if last_step % self.train_config.eval_every_n == 0:
                     if self.train_config.eval_on_train:
