@@ -22,10 +22,19 @@ class Preprocessor:
         for section in self.config['data']:
             print(f"\n*********************************************\nself.config['data'][section]={self.config['data'][section]}\n*********************************************\n") #gostei deste print 
             data = registry.construct('dataset', self.config['data'][section])
+            skipped_counter = 0
+            total_counter = 0
             for item in tqdm.tqdm(data, desc=section, dynamic_ncols=True):
                 to_add, validation_info = self.model_preproc.validate_item(item, section)
                 if to_add:
                     self.model_preproc.add_item(item, section, validation_info)
+                else:
+                    skipped_counter += 1
+                    
+                total_counter += 1
+                    
+            print(f'Skipped {skipped_counter} records for {section}.')
+            print(f'Initial size: {total_counter} Final Size: {total_counter - skipped_counter}.')
         self.model_preproc.save()
 
 def add_parser():
