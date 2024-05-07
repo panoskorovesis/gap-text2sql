@@ -378,6 +378,10 @@ echo "Folders structure preparation"
 mkdir logdir/mt5-large-en-train
 mkdir ie_dirs/mt5-large-en-train
 
+#mt5-base
+mkdir logdir/mT5-base-en-train
+mkdir ie_dirs/mT5-base-en-train
+
 mkdir logdir/mt5-large-en-pt-es-fr-train
 mkdir ie_dirs/mt5-large-en-pt-es-fr-train
 
