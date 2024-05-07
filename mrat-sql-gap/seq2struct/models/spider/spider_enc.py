@@ -1900,9 +1900,6 @@ class SpiderEncoderT5Preproc(SpiderEncoderV2Preproc):
            for token in tokens:
                toks.extend(self.tokenizer.tokenize(token)) 
 
-        if self.t5_version == "google/mt5-base":  
-           for token in tokens:
-               toks.extend(self.tokenizer.tokenize(token)) 
 #        for token in tokens:
 #            toks.extend(self.tokenizer.tokenize(token, add_prefix_space=True))
         return toks
