@@ -86,18 +86,37 @@ def save_checkpoint(items, step, model_dir, ignore=[],
         all_checkpoints = []
         for name in os.listdir(model_dir):
             m = CHECKPOINT_PATTERN.match(name)
-            if m is None or name == os.path.basename(path_with_step):
+            # if m is None or name == os.path.basename(path_with_step):
+            if m is None:
                 continue
+                
             checkpoint_step = int(m.group(1))
             all_checkpoints.append((checkpoint_step, name))
         all_checkpoints.sort()
+        
+        # Due to space limitation of the sagemaker environment
+        # keep_every_n will essentially be keep_latest_no
+        # i.e: keep_every_n = 3 => Keep the 3 latest checkpoints
 
-        last_step = float('-inf')
-        for checkpoint_step, name in all_checkpoints:
-            if checkpoint_step - last_step >= keep_every_n:
-                last_step = checkpoint_step
-                continue
+        # When calculating we have to take into account the 
+        
+        # If the total elements are <= to our threshold
+        # We dont need to do anything
+        if len(all_checkpoints) <= keep_every_n:
+            return
+        
+        for i in range(0, len(all_checkpoints) - keep_every_n):
+            checkpoint_step, name = all_checkpoints[i]
+            print(f'Will delete checkpoint {name}')
+            
             os.unlink(os.path.join(model_dir, name))
+ 
+        # last_step = float('-inf')
+        # for checkpoint_step, name in all_checkpoints:
+        #     if checkpoint_step - last_step >= keep_every_n:
+        #         last_step = checkpoint_step
+        #         continue
+        #     os.unlink(os.path.join(model_dir, name))
 
 
 class Saver(object):
