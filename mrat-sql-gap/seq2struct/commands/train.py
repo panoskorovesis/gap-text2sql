@@ -175,7 +175,7 @@ class Trainer:
 
                 # Quit if too long
                 if last_step >= self.train_config.max_steps:
-                    print(f'FInal batch no: {idx}')
+                    print(f'Final batch no: {idx}')
                     break
                     
                 # Evaluate model
@@ -207,6 +207,7 @@ class Trainer:
                 last_step += 1
                 # Run saver
                 if last_step % self.train_config.save_every_n == 0 and save_checkpoints:
+                    print(f'Will save checkpoint for {last_step + 1}')
                     saver.save(modeldir, last_step)
 
             # Save final model
