@@ -13,7 +13,7 @@
 #   - batch_size 10
 #   - Adam with lr 1e-3
 
-function(output_from, data_path='data/spider-en/') {
+function(output_from, data_path='data/spider-gr/') {
     local PREFIX = data_path,
     
     data: {
@@ -86,12 +86,12 @@ function(output_from, data_path='data/spider-en/') {
         batch_size: 10,
         eval_batch_size: 50,
 
-        keep_every_n: 1,
-        eval_every_n: 10,
+        keep_every_n: 20,
+        eval_every_n: 100,
         save_every_n: 10,
         report_every_n: 10,
 
-        max_steps: 10000,
+        max_steps: 100,
         num_eval_items: 50,
     },
     optimizer: {
