@@ -166,8 +166,11 @@ class Trainer:
         total_batches = len(train_data) / self.train_config.batch_size
         save_checkpoints = True
         
+        # 4. Get last min val loss from the val_loss.txt
+        # If the file does not exists it sets it to inf
+        min_val_loss = self.get_min_validation_loss(self.logger)
         
-        # 4. Start training loop
+        # 5. Start training loop
         with self.data_random:
             for idx, batch in enumerate(train_data_loader):
 
@@ -181,9 +184,9 @@ class Trainer:
                 # Evaluate model
                 if last_step % self.train_config.eval_every_n == 0:
                     if self.train_config.eval_on_train:
-                        self._eval_model(self.logger, self.model, last_step, train_eval_data_loader, 'train', num_eval_items=self.train_config.num_eval_items)
+                        train_loss = self._eval_model(self.logger, self.model, last_step, train_eval_data_loader, 'train', num_eval_items=self.train_config.num_eval_items)
                     if self.train_config.eval_on_val:
-                        self._eval_model(self.logger, self.model, last_step, val_data_loader, 'val', num_eval_items=self.train_config.num_eval_items)
+                        val_loss = self._eval_model(self.logger, self.model, last_step, val_data_loader, 'val', num_eval_items=self.train_config.num_eval_items)
 
                 # Compute and apply gradient
                 with self.model_random:
@@ -207,8 +210,18 @@ class Trainer:
                 last_step += 1
                 # Run saver
                 if last_step % self.train_config.save_every_n == 0 and save_checkpoints:
-                    print(f'Will save checkpoint for {last_step + 1}')
-                    saver.save(modeldir, last_step)
+                    
+                    val_loss = self._eval_model(self.logger, self.model, last_step, val_data_loader, 'val', num_eval_items=self.train_config.num_eval_items)
+                    
+                    if min_val_loss < val_loss:
+                        self.logger.log(f'Saved model has lower val_loss. WILL NOT SAVE!')
+                    else:    
+                        self.logger.log(f'Will save checkpoint for {last_step + 1}. Val Loss: {val_loss} over {min_val_loss}')
+                        saver.save(modeldir, last_step)
+
+                        # Also update the min with the val loss of the model we just stored
+                        min_val_loss = val_loss
+                        self.update_min_validation_loss(self.logger, min_val_loss)
 
             # Save final model
             saver.save(modeldir, last_step)
@@ -244,7 +257,46 @@ class Trainer:
         logger.log("Step {} stats, {}: {}".format(
             last_step, eval_section, ", ".join(
             "{} = {}".format(k, v) for k, v in stats.items())))
+        
+        # also return the eval loss
+        # This will be used to make sure the model with the lowest score
+        return stats['loss']
+    
+    @staticmethod
+    def get_min_validation_loss(logger):
+        
+        base = '/home/studio-lab-user/gr-spider/Database-Systems/gap-text2sql/mrat-sql-gap'
+        # the min validation loss can be found in the same file the logger writes to
+        file_path = str(logger.log_file)
+        file_path = file_path.split('name=')[-1].split('mode=')[0].strip()
+        file_path = file_path.replace('log.txt', 'val_loss.txt').replace("'", '')
+        
+        file_path = base + '/' + file_path
+        
+        lines = []
+        min_val_loss = float('inf')
+        
+        if not os.path.exists(file_path):
+            return min_val_loss
+            
+        with open(file_path, 'r') as fp:
+            lines = fp.readlines()
+                    
+        return float(lines[0])
+    
+    @staticmethod
+    def update_min_validation_loss(logger, val_loss):
+        
+        base = '/home/studio-lab-user/gr-spider/Database-Systems/gap-text2sql/mrat-sql-gap'
+        file_path = str(logger.log_file)
+        file_path = file_path.split('name=')[-1].split('mode=')[0].strip()
+        file_path = file_path.replace('log.txt', 'val_loss.txt').replace("'", '')
+        file_path = base + '/' + file_path
+        
+        with open(file_path, 'w') as fp:
+            fp.write(str(val_loss))
 
+        
 def add_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('--logdir', required=True)
