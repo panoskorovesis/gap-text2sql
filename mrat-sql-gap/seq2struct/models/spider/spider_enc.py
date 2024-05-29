@@ -26,9 +26,7 @@ from seq2struct.models.spider.spider_match_utils import (
 )
 
 import simplemma
-#langdata = simplemma.load_data('en')
-#langdata = simplemma.load_data('pt','en')
-langdata = simplemma.load_data('en','pt','es','fr')
+langdata = ('en','pt','es','fr', 'el')
 
 @attr.s
 class SpiderEncoderState:
@@ -618,7 +616,7 @@ class Bertokens:
         # lemmatize "abc"
         normalized_toks = []
         for i, tok in enumerate(new_toks):
-            normalized_toks.append(simplemma.lemmatize(tok, langdata))
+            normalized_toks.append(simplemma.lemmatize(tok, lang=langdata))
         
         # lemmatize "abc"
 #        normalized_toks = []
@@ -1076,7 +1074,7 @@ class BartTokens:
 
         normalized_toks = []
         for i, tok in enumerate(tokens):
-            normalized_toks.append(simplemma.lemmatize(tok, langdata))
+            normalized_toks.append(simplemma.lemmatize(tok, lang=langdata))
 
 #        normalized_toks = []
 #        for i, tok in enumerate(tokens):
@@ -1707,7 +1705,7 @@ class T5Tokens:
             
         normalized_toks = []
         for i, tok in enumerate(tokens):
-            normalized_toks.append(simplemma.lemmatize(tok, langdata))
+            normalized_toks.append(simplemma.lemmatize(tok, lang=langdata))
 
 #        normalized_toks = []
 #        for i, tok in enumerate(tokens):
