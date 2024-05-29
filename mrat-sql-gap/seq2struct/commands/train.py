@@ -223,10 +223,6 @@ class Trainer:
                         min_val_loss = val_loss
                         self.update_min_validation_loss(self.logger, min_val_loss)
 
-            # Save final model
-            saver.save(modeldir, last_step)
-
-
 
     @staticmethod
     def _yield_batches_from_epochs(loader):
@@ -265,7 +261,7 @@ class Trainer:
     @staticmethod
     def get_min_validation_loss(logger):
         
-        base = '/home/studio-lab-user/gr-spider/Database-Systems/gap-text2sql/mrat-sql-gap'
+        base = '.'
         # the min validation loss can be found in the same file the logger writes to
         file_path = str(logger.log_file)
         file_path = file_path.split('name=')[-1].split('mode=')[0].strip()
@@ -287,7 +283,7 @@ class Trainer:
     @staticmethod
     def update_min_validation_loss(logger, val_loss):
         
-        base = '/home/studio-lab-user/gr-spider/Database-Systems/gap-text2sql/mrat-sql-gap'
+        base = '.'
         file_path = str(logger.log_file)
         file_path = file_path.split('name=')[-1].split('mode=')[0].strip()
         file_path = file_path.replace('log.txt', 'val_loss.txt').replace("'", '')
