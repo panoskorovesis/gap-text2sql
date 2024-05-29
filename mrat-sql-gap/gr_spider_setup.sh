@@ -49,7 +49,7 @@ ln -s $(pwd)/spider/database data/spider-gr/database
 echo
 echo "Downdload SMALL version of GR Spider"
 
-gdown https://drive.google.com/uc?id=1IlGT2aK0Ntf6ojRf7qhNfkuRkSn28dXI
+gdown https://drive.google.com/uc?id=1WcxPVo2rYecCXk_2fuT5aY8BMMt8Cuky
 gdown https://drive.google.com/uc?id=1B9s1sj8a3AUTRlH6magKsDkPVk6ODNAI
 gdown https://drive.google.com/uc?id=1SwW40nBwqghOtHBlFRDtG391XKzFMmty
 gdown https://drive.google.com/uc?id=1u8cJ2PH6mfiDKZJRpEMBdnJfpmAlLGtZ
