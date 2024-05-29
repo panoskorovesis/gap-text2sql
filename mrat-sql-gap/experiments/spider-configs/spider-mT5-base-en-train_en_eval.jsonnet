@@ -3,7 +3,7 @@
     logdir: "logdir/mT5-base-en-train",
     model_config: "experiments/spider-configs/mT5-base-en/gap-mT5.jsonnet",
     model_config_args: {
-        bs: 1,
+        bs: 4,
         num_batch_accumulated: 2,
         t5_version: "google/mt5-base",
         pretrained_checkpoint: "models/mt5-base/pretrained_checkpoint/pytorch_model.bin",
@@ -28,6 +28,6 @@
     eval_output: "ie_dirs/mT5-base-en-train",
     eval_beam_size: 1,
     eval_use_heuristic: true,
-    eval_steps: [50100],
+    eval_steps: [8460],
     eval_section: "val",
 }

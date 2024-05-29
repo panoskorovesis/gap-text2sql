@@ -86,12 +86,12 @@ function(output_from, data_path='data/spider-gr/') {
         batch_size: 10,
         eval_batch_size: 50,
 
-        keep_every_n: 20,
-        eval_every_n: 100,
+        keep_every_n: 1,
+        eval_every_n: 10,
         save_every_n: 10,
         report_every_n: 10,
 
-        max_steps: 100,
+        max_steps: 10000,
         num_eval_items: 50,
     },
     optimizer: {

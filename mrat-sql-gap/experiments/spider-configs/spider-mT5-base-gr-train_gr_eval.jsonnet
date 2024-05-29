@@ -28,6 +28,6 @@
     eval_output: "ie_dirs/mT5-base-gr-train",
     eval_beam_size: 1,
     eval_use_heuristic: true,
-    eval_steps: [40],
+    eval_steps: [8460],
     eval_section: "val",
 }
