@@ -25,8 +25,13 @@ from seq2struct.models.spider.spider_match_utils import (
     compute_cell_value_linking
 )
 
-import simplemma
-langdata = ('en','pt','es','fr', 'el')
+# import simplemma
+# langdata = ('en','pt','es','fr', 'el')
+
+import stanza
+stanza.download('el')
+stanza.download('en')
+nlp = stanza.Pipeline('el', use_gpu=False, processors=["tokenize", "lemma"])
 
 @attr.s
 class SpiderEncoderState:
@@ -616,7 +621,9 @@ class Bertokens:
         # lemmatize "abc"
         normalized_toks = []
         for i, tok in enumerate(new_toks):
-            normalized_toks.append(simplemma.lemmatize(tok, lang=langdata))
+            doc = nlp(tok)
+            normalized_toks.append( doc.sentences[0].words[0].lemma )
+            # normalized_toks.append(simplemma.lemmatize(tok, lang=langdata))
         
         # lemmatize "abc"
 #        normalized_toks = []
@@ -1074,7 +1081,9 @@ class BartTokens:
 
         normalized_toks = []
         for i, tok in enumerate(tokens):
-            normalized_toks.append(simplemma.lemmatize(tok, lang=langdata))
+            doc = nlp(tok)
+            normalized_toks.append( doc.sentences[0].words[0].lemma )
+            # normalized_toks.append(simplemma.lemmatize(tok, lang=langdata))
 
 #        normalized_toks = []
 #        for i, tok in enumerate(tokens):
@@ -1705,7 +1714,9 @@ class T5Tokens:
             
         normalized_toks = []
         for i, tok in enumerate(tokens):
-            normalized_toks.append(simplemma.lemmatize(tok, lang=langdata))
+            doc = nlp(tok)
+            normalized_toks.append( doc.sentences[0].words[0].lemma )
+            # normalized_toks.append(simplemma.lemmatize(tok, lang=langdata))
 
 #        normalized_toks = []
 #        for i, tok in enumerate(tokens):
