@@ -33,7 +33,7 @@ stanza.download('el')
 stanza.download('en')
 nlp = stanza.Pipeline(lang='el', use_gpu=False, processors="tokenize,lemma")
 
-LEMMA_MODE="simplemma"
+LEMMA_MODE="stanza"
 
 @attr.s
 class SpiderEncoderState:
@@ -1993,6 +1993,35 @@ class SpiderEncoderT5Preproc(SpiderEncoderV2Preproc):
                 for text in texts:
                     f.write(json.dumps(text, ensure_ascii=False) + '\n')#UTF-8
 					#f.write(json.dumps(text) + '\n')
+					
+    def save_and_update_dev(self, path_to_dev, list_with_valid_dev_questions):
+        os.makedirs(self.data_dir, exist_ok=True)
+        self.tokenizer.save_pretrained(self.data_dir)
+
+        for section, texts in self.texts.items():
+            with open(os.path.join(self.data_dir, section + '.jsonl'), 'w', encoding='utf8') as f:#UTF-8
+			#with open(os.path.join(self.data_dir, section + '.jsonl'), 'w') as f:
+                for text in texts:
+                    f.write(json.dumps(text, ensure_ascii=False) + '\n')#UTF-8
+					#f.write(json.dumps(text) + '\n')
+
+        # Extract the directory and the file name
+        directory = os.path.dirname(path_to_dev)
+        current_dev_file_name = os.path.basename(path_to_dev)
+
+        # Create the new file name
+        new_dev_file_name = f"initial_{current_dev_file_name}"
+
+        # Construct the full path for the new file name
+        new_dev_file_path = os.path.join(directory, new_dev_file_name)
+
+        # Use os.rename() to rename the file
+        os.rename(path_to_dev, new_dev_file_path)
+
+        with open(path_to_dev, "w", encoding="utf-8") as json_file:
+            json.dump(list_with_valid_dev_questions, json_file, ensure_ascii=False, indent=4)
+
+        print(f"File {path_to_dev} updated successfully.")
 
     def load(self):
         #Adicionado para tratamento para model mt5

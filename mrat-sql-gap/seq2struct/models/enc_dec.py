@@ -51,6 +51,10 @@ class EncDecModel(torch.nn.Module):
         def save(self):
             self.enc_preproc.save()
             self.dec_preproc.save()
+            
+       	def save_and_update_dev(self, path_to_dev, list_with_valid_dev_questions):
+            self.enc_preproc.save_and_update_dev(path_to_dev, list_with_valid_dev_questions)
+            self.dec_preproc.save()
         
         def load(self):
             self.enc_preproc.load()
